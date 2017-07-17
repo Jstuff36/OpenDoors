@@ -9,7 +9,7 @@ lastname        | string    | not null
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
-locations       | string    | not null
+location       | string    | not null
 languages       | string    |
 city            | string    | not null
 country         | string    | not null

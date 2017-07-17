@@ -2,10 +2,10 @@
 
 [Heroku][heroku] The heroku link will go here when completed
 
-[Trello link][trello] The trello link will go here
+[Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/
+[trello]: https://trello.com/b/kBJo5Fqe/full-stack
 
 ## Minimum Viable Product
 
@@ -17,10 +17,10 @@ sufficient CSS styling:
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Spots
+- [ ] Host Locations
 - [ ] Bookings
-- [ ] Spots search (by location & availability) & Google Maps on search
-- [ ] Reviews
+- [ ] User Profile
+- [ ] Refrences
 
 ## Design Docs
 
@@ -28,8 +28,33 @@ sufficient CSS styling:
 * [React Components][components]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
+* [Sample State][sample-state]
+
 
 [components]: docs/component-hierarchy.md
 [wireframes]: docs/wireframes
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
+[sample-state]: docs/sample-state.md
+
+
+## Implementation Timeline
+
+### Phase 1: Backend setup and Front End User Authentication (2 days)
+
+**Objective:** Functioning rails project with front-end Authentication
+
+### Phase 2: Map Model, API, and components (2 days)
+
+**Objective:** Map displays listings and dynamically updates as window changes
+
+### Phase 3: Refrences and components (2 days)
+
+**Objective:** Users can leave refrences to listings they have completed
+
+### Phase 4: User profile (2 day)
+
+**Objective:** Show user profile including upcoming trips and refrences
+
+### Bonus Features (TBD)
+- [ ] Filter results by availability
