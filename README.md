@@ -26,6 +26,10 @@ sufficient CSS styling:
 
 * [View Wireframes][wireframes]
 * [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
 
 [components]: docs/component-hierarchy.md
 [wireframes]: docs/wireframes
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
