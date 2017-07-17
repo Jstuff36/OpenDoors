@@ -25,5 +25,7 @@ sufficient CSS styling:
 ## Design Docs
 
 * [View Wireframes][wireframes]
+* [React Components][components]
 
+[components]: docs/component-hierarchy.md
 [wireframes]: docs/wireframes
