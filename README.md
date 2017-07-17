@@ -23,3 +23,7 @@ sufficient CSS styling:
 - [ ] Reviews
 
 ## Design Docs
+
+* [View Wireframes][wireframes]
+
+[wireframes]: docs/wireframes
