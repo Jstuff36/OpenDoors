@@ -26,6 +26,7 @@ user_id         | integer   | not null, foreign key (references users), indexed
 dates           | array     | not null
 status          | string    | not null
 host_id         | integer   | not null, foreign key (references users), indexed
+message         | text      | not null
 
 ## references
 column name     | data type | details

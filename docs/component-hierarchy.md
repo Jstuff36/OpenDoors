@@ -19,6 +19,8 @@
       * LogOut
     * DisplayMap
       * AddHostingLocations
+    * **HostProfileScroll**
+      * HostInfo
     * **HostProfile**
       * HostInfo
   * **HostProfile**
