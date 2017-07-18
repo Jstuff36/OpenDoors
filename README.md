@@ -20,7 +20,8 @@ sufficient CSS styling:
 - [ ] Host Locations
 - [ ] Bookings
 - [ ] User Profile
-- [ ] Refrences
+- [ ] References
+- [ ] Search Filter
 
 ## Design Docs
 
@@ -48,13 +49,17 @@ sufficient CSS styling:
 
 **Objective:** Map displays listings and dynamically updates as window changes
 
-### Phase 3: Refrences and components (2 days)
+### Phase 3: Implement Search (2 days)
 
-**Objective:** Users can leave refrences to listings they have completed
+**Objective:** Be able to filter search by date range and city
 
-### Phase 4: User profile (2 day)
+### Phase 4: References and components (2 days)
 
-**Objective:** Show user profile including upcoming trips and refrences
+**Objective:** Users can leave references to listings they have completed
+
+### Phase 5: User profile (2 day)
+
+**Objective:** Show user profile including upcoming trips and references
 
 ### Bonus Features (TBD)
 - [ ] Filter results by availability
