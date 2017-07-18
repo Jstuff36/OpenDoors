@@ -22,7 +22,11 @@ class Api::UsersController < ApplicationController
       :lastname,
       :city,
       :country,
-      location: []
+      :age,
+      :occupation,
+      :about,
+      location: [],
+      languages: [],
     )
   end
 
