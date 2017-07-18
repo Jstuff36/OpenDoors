@@ -21,13 +21,14 @@
 
 ## Listings
 
+### Listings reference the user table
+
 - `GET /api/listings`
-- `POST /api/listings`
 - `GET /api/listings/:id`
-- `PATCH /api/listings/:id`
 
-### Refrences
+### References
 
-- `GET /api/refrences`
-- `PATCH /api/refrences/:id`
-- `DELETE /api/refrences/:id`
+- `GET /api/references`
+- `POST /api/references`
+- `PATCH /api/references/:id`
+- `DELETE /api/references/:id`
