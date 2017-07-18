@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://open-doors22.herokuapp.com/#/
 [trello]: https://trello.com/b/kBJo5Fqe/full-stack
 
 ## Minimum Viable Product
