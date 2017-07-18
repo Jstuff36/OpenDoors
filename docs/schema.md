@@ -16,7 +16,7 @@ country         | string    | not null
 age             | string    |
 occupation      | string    |
 about           | text      |
-hosting         | boolean   |
+hosting         | boolean   | not null
 
 ## trips
 column name     | data type | details

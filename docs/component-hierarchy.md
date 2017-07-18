@@ -43,12 +43,12 @@
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `LoginUser` **path:** `Login`
-  * **component:** `NewUser` **path:** `new-user`
+  * **component:** `LoginUser` **path:** `login`
+  * **component:** `SignUp` **path:** `sign-up`
   * **component:** `ListingsIndex` **path:** `index`
   * **component:** `UserProfile` **path:** `user/:userid`
-    * **component:** `UpcomingTrips` **path:** `user-trips`
-    * **component:** `EditUserProfile` **path** `edit-user-profile`
+    * **component:** `UpcomingTrips` **path:** `trips`
+    * **component:** `EditUserProfile` **path** `edit-profile`
   * **component:** `HostProfile` **path:** `host/:hostid`
-    * **component:** `HostInformation` **path:** `host-info`
-    * **component:** `HostLocation` **path:** `host-location`
+    * **component:** `HostInformation` **path:** `info`
+    * **component:** `HostLocation` **path:** `location`
