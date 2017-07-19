@@ -2,12 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  background-image: image("../images/bike_background.jpeg");
+  height: 100vh;
+  background-image: image-url("bike_background.jpeg");
 }
 
 .form_container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
