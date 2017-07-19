@@ -8,10 +8,8 @@
 * **App**
   * **NewUser**
     * SignUpForm
-    * LoginUser
   * **LoginUser**
     * LoginForm
-    * NewUser
   * **ListingsIndex**
     * SearchFilter
     * MenuBar

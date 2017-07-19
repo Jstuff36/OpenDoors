@@ -25,10 +25,6 @@
     errors: []
   }
 
-  current_user: {
-    id: 1
-  }
-
   trips: {
     1: {
       id: 1,
