@@ -8,8 +8,9 @@ class ListingMap extends React.Component {
   }
 
   handleClick() {
-    this.props.logout().then( () => this.props.history.push({
-      pathname: `/login`
+    this.props.logout().then(
+      () => this.props.history.push({
+        pathname: `/login`
     }));
   }
 

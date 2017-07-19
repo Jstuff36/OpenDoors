@@ -9,15 +9,30 @@ class SignInForm extends React.Component {
       password: 'Password'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const user = {
+      email: "a",
+      password: "password"
+    };
+    this.props.login(user).then(
+      () => this.props.history.push({
+        pathname: `/listings`
+      })
+    );
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login(user);
-    this.props.history.push({
-      pathname: `/listings`
-    });
+    this.props.login(user).then(
+      () => this.props.history.push({
+        pathname: `/listings`
+      })
+    );
   }
 
   update(field) {
@@ -55,6 +70,7 @@ class SignInForm extends React.Component {
             Sign Up
           </div>
         </Link>
+        <button onClick={this.demoLogin}>Demo Login</button>
       </div>
     );
   }

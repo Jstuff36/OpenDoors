@@ -1,6 +1,6 @@
 # OpenDoors
 
-[Heroku][heroku] The heroku link will go here when completed
+[Heroku][heroku]
 
 [Trello link][trello]
 
