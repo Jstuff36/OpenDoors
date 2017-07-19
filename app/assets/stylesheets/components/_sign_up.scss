@@ -3,7 +3,13 @@
   justify-content: center;
   align-items: stretch;
   height: 100vh;
-  background-image: image-url("bike_background.jpeg");
+  width: 100%;
+  background: url("https://res.cloudinary.com/dax5cdjeh/image/upload/c_scale,w_3000/v1500498363/bike_background_final_ivpe4f.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 .form_container {
@@ -11,16 +17,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgba(24, 25, 27, 0.75);
+  flex-basis: 400px;
+  color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .login_title {
   font-size: 300%;
+  margin-bottom: 50px;
 }
 
 .login_items {
   padding: 5px
 }
 
-.sign_in_button {
+.login_button {
+  margin: 10px;
+  padding: 20px;
+  border: solid;
+  border-radius: 5px;
+}
 
+.add_underline {
+  border-bottom: solid white;
 }

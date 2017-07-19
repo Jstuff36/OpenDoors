@@ -55,23 +55,23 @@ class SignInForm extends React.Component {
             OpenDoors
           </div>
           <input
-            className="login_items"
+            className="login_items add_underline"
             type="text"
             placeholder="Email"
             onChange={this.update('email')}
             onFocus={this.handleFocus}
             />
           <input
-            className="login_items"
+            className="login_items add_underline"
             type="password"
             placeholder="Password"
             onChange={this.update('password')}
             onFocus={this.handleFocus}
             />
           <input
-            className="login_items"
+            className="login_items login_button"
             type="submit"
-            value="Sign In" />
+            value="Log In" />
           <Link to="/signup" className="login_items">
             Sign Up
           </Link>
