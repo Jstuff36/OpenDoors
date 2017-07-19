@@ -9,25 +9,19 @@ class SignInForm extends React.Component {
       password: 'Password'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
-  }
-
-  demoLogin(e) {
-    e.preventDefault();
-    const user = {
-      email: "a",
-      password: "password"
-    };
-    this.props.login(user).then(
-      () => this.props.history.push({
-        pathname: `/listings`
-      })
-    );
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
+    let user;
+    if (e.currentTarget.innerHTML === "Demo Login") {
+      user = {
+        email: "a",
+        password: "password"
+      };
+    } else {
+    user = this.state;
+    }
     this.props.login(user).then(
       () => this.props.history.push({
         pathname: `/listings`
@@ -47,30 +41,42 @@ class SignInForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="main-background">
         {this.props.errors}
-        <form onSubmit={this.handleSubmit}>
-          <div>
+        <form
+          onSubmit={this.handleSubmit}
+          className="form_container">
+          <div
+            className="login_title login_items">
             OpenDoors
           </div>
-          <input type="text"
+          <input
+            className="login_items"
+            type="text"
             placeholder="Email"
             onChange={this.update('email')}
             onFocus={this.handleFocus}
-          />
-          <input type="password"
+            />
+          <input
+            className="login_items"
+            type="password"
             placeholder="Password"
             onChange={this.update('password')}
             onFocus={this.handleFocus}
-          />
-          <input type="submit" value="Sign In" />
-        </form>
-        <Link to="/signup">
-          <div>
+            />
+          <input
+            className="login_items"
+            type="submit"
+            value="Sign In" />
+          <Link to="/signup" className="login_items">
             Sign Up
-          </div>
-        </Link>
-        <button onClick={this.demoLogin}>Demo Login</button>
+          </Link>
+          <button
+            className="login_items"
+            onClick={this.handleSubmit}>
+              Demo Login
+          </button>
+        </form>
       </div>
     );
   }

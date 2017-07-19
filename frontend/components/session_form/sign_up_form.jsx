@@ -39,10 +39,11 @@ class SignUpForm extends React.Component {
     } else {
       const user = this.state;
       user["location"] = [user["location"]];
-      this.props.signup(user);
-      this.props.history.push({
-        pathname: `/listings`
-      });
+      this.props.signup(user).then(
+        () => this.props.history.push({
+          pathname: `/listings`
+        })
+      );
     }
   }
 
