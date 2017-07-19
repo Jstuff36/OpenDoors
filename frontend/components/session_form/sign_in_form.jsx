@@ -15,6 +15,9 @@ class SignInForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.login(user);
+    this.props.history.push({
+      pathname: `/listings`
+    });
   }
 
   update(field) {
@@ -40,13 +43,18 @@ class SignInForm extends React.Component {
             onChange={this.update('email')}
             onFocus={this.handleFocus}
           />
-        <input type="password"
-          placeholder="Password"
-          onChange={this.update('password')}
-          onFocus={this.handleFocus}
-        />
-      <input type="submit" value="Sign In" />
+          <input type="password"
+            placeholder="Password"
+            onChange={this.update('password')}
+            onFocus={this.handleFocus}
+          />
+          <input type="submit" value="Sign In" />
         </form>
+        <Link to="/signup">
+          <div>
+            Sign Up
+          </div>
+        </Link>
       </div>
     );
   }
