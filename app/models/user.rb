@@ -13,6 +13,14 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def self.find_by_location(city)
+    User.all.where(city: city)
+  end
+
+  def self.find_by_email(email)
+    User.find_by(email: email)
+  end
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user && user.password_is?(password)

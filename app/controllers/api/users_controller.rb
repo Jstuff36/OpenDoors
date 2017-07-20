@@ -1,8 +1,12 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    @user = User.all
+  end
+
   def create
     @user = User.new(user_params)
-    @user.location = ["change this"]
+    @user.location = [37.7749, 122.4194]
     if @user.save
       sign_in(@user)
       render "api/users/show"
