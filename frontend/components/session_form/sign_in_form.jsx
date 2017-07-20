@@ -46,46 +46,49 @@ class SignInForm extends React.Component {
   render() {
     return (
       <div className="main-background">
-        <form
-          onSubmit={this.handleSubmit}
-          className="form_container">
-          <div
-            className="login_title login_items">
-            OpenDoors
-          </div>
-          <div className="errors">
-            {this.props.errors}
-          </div>
-          <input
-            className="login_items add_underline edit_placeholder"
-            type="text"
-            placeholder="Email"
-            onChange={this.update('email')}
-            onFocus={this.handleFocus}
-            />
-          <input
-            className="login_items add_underline edit_placeholder"
-            type="password"
-            placeholder="Password"
-            onChange={this.update('password')}
-            onFocus={this.handleFocus}
-            />
-          <input
-            className="login_items login_button"
-            type="submit"
-            value="Log In" />
-          <div>
-            Don't have an account?
-            <Link to="/signup" className="login_items link_to_sign_up">
-              Sign Up
-            </Link>
-          </div>
-          <button
-            className="login_items"
-            onClick={this.handleSubmit}>
+        <div className="form_container">
+
+          <form
+            onSubmit={this.handleSubmit}
+            className="auth_form_sign_in">
+            <div
+              className="sign_in_title login_items">
+              OpenDoors
+            </div>
+            <div className="errors_sign_in">
+              {this.props.errors}
+            </div>
+            <input
+              className="login_items add_underline edit_placeholder"
+              type="text"
+              placeholder="Email"
+              onChange={this.update('email')}
+              onFocus={this.handleFocus}
+              />
+            <input
+              className="login_items add_underline edit_placeholder"
+              type="password"
+              placeholder="Password"
+              onChange={this.update('password')}
+              onFocus={this.handleFocus}
+              />
+            <input
+              className="login_items sign_in_up_button"
+              type="submit"
+              value="Log In" />
+            <div className="link_to_sign_up_sign_in">
+              Don't have an account?
+              <Link to="/signup" className="login_items">
+                Sign Up
+              </Link>
+            </div>
+            <button
+              className="login_items"
+              onClick={this.handleSubmit}>
               Demo Login
-          </button>
-        </form>
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

@@ -57,69 +57,95 @@ class SignUpForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.errors);
     return (
-      <div>
-        {this.props.errors}
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
-              placeholder="First Name"
-              onChange={this.update('firstname')}
-              onFocus={this.handleFocus}
-              />
-            <input type="text"
-              placeholder="Last Name"
-              onChange={this.update('lastname')}
-              onFocus={this.handleFocus}
-              />
-            <input type="text"
-              placeholder="Email"
-              onChange={this.update('email')}
-              onFocus={this.handleFocus}
-              />
-            <input type="password"
-              placeholder="Password"
-              onChange={this.update('password')}
-              onFocus={this.handleFocus}
-              />
-            <input type="password"
-              placeholder="Password"
-              onChange={this.update('password2')}
-              onFocus={this.handleFocus}
-              />
+      <div className="main-background">
+        <form
+          className="auth_form_sign_up"
+          onSubmit={this.handleSubmit}>
+          <div className="sign_up_title">
+            OpenDoors
           </div>
-          <div>
-            <input type="text"
-              placeholder="Location"
-              onChange={this.update('location')}
-              onFocus={this.handleFocus}
-              />
-            <input type="text"
-              placeholder="City"
-              onChange={this.update('city')}
-              onFocus={this.handleFocus}
-              />
-            <input type="text"
-              placeholder="Country"
-              onChange={this.update('country')}
-              onFocus={this.handleFocus}
-              />
+          <ul className="errors_container">
+            {this.props.errors.map( (error, idx) => (
+              <li key={idx}
+                className="errors_sign_up">
+                {error}
+              </li>
+            ))}
+          </ul>
+          <br/>
+          <input
+            className="add_underline edit_placeholder"
+            type="text"
+            placeholder="First Name"
+            onChange={this.update('firstname')}
+            onFocus={this.handleFocus}
+            />
+          <input
+            className="add_underline edit_placeholder"
+            type="text"
+            placeholder="Last Name"
+            onChange={this.update('lastname')}
+            onFocus={this.handleFocus}
+            />
+          <input
+            className="add_underline edit_placeholder"
+            type="text"
+            placeholder="Email"
+            onChange={this.update('email')}
+            onFocus={this.handleFocus}
+            />
+          <input
+            className="add_underline edit_placeholder"
+            type="password"
+            placeholder="Password"
+            onChange={this.update('password')}
+            onFocus={this.handleFocus}
+            />
+          <input
+            className="add_underline edit_placeholder"
+            type="password"
+            placeholder="Password"
+            onChange={this.update('password2')}
+            onFocus={this.handleFocus}
+            />
+          <input
+            className="add_underline edit_placeholder"
+            type="text"
+            placeholder="City"
+            onChange={this.update('city')}
+            onFocus={this.handleFocus}
+            />
+          <input
+            className="add_underline edit_placeholder"
+            type="text"
+            placeholder="Country"
+            onChange={this.update('country')}
+            onFocus={this.handleFocus}
+            />
+          <div className="hosting">
+            <div>
+              Hosting
+            </div>
             <select
               name="hosting"
-              onChange={this.handleSelect}
-              >
+              onChange={this.handleSelect}>
+              Hosting
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
-          <input type="submit" value="Sign Up"/>
+          <input
+            className="sign_in_up_button"
+            type="submit"
+            value="Sign Up"/>
+          <div className="link_to_sign_up_sign_in">
+            Already have an account?
+            <Link to="/login" className="login_items">
+              Login
+            </Link>
+          </div>
         </form>
-        <Link to="/login">
-        <div>
-          Login
-        </div>
-      </Link>
       </div>
     );
   }
