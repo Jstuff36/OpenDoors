@@ -46,7 +46,6 @@ class SignInForm extends React.Component {
   render() {
     return (
       <div className="main-background">
-        {this.props.errors}
         <form
           onSubmit={this.handleSubmit}
           className="form_container">
@@ -54,15 +53,18 @@ class SignInForm extends React.Component {
             className="login_title login_items">
             OpenDoors
           </div>
+          <div className="errors">
+            {this.props.errors}
+          </div>
           <input
-            className="login_items add_underline"
+            className="login_items add_underline edit_placeholder"
             type="text"
             placeholder="Email"
             onChange={this.update('email')}
             onFocus={this.handleFocus}
             />
           <input
-            className="login_items add_underline"
+            className="login_items add_underline edit_placeholder"
             type="password"
             placeholder="Password"
             onChange={this.update('password')}
@@ -72,9 +74,12 @@ class SignInForm extends React.Component {
             className="login_items login_button"
             type="submit"
             value="Log In" />
-          <Link to="/signup" className="login_items">
-            Sign Up
-          </Link>
+          <div>
+            Don't have an account?
+            <Link to="/signup" className="login_items link_to_sign_up">
+              Sign Up
+            </Link>
+          </div>
           <button
             className="login_items"
             onClick={this.handleSubmit}>

@@ -57,6 +57,7 @@ class SignUpForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.errors);
     return (
       <div>
         {this.props.errors}

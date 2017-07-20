@@ -4,7 +4,7 @@
   align-items: stretch;
   height: 100vh;
   width: 100%;
-  background: url("https://res.cloudinary.com/dax5cdjeh/image/upload/c_scale,w_3000/v1500498363/bike_background_final_ivpe4f.jpg") no-repeat center center fixed;
+  background: url("http://res.cloudinary.com/dax5cdjeh/image/upload/e_sharpen:100/v1500498363/bike_background_final_ivpe4f.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -22,11 +22,14 @@
   color: white;
   margin-top: 100px;
   margin-bottom: 100px;
+  min-height: 500px;
+  font-size: 125%;
 }
 
 .login_title {
-  font-size: 300%;
+  font-size: 250%;
   margin-bottom: 50px;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .login_items {
@@ -34,12 +37,38 @@
 }
 
 .login_button {
-  margin: 10px;
-  padding: 20px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  padding: 10px;
   border: solid;
   border-radius: 5px;
+  width: 100px;
+  text-align: center;
+}
+
+.errors {
+  font-size: 150%
 }
 
 .add_underline {
+  color: white;
   border-bottom: solid white;
+  margin: 10px;
+}
+
+.link_to_sign_up {
+  font-weight: 900;
+}
+
+.edit_placeholder::placeholder {
+  color: white;
+}
+.edit_placeholder::-moz-placeholder {
+  color: white;
+}
+.edit_placeholder:-ms-input-placeholder {
+  color: white;
+}
+.edit_placeholder:-moz-placeholder {
+  color: white;
 }

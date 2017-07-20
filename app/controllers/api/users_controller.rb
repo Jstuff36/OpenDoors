@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.location = ["change this"]
     if @user.save
       sign_in(@user)
       render "api/users/show"
@@ -24,8 +25,8 @@ class Api::UsersController < ApplicationController
       :age,
       :occupation,
       :about,
-      location: [],
-      languages: [],
+      # location: [],
+      languages: []
     )
   end
 
