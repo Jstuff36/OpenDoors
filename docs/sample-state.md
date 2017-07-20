@@ -17,6 +17,8 @@
     }
     errors: []
   }
+
+
   listings: {
     1: {
       id :1
@@ -31,10 +33,13 @@
       occupation: "developer",
       about: "Likes to travel",
       hosting: true
+    },
+    errors: [],
+    current_listing: {
+      id: 1
     }
-    errors: []
   }
-
+  
   trips: {
     1: {
       id: 1,
