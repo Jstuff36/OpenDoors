@@ -35,12 +35,6 @@
     errors: []
   }
 
-  listings: {
-    1: {
-
-    }
-  }
-
   trips: {
     1: {
       id: 1,
