@@ -15,8 +15,9 @@ class SignUpForm extends React.Component {
       country: "",
       hosting: true
     };
+    this.hosting = "?";
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
+    this.handleHosting = this.handleHosting.bind(this);
   }
 
   componentWillUnmount() {
@@ -28,13 +29,6 @@ class SignUpForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
-  }
-
-  handleSelect(e) {
-    e.preventDefault();
-    if (e.currentTarget.value === "No") {
-      this.setState({hosting: false});
-    }
   }
 
   handleSubmit(e) {
@@ -54,6 +48,17 @@ class SignUpForm extends React.Component {
 
   handleFocus(e) {
     e.target.select();
+  }
+
+  handleHosting(e) {
+    e.preventDefault();
+    if (this.hosting === "Yes") {
+      this.hosting = "No";
+      this.setState({hosting: false});
+    } else {
+      this.hosting = "Yes";
+      this.setState({hosting: true});
+    }
   }
 
   render() {
@@ -124,17 +129,10 @@ class SignUpForm extends React.Component {
             onFocus={this.handleFocus}
             />
           <div className="hosting">
-            <div>
-              Hosting
-            </div>
-            <select
-              className="soflow soflow-color"
-              name="hosting"
-              onChange={this.handleSelect}>
-              Hosting
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
+            Hosting
+            <button onClick={this.handleHosting}>
+              {this.hosting}
+            </button>
           </div>
           <input
             className="sign_in_up_button"

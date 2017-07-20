@@ -111,6 +111,17 @@ html {
   color: #b2b2b2;
 }
 
+.hosting button {
+  margin-left: 63px;
+  margin-right: 1px;
+  color: white;
+  border: solid white;
+  border-radius: 10px;
+  border-width: 2px;
+  width: 55px;
+  text-align: center;
+}
+
 .link_to_sign_up_sign_in {
   font-weight: 100;
   color: #b2b2b2;
@@ -130,24 +141,4 @@ html {
   color: #b2b2b2;
 
 
-}
-
-  .soflow, .soflow-color {
-   -webkit-appearance: button;
-   -webkit-border-radius: 2px;
-   -webkit-padding-end: 20px;
-   -webkit-padding-start: 2px;
-   -webkit-user-select: none;
-   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#8a8a8a, #dad8d8 100%, #7b7b7b);
-   background-position: 91% center;
-   background-repeat: no-repeat;
-   border: 1px solid #AAA;
-   color: #555;
-   font-size: 15px;
-   overflow: hidden;
-   padding: 5px 10px;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-   width: 75px;
-   margin-left: 50px;
 }
