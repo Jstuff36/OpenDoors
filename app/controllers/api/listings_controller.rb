@@ -3,11 +3,6 @@ class Api::ListingsController < ApplicationController
   include Api::ListingsHelper
 
   def index
-    #Can I combine these two statements into two?
-    # @listings = Users.all
-    # @litings_filterd = @listing.where(city: params[:city])
-
-    # @listings_filtered = user_list(params[:city])
     @listings_filtered = User.find_by_location(listing_params[:city])
 
     if @listings_filtered

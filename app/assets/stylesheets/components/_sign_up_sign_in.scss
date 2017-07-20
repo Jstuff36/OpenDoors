@@ -1,4 +1,8 @@
 html {
+
+}
+
+.main-background {
   background: url("http://res.cloudinary.com/dax5cdjeh/image/upload/e_sharpen:100/v1500498363/bike_background_final_ivpe4f.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6,19 +10,21 @@ html {
   background-size: cover;
   height: 100vh;
   width: 100%;
+  background-attachment: fixed;
+  position: fixed;
+  z-index: -1;
 }
 
-.main-background {
+.main-flex {
   display: flex;
   justify-content: center;
-  background-attachment: fixed;
 }
 
-// .form_container {
-//   background: blue;
-//   min-height: 500px;
-//   width: 100vw;
-// }
+.test-image {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
 
 .auth_form {
   display: flex;

@@ -3,18 +3,11 @@
   session: {
     current_user: {
       id: 1
-      name: "Justin"
-    }
-    errors: []
-  }
-  users: {
-    1: {
-      id :1
-      firstname: Justin,
-      lastname: White,
+      firstname: "Justin"
+      lastname: "White",
       email: "myemail",
       location: [129.344, 124.93],
-      languages: [English, Arabic],
+      languages: [English, Spanish],
       City: "Cucuta",
       Country: "Colombia",
       age: 23,
@@ -23,6 +16,29 @@
       hosting: true
     }
     errors: []
+  }
+  listings: {
+    1: {
+      id :1
+      firstname: "Justin",
+      lastname: "White",
+      email: "myemail",
+      location: [129.344, 124.93],
+      languages: [English, Spanish],
+      City: "Cucuta",
+      Country: "Colombia",
+      age: 23,
+      occupation: "developer",
+      about: "Likes to travel",
+      hosting: true
+    }
+    errors: []
+  }
+
+  listings: {
+    1: {
+
+    }
   }
 
   trips: {

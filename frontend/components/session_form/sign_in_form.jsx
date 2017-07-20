@@ -45,7 +45,10 @@ class SignInForm extends React.Component {
 
   render() {
     return (
-      <div className="main-background">
+      <div className="main-flex">
+        <div className="main-background">
+
+        </div>
         <div className="form_container">
 
           <form
