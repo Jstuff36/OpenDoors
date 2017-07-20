@@ -128,6 +128,7 @@ class SignUpForm extends React.Component {
               Hosting
             </div>
             <select
+              className="soflow soflow-color"
               name="hosting"
               onChange={this.handleSelect}>
               Hosting
