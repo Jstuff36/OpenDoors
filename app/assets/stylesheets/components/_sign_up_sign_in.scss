@@ -1,14 +1,17 @@
-.main-background {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
+html {
   background: url("http://res.cloudinary.com/dax5cdjeh/image/upload/e_sharpen:100/v1500498363/bike_background_final_ivpe4f.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
 
+.main-background {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
 }
 
 // .form_container {
@@ -23,11 +26,11 @@
   justify-content: center;
   align-items: center;
   background: rgba(24, 25, 27, 0.75);
-  flex-basis: 400px;
   color: white;
   margin-top: 100px;
   margin-bottom: 100px;
   font-size: 125%;
+  width: 400px;
 }
 
 .auth_form_sign_up {
@@ -80,12 +83,8 @@
   text-align: center;
 }
 
-.errors_sign_in {
-  font-size: 150%
-}
-
-.errors_sign_up {
-  font-size: 125%
+.error {
+  font-size: 100%
 }
 
 .errors_container {
@@ -136,12 +135,11 @@
   .soflow, .soflow-color {
    -webkit-appearance: button;
    -webkit-border-radius: 2px;
-   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
    -webkit-padding-end: 20px;
    -webkit-padding-start: 2px;
    -webkit-user-select: none;
-   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-   background-position: 97% center;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#8a8a8a, #dad8d8 100%, #7b7b7b);
+   background-position: 91% center;
    background-repeat: no-repeat;
    border: 1px solid #AAA;
    color: #555;

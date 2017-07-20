@@ -55,7 +55,7 @@ class SignInForm extends React.Component {
               className="sign_in_title login_items">
               OpenDoors
             </div>
-            <div className="errors_sign_in">
+            <div className="errors">
               {this.props.errors}
             </div>
             <input

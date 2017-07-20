@@ -68,7 +68,7 @@ class SignUpForm extends React.Component {
           <ul className="errors_container">
             {this.props.errors.map( (error, idx) => (
               <li key={idx}
-                className="errors_sign_up">
+                className="errors">
                 {error}
               </li>
             ))}
