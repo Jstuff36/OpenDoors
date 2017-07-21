@@ -21,9 +21,3 @@ const App = () => (
 );
 
 export default App;
-// <AuthRoute path="/signup" component={SignUpFormContainer} />
-// <ProtectedRoute path="/listings" component={ListingMapContainer} />
-
-// <Route path="/" render={ () => (
-//     <Redirect to="/listings" />
-//     )}/>

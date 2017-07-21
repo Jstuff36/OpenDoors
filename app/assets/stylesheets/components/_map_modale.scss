@@ -7,6 +7,9 @@
 }
 
 .Overlay {
+  display: flex;
+  min-width: 200px;
+  min-height: 200px;
   position: fixed;
   top: 150px;
   left: 150px;

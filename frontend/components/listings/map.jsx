@@ -78,7 +78,8 @@ class Map extends React.Component {
   render () {
     return (
       <div>
-        <ListingsNavBar />
+        <ListingsNavBar
+          logout={this.props.logout}/>
         <div id='map' ref='map'></div>
         <Modal
           isOpen={this.state.showModal}

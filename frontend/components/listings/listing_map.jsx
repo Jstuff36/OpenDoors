@@ -39,7 +39,10 @@ class ListingMap extends React.Component {
     }
     return(
       <div>
-        <Map center ={mapCenter} listings={this.state.listings} />
+        <Map
+          logout={this.props.logout}
+          center ={mapCenter}
+          listings={this.state.listings}/>
         <button onClick={this.handleClick}>Logout</button>
         {currentListing ? currentListing.firstname : ""}
       </div>

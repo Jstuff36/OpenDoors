@@ -20,7 +20,7 @@ class SignInForm extends React.Component {
     let user;
     if (e.currentTarget.innerHTML === "Demo Login") {
       user = {
-        email: "a",
+        email: "email",
         password: "password"
       };
     } else {
