@@ -5,6 +5,7 @@ class ListingMap extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.test = this.props.singleListing(5);
   }
 
   handleClick() {
@@ -15,8 +16,13 @@ class ListingMap extends React.Component {
   }
 
   render() {
+    const currentListing = this.props.currentListing;
+    debugger;
     return(
-      <button onClick={this.handleClick}>Logout</button>
+      <div>
+        <button onClick={this.handleClick}>Logout</button>
+        {currentListing ? currentListing.firstname : ""}
+      </div>
     );
   }
 }

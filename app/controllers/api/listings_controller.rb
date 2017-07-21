@@ -1,10 +1,7 @@
 class Api::ListingsController < ApplicationController
 
-  include Api::ListingsHelper
-
   def index
     @listings_filtered = User.find_by_location(listing_params[:city])
-
     if @listings_filtered
       render "api/listings/index"
     else

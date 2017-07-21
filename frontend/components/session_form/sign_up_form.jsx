@@ -34,7 +34,7 @@ class SignUpForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.password !== this.state.password2) {
-      this.props.custom_error("Passwords don't match!");
+      this.props.custom_error(["Passwords don't match!"]);
     } else {
       const user = this.state;
       user["location"] = [user["location"]];
@@ -62,6 +62,7 @@ class SignUpForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.errors);
     return (
       <div className="main-flex">
         <div className="main-background">
@@ -112,7 +113,7 @@ class SignUpForm extends React.Component {
           <input
             className="add_underline edit_placeholder"
             type="password"
-            placeholder="Password"
+            placeholder="Confirm Password"
             onChange={this.update('password2')}
             onFocus={this.handleFocus}
             />

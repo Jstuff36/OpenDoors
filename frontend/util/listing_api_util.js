@@ -3,7 +3,9 @@ export const listingByLocation = city => (
     method: 'GET',
     url: '/api/listings',
     data: {
-      user: city
+      user: {
+        city
+      }
     }
   })
 );
@@ -13,7 +15,9 @@ export const singleListing = id => (
     method: 'GET',
     url: `/api/listings/${id}`,
     data: {
-      user: id
+      user: {
+        id
+      }
     }
   })
 );

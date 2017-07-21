@@ -1,13 +1,23 @@
 import { connect } from 'react-redux';
 import ListingMap from './listing_map';
 import { logout } from '../../actions/session_actions';
+import {
+  allListings,
+  singleListing,
+  clearErrors
+} from '../../actions/listings_actions';
 
-const mapStateToProps = () => ({
-
+const mapStateToProps = ( { listings } ) => ({
+  listings: listings.listings,
+  currentListing: listings.currentListing,
+  errors: listings.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
+  allListings: (city) => dispatch(allListings(city)),
+  singleListing: (id) => dispatch(singleListing(id)),
+  logout: () => dispatch(logout()),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(
