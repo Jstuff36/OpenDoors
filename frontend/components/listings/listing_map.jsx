@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
+import TestMap from './map';
 
 class ListingMap extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class ListingMap extends React.Component {
 
     return(
       <div>
-        <Map center ={mapCenter} />
+        <TestMap center ={mapCenter} />
         <button onClick={this.handleClick}>Logout</button>
         {currentListing ? currentListing.firstname : ""}
       </div>

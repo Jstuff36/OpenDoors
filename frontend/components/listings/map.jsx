@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Map extends React.Component {
+class TestMap extends React.Component {
 
   constructor(props) {
     super(props);
@@ -9,7 +9,8 @@ class Map extends React.Component {
   }
 
   componentDidMount() {
-    const map = ReactDOM.findDOMNode(this.refs.map);
+    const map = this.refs.map;
+    console.log("hi");
     const options = {
       center: this.props.center,
       zoom: 13
@@ -53,10 +54,11 @@ class Map extends React.Component {
   render () {
     return (
       <div>
-        <div id='map' ref='map'/>
+        <div id='map' ref='map'></div>
       </div>
-    )
+    );
   }
 
 
 }
+export default TestMap;
