@@ -10,9 +10,10 @@ class ListingsNavBar extends React.Component {
     this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleSelect() {
-    debugger;
-    this.state = {};
+  handleSelect(e) {
+    this.setState({
+      city: e.currentTarget.value
+    });
   }
 
   render() {
@@ -21,6 +22,7 @@ class ListingsNavBar extends React.Component {
         <h1>Find Host in {this.state.city}</h1>
         <select onChange={this.handleSelect}>
           <option value="San Francisco">San Francisco</option>
+          <option value="CasaBlanca">CasaBlanca</option>
         </select>
       </div>
     );
