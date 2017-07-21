@@ -54,14 +54,16 @@ class TestMap extends React.Component {
   }
 
   render () {
+
     return (
       <div>
         <div id='map' ref='map'></div>
         <Modal
           isOpen={this.state.showModal}
-          contentLabel="Some text">
-          <button  onClick={this.handleCloseModal}>Close Modal
-          </button>
+          contentLabel="Some text"
+          className="Modal"
+          overlayClassName="Overlay">
+          <button  onClick={this.handleCloseModal}>Close Modal</button>
         </Modal>
       </div>
     );

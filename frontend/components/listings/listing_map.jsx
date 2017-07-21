@@ -30,6 +30,7 @@ class ListingMap extends React.Component {
   render() {
     const currentListing = this.props.currentListing;
     const mapCenter = { lat: 37.7758, lng: -122.435 };
+    console.log(this.props);
     if (!this.state.listings) {
       return null;
     }

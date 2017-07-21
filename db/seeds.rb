@@ -16,6 +16,7 @@ user1 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
+  about: "Likes to eat",
   location: [37.775769, -122.434960]
 )
 user1.save
@@ -28,6 +29,7 @@ user2 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
+  about: "Meddles with dark forces better left alone",
   location: [37.779760, -122.413820]
 )
 user2.save
@@ -40,6 +42,7 @@ user3 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
+  about: "Has hair that is naturally red",
   location: [ 37.769996, -122.511281]
 )
 user3.save
