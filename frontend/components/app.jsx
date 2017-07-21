@@ -14,12 +14,16 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <Switch>
-      <AuthRoute path="/login" component={SignInFormContainer} />
-      <AuthRoute path="/signup" component={SignUpFormContainer} />
-      <Route path="/listings" component={ListingMapContainer} />
-    </Switch>
+    <AuthRoute path="/login" component={SignInFormContainer} />
+    <AuthRoute path="/signup" component={SignUpFormContainer} />
+    <Route exact path="/" component={ListingMapContainer} />
   </div>
 );
 
 export default App;
+// <AuthRoute path="/signup" component={SignUpFormContainer} />
+// <ProtectedRoute path="/listings" component={ListingMapContainer} />
+
+// <Route path="/" render={ () => (
+//     <Redirect to="/listings" />
+//     )}/>

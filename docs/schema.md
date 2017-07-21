@@ -17,7 +17,7 @@ age             | string    |
 occupation      | string    |
 about           | text      |
 hosting         | boolean   | not null
-image           | string    |
+picture         | string    |
 
 ## trips
 column name     | data type | details

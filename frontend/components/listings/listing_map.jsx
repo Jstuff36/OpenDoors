@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
-import TestMap from './map';
+import Map from './map';
 
 class ListingMap extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {listings: ""};
+    this.state = {
+      listings: [],
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -14,9 +16,11 @@ class ListingMap extends React.Component {
     this.props.allListings("San Francisco").then( () => {
       let listings = [];
       this.props.listings.forEach( el => {
-        listings.push(el.location);
+        listings.push(el);
       });
-      this.setState({listings: listings});
+      this.setState({
+        listings: listings,
+      });
     });
   }
 
@@ -30,13 +34,12 @@ class ListingMap extends React.Component {
   render() {
     const currentListing = this.props.currentListing;
     const mapCenter = { lat: 37.7758, lng: -122.435 };
-    console.log(this.props);
-    if (!this.state.listings) {
+    if (this.state.listings.length === 0) {
       return null;
     }
     return(
       <div>
-        <TestMap center ={mapCenter} listings={this.state.listings} />
+        <Map center ={mapCenter} listings={this.state.listings} />
         <button onClick={this.handleClick}>Logout</button>
         {currentListing ? currentListing.firstname : ""}
       </div>

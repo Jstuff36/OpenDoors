@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import ListingsSideBar from './listings_side_bar';
+import ListingsNavBar from './listings_nav_bar'
 
-class TestMap extends React.Component {
+class Map extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      modalContent: [],
+      listingsInView: []
     };
     this.addMarker = this.addMarker.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -25,50 +29,79 @@ class TestMap extends React.Component {
     this.props.listings.forEach(this.addMarker);
   }
 
-  handleOpenModal () {
-    this.setState({ showModal: true });
-  }
-
-  handleCloseModal () {
-    this.setState({ showModal: false });
-  }
-
-  addMarker(coordinates) {
-    console.log(coordinates);
-    const pos = new google.maps.LatLng(coordinates[0], coordinates[1]);
+  addMarker(listing) {
+    const pos = new google.maps.LatLng(listing.location[0], listing.location[1]);
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map
     });
 
     marker.addListener('click', () => {
-      this.handleOpenModal();
+      this.handleOpenModal(listing);
     });
   }
 
+  handleOpenModal (content) {
+    this.setState({
+      showModal: true,
+      modalContent: content
+    });
+  }
+
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
 
   listenForMove() {
     google.maps.event.addListener(this.map, 'idle', () => {
       const bounds = this.map.getBounds();
+      let listingsInView = []
+      this.props.listings.forEach( (listing) => {
+        let listingLat = listing.location[0];
+        let listingLong = listing.location[1];
+        let mapLatLower = bounds.f.b;
+        let mapLatUpper = bounds.f.f;
+        let mapLongLower = bounds.b.b;
+        let mapLongUpper = bounds.b.f;
+        if (listingLat > mapLatLower &&
+          listingLat < mapLatUpper &&
+          listingLong > mapLongLower &&
+          listingLong < mapLongUpper
+        ) {
+          listingsInView.push(listing);
+        }
+      });
+      this.setState({listingsInView: listingsInView});
     });
   }
 
   render () {
-
     return (
       <div>
+        <ListingsNavBar />
         <div id='map' ref='map'></div>
         <Modal
           isOpen={this.state.showModal}
           contentLabel="Some text"
           className="Modal"
           overlayClassName="Overlay">
+          <ul>
+            <li>
+              <img src={this.state.modalContent["picture"]}
+                className="modal-image"
+                />
+              {this.state.modalContent["firstname"]}
+              {this.state.modalContent["lastname"]}
+              {this.state.modalContent["about"]}
+            </li>
+          </ul>
           <button  onClick={this.handleCloseModal}>Close Modal</button>
         </Modal>
+        <ListingsSideBar listingsInView={this.state.listingsInView}/>
       </div>
     );
   }
 
 
 }
-export default TestMap;
+export default Map;

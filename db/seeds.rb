@@ -17,7 +17,8 @@ user1 = User.new(
   country: "United States",
   hosting: true,
   about: "Likes to eat",
-  location: [37.775769, -122.434960]
+  location: [37.775769, -122.434960],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/q_100/v1500658457/16587048_10209812149394672_8162820951177611547_o_woib7p.jpg"
 )
 user1.save
 
@@ -30,19 +31,21 @@ user2 = User.new(
   country: "United States",
   hosting: true,
   about: "Meddles with dark forces better left alone",
-  location: [37.779760, -122.413820]
+  location: [37.779760, -122.413820],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/q_100/v1500658517/kvothe_m9mbfl.jpg"
 )
 user2.save
 
 user3 = User.new(
-  firstname: "Pippie",
-  lastname: "Longstockings",
+  firstname: "Julius",
+  lastname: "Ceaser",
   email: "email2",
   password: "password",
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Has hair that is naturally red",
-  location: [ 37.769996, -122.511281]
+  about: "Doesn't listen to advice",
+  location: [ 37.769996, -122.511281],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/q_100/v1500658629/Caesar_zxwnnx.jpg"
 )
 user3.save

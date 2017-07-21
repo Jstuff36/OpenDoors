@@ -28,7 +28,7 @@ class SignInForm extends React.Component {
     }
     this.props.login(user).then(
       () => this.props.history.push({
-        pathname: `/listings`
+        pathname: `/`
       })
     );
   }
