@@ -62,7 +62,6 @@ class SignUpForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.errors);
     return (
       <div className="main-flex">
         <div className="main-background">

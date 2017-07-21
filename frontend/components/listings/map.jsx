@@ -10,19 +10,18 @@ class TestMap extends React.Component {
 
   componentDidMount() {
     const map = this.refs.map;
-    console.log("hi");
     const options = {
       center: this.props.center,
       zoom: 13
     };
-    const testMarker = { lat: 38, lng: -122 };
     this.map = new google.maps.Map(map, options);
     this.listenForMove();
-    this.addMarker(testMarker);
+    this.props.listings.forEach(this.addMarker);
   }
 
   addMarker(coordinates) {
-    const pos = new google.maps.LatLng(coordinates.lat, coordinates.lng);
+    console.log(coordinates);
+    const pos = new google.maps.LatLng(coordinates[0], coordinates[1]);
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map
@@ -37,7 +36,6 @@ class TestMap extends React.Component {
   listenForMove() {
     google.maps.event.addListener(this.map, 'idle', () => {
       const bounds = this.map.getBounds();
-      alert('map has moved, check console to see updated bounds');
       console.log('center',
         bounds.getCenter().lat(),
         bounds.getCenter().lng());
