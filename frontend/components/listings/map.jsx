@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 
 class TestMap extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      showModal: false
+    };
     this.addMarker = this.addMarker.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   componentDidMount() {
@@ -19,6 +25,14 @@ class TestMap extends React.Component {
     this.props.listings.forEach(this.addMarker);
   }
 
+  handleOpenModal () {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
+
   addMarker(coordinates) {
     console.log(coordinates);
     const pos = new google.maps.LatLng(coordinates[0], coordinates[1]);
@@ -28,7 +42,7 @@ class TestMap extends React.Component {
     });
 
     marker.addListener('click', () => {
-      alert('click');
+      this.handleOpenModal();
     });
   }
 
@@ -36,16 +50,6 @@ class TestMap extends React.Component {
   listenForMove() {
     google.maps.event.addListener(this.map, 'idle', () => {
       const bounds = this.map.getBounds();
-      console.log('center',
-        bounds.getCenter().lat(),
-        bounds.getCenter().lng());
-      console.log("north east",
-        bounds.getNorthEast().lat(),
-        bounds.getNorthEast().lng());
-      console.log("south west",
-        bounds.getSouthWest().lat(),
-        bounds.getSouthWest().lng());
-
     });
   }
 
@@ -53,6 +57,12 @@ class TestMap extends React.Component {
     return (
       <div>
         <div id='map' ref='map'></div>
+        <Modal
+          isOpen={this.state.showModal}
+          contentLabel="Some text">
+          <button  onClick={this.handleCloseModal}>Close Modal
+          </button>
+        </Modal>
       </div>
     );
   }
