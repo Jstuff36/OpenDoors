@@ -6,20 +6,30 @@ class ListingsSideBar extends React.Component {
     super(props);
   }
 
+  getImage(imageUrl) {
+    return { backgroundImage: `url(${imageUrl})` };
+  }
+
   render() {
     return(
-      <div>
-        <ul>
-          {this.props.listingsInView.map( (content, idx) => (
-            <li key={idx}>
-              <img src={content.picture} className="side-bar-image"></img>
-              {content.firstname}
-              {content.lastname}
+      <ul className="listings-side-bar">
+        {this.props.listingsInView.map( (content, idx) => (
+          <li
+            className="side-bar-item"
+            key={idx}>
+            <div
+              className="img"
+              style={this.getImage(content.picture)}>
+            </div>
+            <h3>
+              {content.firstname} {content.lastname}
+            </h3>
+            <h3>
               {content.about}
-            </li>
-          ))}
-        </ul>
-      </div>
+            </h3>
+          </li>
+        ))}
+      </ul>
     );
   }
 }

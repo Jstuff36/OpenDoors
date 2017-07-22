@@ -93,9 +93,11 @@ class Map extends React.Component {
           </ul>
           <button  onClick={this.handleCloseModal}>Close Modal</button>
         </Modal>
-        <div>
-          <ListingsSideBar listingsInView={this.state.listingsInView}/>
-          <div id='map' ref='map'></div>
+        <div className="map-side-bar-container">
+          <ListingsSideBar
+            listingsInView={this.state.listingsInView}/>
+          <div id='map' ref='map'>
+          </div>
         </div>
       </div>
     );

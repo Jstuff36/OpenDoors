@@ -27,22 +27,24 @@ class ListingsNavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="listing-nav-bar-container">
         <h1>Find A Host in {this.state.city}</h1>
-        <div className="dropdown">
-          <button
-            className="dropbtn">
-            Dropdown
-          </button>
+        <div className="dropdown-location">
+          <div
+            className="dropbtn-location">
+            Location
+          </div>
           <div className="dropdown-content">
             <span onClick={this.handleCityClick}>San Francisco</span>
             <span onClick={this.handleCityClick}>CasaBlanca</span>
           </div>
         </div>
-        <div className="dropdown">
+        <div className="dropdown-icon">
           <button
-            className="dropbtn">
-            Dropdown
+            className="dropbtn-icon">
+            <div className="menu-icon"></div>
+            <div className="menu-icon"></div>
+            <div className="menu-icon"></div>
           </button>
           <div className="dropdown-content">
             <a href="#">My Profile</a>

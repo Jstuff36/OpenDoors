@@ -30,16 +30,14 @@ class ListingMap extends React.Component {
     if (this.state.listings.length === 0) {
       return null;
     }
-    //make first div pos relative then make listingsnavbar pos absolute and say top left 00
     return(
-      <div>
+      <div className="listings-main-div">
         <ListingsNavBar
           logout={this.props.logout}/>
         <Map
           logout={this.props.logout}
           center ={mapCenter}
           listings={this.state.listings}/>
-        {currentListing ? currentListing.firstname : ""}
       </div>
     );
   }
