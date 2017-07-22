@@ -3,12 +3,17 @@
   flex-flow: nowrap;
   width: 100%;
   z-index: 1;
-  border-bottom: black;
+  border-bottom: black solid;
 }
 
-.listing-nav-bar-container h1 {
+.listing-nav-bar-container h2 {
   font-size: 25px;
+  margin: 5px 0 5px 10px;
   padding: 5px;
+}
+
+.site-name {
+  font-family: 'Proza Libre', sans-serif;
 }
 
 // Dropdown button styling below
@@ -23,18 +28,24 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+  margin: 5px 0 5px 0;
+
 }
 
 .dropbtn-icon {
   @extend .dropbtn;
+  margin-left: 25px;
 }
 
 .dropbtn-location {
   @extend .dropbtn;
   font-size: 25px;
-  width: 100px;
-  border: black;
+  border: black solid;
   padding: 5px;
+  text-align: center;
+  width: 115px;
+  border-radius: 25px;
+  border-width: 1px;
 }
 
 .dropdown {
