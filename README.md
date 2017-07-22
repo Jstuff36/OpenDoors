@@ -49,17 +49,18 @@ sufficient CSS styling:
 
 **Objective:** Map displays listings and dynamically updates as window changes
 
-### Phase 3: Implement Search (2 days)
+### Phase 3: User profile (2 day)
 
-**Objective:** Be able to filter search by date range and city
+**Objective:** Show user profile including upcoming trips and references
 
 ### Phase 4: References and components (2 days)
 
 **Objective:** Users can leave references to listings they have completed
 
-### Phase 5: User profile (2 day)
 
-**Objective:** Show user profile including upcoming trips and references
+### Phase 5: Implement Search (2 days)
+
+**Objective:** Be able to filter search by date range and city
 
 ### Bonus Features (TBD)
 - [ ] Filter results by availability

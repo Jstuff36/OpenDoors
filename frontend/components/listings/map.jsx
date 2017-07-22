@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import ListingsSideBar from './listings_side_bar';
-import ListingsNavBar from './listings_nav_bar'
-
 class Map extends React.Component {
 
   constructor(props) {
@@ -78,9 +76,6 @@ class Map extends React.Component {
   render () {
     return (
       <div>
-        <ListingsNavBar
-          logout={this.props.logout}/>
-        <div id='map' ref='map'></div>
         <Modal
           isOpen={this.state.showModal}
           contentLabel="Some text"
@@ -98,7 +93,10 @@ class Map extends React.Component {
           </ul>
           <button  onClick={this.handleCloseModal}>Close Modal</button>
         </Modal>
-        <ListingsSideBar listingsInView={this.state.listingsInView}/>
+        <div>
+          <ListingsSideBar listingsInView={this.state.listingsInView}/>
+          <div id='map' ref='map'></div>
+        </div>
       </div>
     );
   }

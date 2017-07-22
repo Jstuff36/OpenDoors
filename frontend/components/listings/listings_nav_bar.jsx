@@ -28,7 +28,7 @@ class ListingsNavBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>Find Host in {this.state.city}</h1>
+        <h1>Find A Host in {this.state.city}</h1>
         <div className="dropdown">
           <button
             className="dropbtn">

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
 import Map from './map';
+import ListingsNavBar from './listings_nav_bar';
 
 class ListingMap extends React.Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class ListingMap extends React.Component {
     this.state = {
       listings: [],
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -24,26 +24,21 @@ class ListingMap extends React.Component {
     });
   }
 
-  handleClick() {
-    this.props.logout().then(
-      () => this.props.history.push({
-        pathname: `/login`
-    }));
-  }
-
   render() {
     const currentListing = this.props.currentListing;
     const mapCenter = { lat: 37.7758, lng: -122.435 };
     if (this.state.listings.length === 0) {
       return null;
     }
+    //make first div pos relative then make listingsnavbar pos absolute and say top left 00
     return(
       <div>
+        <ListingsNavBar
+          logout={this.props.logout}/>
         <Map
           logout={this.props.logout}
           center ={mapCenter}
           listings={this.state.listings}/>
-        <button onClick={this.handleClick}>Logout</button>
         {currentListing ? currentListing.firstname : ""}
       </div>
     );
