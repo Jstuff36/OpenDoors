@@ -6,7 +6,8 @@
     position: relative;
     float: left;
     width: 100px;
-    height: 100px;
+    height: 150px;
+    min-width: 55px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,13 +19,21 @@
   justify-content: flex-start;
   z-index: 1;
   width: 40%;
+  min-width: 350px;
   position: fixed;
-  top: 75px;
+  top: 57px;
   left: 0px;
   background: white;
 }
 
-.side-bar-item {
-  flex: 1 1 250px;
+.side-bar-item-description {
   display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.side-bar-item {
+  flex: 1 1 225px;
+  display: flex;
+  margin: 10px;
 }

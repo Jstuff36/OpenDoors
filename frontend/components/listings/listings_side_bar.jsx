@@ -17,16 +17,20 @@ class ListingsSideBar extends React.Component {
           <li
             className="side-bar-item"
             key={idx}>
-            <div
-              className="img"
-              style={this.getImage(content.picture)}>
+            <div>
+              <div
+                className="img"
+                style={this.getImage(content.picture)}>
+              </div>
             </div>
-            <h3>
-              {content.firstname} {content.lastname}
-            </h3>
-            <h3>
-              {content.about}
-            </h3>
+            <div className="side-bar-item-description">
+              <h3>
+                {content.firstname} {content.lastname}
+              </h3>
+              <h3>
+                {content.about}
+              </h3>
+            </div>
           </li>
         ))}
       </ul>

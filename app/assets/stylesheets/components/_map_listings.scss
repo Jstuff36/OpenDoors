@@ -1,5 +1,4 @@
 .map-side-bar-container {
-  display: flex
 }
 
 .listings-main-div {
@@ -9,7 +8,14 @@
 }
 
 #map {
-  width: 750px;
-  height: 750px;
   top: 0px;
+  display: block;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  position: fixed !important;
+  top: 57px;
+  bottom: 0px;
+  right: auto;
+
 }
