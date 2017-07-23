@@ -15,10 +15,21 @@ class ListingMap extends React.Component {
     this.state = {
       listings: [],
     };
+    this.fetchAllListings = this.fetchAllListings.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentCity !== this.props.currentCity) {
+      this.fetchAllListings(nextProps.currentCity);
+    }
   }
 
   componentDidMount() {
-    this.props.allListings(this.props.currentCity).then( () => {
+    this.fetchAllListings(this.props.currentCity)
+  }
+
+  fetchAllListings(city) {
+    this.props.allListings(city).then( () => {
       let listings = [];
       this.props.listings.forEach( el => {
         listings.push(el);

@@ -112,3 +112,18 @@ user7 = User.new(
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500764855/stephen_cxoztx.jpg"
 )
 user7.save
+
+user8 = User.new(
+  firstname: "Rick",
+  lastname: "Blaine",
+  email: "email7",
+  password: "password",
+  city: "Casablanca",
+  country: "United States",
+  hosting: true,
+  about: "…Here’s looking at you, kid.",
+  location: [ 33.5731, -7.5898],
+  languages: ["English"],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500830483/rick_jkp74k.jpg"
+)
+user8.save
