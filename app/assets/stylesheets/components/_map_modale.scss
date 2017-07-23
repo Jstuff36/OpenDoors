@@ -8,11 +8,13 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  border: solid #e2e1e1;
+  border-width: 1px
 }
 
 .modal-name {
   font-size: 45px;
-  border-bottom: black solid;
+  border-bottom: #e2e1e1 solid;
   margin: 10px;
 }
 
@@ -24,7 +26,7 @@
   position: relative;
   float: right;
   font-size: 25px;
-  border: black solid;
+  border: #e2e1e1 solid;
   border-width: 2px;
   width: 200px;
   text-align: center;
@@ -39,12 +41,13 @@
 }
 
 .Modal {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.78);
   max-width: 400px;
   padding: 30px;
   border-radius: 30px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #f9f9f9;
   box-shadow: 0px 0px 3px #e6e6e6;
+  color: #e2e1e1;
 }
 
 .Overlay {
@@ -57,6 +60,6 @@
   right: 0px;
   bottom: 0px;
   background-color: rgba(0,0,0,0.3);
-  border: solid black;
+  border: solid #e2e1e1;
   z-index: 3;
 }

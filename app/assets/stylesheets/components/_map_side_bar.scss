@@ -11,6 +11,8 @@
   background: white;
   border-bottom-right-radius: 15px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.9);
+  color: #e2e1e1;
 }
 
 .side-bar-item-main-container {
@@ -32,7 +34,9 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 10px
+    border-radius: 10px;
+    border: solid #e2e1e1;
+    border-width: 1px;
 }
 
 
@@ -50,10 +54,17 @@
 
 .name {
   font-size: 35px;
+  border-bottom: solid #e2e1e1;
+  border-width: 1px;
+
 }
 
 .side-bar-item {
   flex: 1 1 275px;
   display: flex;
-  margin: 10px;
+  margin: 5px;
+  border: solid #e2e1e1;
+  padding: 10px;
+  border-radius: 5px;
+  border-width: 1px;
 }
