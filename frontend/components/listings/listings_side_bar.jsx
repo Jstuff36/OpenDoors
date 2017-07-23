@@ -17,26 +17,27 @@ class ListingsSideBar extends React.Component {
           <li
             className="side-bar-item"
             key={idx}>
-            <div>
+            <div className="side-bar-item-main-container">
               <div
                 className="img"
                 style={this.getImage(content.picture)}>
+                <div className="side-bar-item-description">
+                  <span className="name">
+                    {content.firstname} {content.lastname}
+                  </span>
+                  <span>
+                    {content.languages.join(", ")}
+                  </span>
+                  <span>
+                    {content.hosting? "Currently Hosting" : "Not Currently Hosting"}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="side-bar-item-description">
-              <span className="name">
-                {content.firstname} {content.lastname}
-              </span>
-              <span>
-                {content.languages.join(", ")}
-              </span>
-              <span>
-                {content.hosting? "Currently Hosting" : "Not Currently Hosting"}
-              </span>
               <span>
                 {content.about}
               </span>
             </div>
+
           </li>
         ))}
       </ul>

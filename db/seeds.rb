@@ -78,7 +78,7 @@ user5 = User.new(
   hosting: true,
   about: "Damn right I like the life I live, cause I went from negative to positive",
   location: [ 37.759990, -122.31127],
-  languages: ["Ebonics"],
+  languages: ["English"],
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500764375/biggie_epf4lh.jpg"
 )
 user5.save

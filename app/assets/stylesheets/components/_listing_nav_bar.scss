@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 1;
   border-bottom: black solid;
+  border-width: 1px;
 }
 
 .listing-nav-bar-container h2 {
@@ -22,6 +23,7 @@
   height: 6px;
   background-color: black;
   margin: 6px 0;
+  border-radius: 5px
 }
 .dropbtn {
   z-index: 2;
@@ -72,7 +74,8 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  right: 0
+  right: 0;
+  border-radius: 5px;
 }
 
 .dropdown-content span {

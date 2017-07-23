@@ -4,31 +4,59 @@
   width: 100px;
   height: 150px;
   min-width: 55px;
+  border-radius: 50%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.modal-name {
+  font-size: 45px;
+  border-bottom: black solid;
+  margin: 10px;
+}
+
+.modal-about {
+  font-size: 25px;
+}
+
+.modal-button {
+  position: relative;
+  float: right;
+  font-size: 25px;
+  border: black solid;
+  border-width: 2px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .Modal {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
+  background: #fff;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 30px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 0px 3px #e6e6e6;
 }
 
 .Overlay {
   display: flex;
-  min-width: 200px;
-  max-width: 450px;
-  min-height: 250px;
-  max-height: 500px;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  top: 150px;
-  left: 33%;
-  right: 33%;
-  bottom: 150px;
-  background-color: white;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0,0,0,0.3);
   border: solid black;
   z-index: 3;
 }
