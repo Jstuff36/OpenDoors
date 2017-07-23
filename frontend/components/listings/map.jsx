@@ -246,7 +246,10 @@ class Map extends React.Component {
     };
     this.map = new google.maps.Map(map, options);
     this.listenForMove();
-    this.props.listings.forEach(this.addMarker);
+    let keys = Object.keys(this.props.listings);
+    for (let i = 0; i < keys.length - 1; i++) {
+      this.addMarker(this.props.listings[keys[i]]);
+    }
   }
 
   addMarker(listing) {
@@ -275,8 +278,10 @@ class Map extends React.Component {
   listenForMove() {
     google.maps.event.addListener(this.map, 'idle', () => {
       const bounds = this.map.getBounds();
-      let listingsInView = []
-      this.props.listings.forEach( (listing) => {
+      let listingsInView = [];
+      let keys = Object.keys(this.props.listings);
+      for (let i = 0; i < keys.length - 1; i++) {
+        let listing = this.props.listings[keys[i]];
         let listingLat = listing.location[0];
         let listingLong = listing.location[1];
         let mapLatLower = bounds.f.b;
@@ -290,7 +295,7 @@ class Map extends React.Component {
         ) {
           listingsInView.push(listing);
         }
-      });
+      }
       this.setState({listingsInView: listingsInView});
     });
   }
@@ -305,6 +310,7 @@ class Map extends React.Component {
         <Modal
           isOpen={this.state.showModal}
           className="Modal"
+          contentLabel="User profile"
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={true}
           overlayClassName="Overlay">
