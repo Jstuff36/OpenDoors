@@ -73,21 +73,31 @@ class Map extends React.Component {
     });
   }
 
+  getImage(imageUrl) {
+    return { backgroundImage: `url(${imageUrl})` };
+  }
+
   render () {
     return (
       <div>
         <Modal
           isOpen={this.state.showModal}
-          contentLabel="Some text"
           className="Modal"
           overlayClassName="Overlay">
           <ul>
             <li>
-              <img src={this.state.modalContent["picture"]}
+              <div
                 className="modal-image"
-                />
+                style={this.getImage(this.state.modalContent["picture"])}>
+              </div>
+            </li>
+            <li>
               {this.state.modalContent["firstname"]}
+            </li>
+            <li>
               {this.state.modalContent["lastname"]}
+            </li>
+            <li>
               {this.state.modalContent["about"]}
             </li>
           </ul>

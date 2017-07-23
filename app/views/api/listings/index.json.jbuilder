@@ -4,4 +4,6 @@ json.array! (@listings_filtered) do |listing|
   json.lastname listing.lastname
   json.picture listing.picture
   json.about listing.about
+  json.languages listing.languages
+  json.hosting listing.hosting
 end

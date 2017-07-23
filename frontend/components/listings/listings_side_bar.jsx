@@ -24,12 +24,18 @@ class ListingsSideBar extends React.Component {
               </div>
             </div>
             <div className="side-bar-item-description">
-              <h3>
+              <span className="name">
                 {content.firstname} {content.lastname}
-              </h3>
-              <h3>
+              </span>
+              <span>
+                {content.languages.join(", ")}
+              </span>
+              <span>
+                {content.hosting? "Currently Hosting" : "Not Currently Hosting"}
+              </span>
+              <span>
                 {content.about}
-              </h3>
+              </span>
             </div>
           </li>
         ))}
