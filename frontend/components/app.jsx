@@ -2,7 +2,7 @@ import React from 'react';
 import SignInFormContainer from './session_form/sign_in_form_container';
 import SignUpFormContainer from './session_form/sign_up_form_container';
 import ListingMapContainer from './listings/listing_map_container';
-import SingleLisitingContainer from './listings/single_listing_container';
+import HostProfileContainer from './host_profile/host_profile_container';
 import {
   Route,
   Redirect,
@@ -18,7 +18,7 @@ const App = () => (
     <AuthRoute path="/login" component={SignInFormContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />
     <Route exact path="/" component={ListingMapContainer} />
-    <Route path="/listings/:id" component={SingleLisitingContainer} />
+    <Route path="/listings/:id" component={HostProfileContainer} />
   </div>
 );
 

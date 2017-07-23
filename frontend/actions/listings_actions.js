@@ -40,8 +40,7 @@ export const allListings = (city) => dispatch => (
 
 export const singleListing = (id) => dispatch => (
   ListingsUtil.singleListing(id).then(response => (
-    dispatch(receiveCurrentListing(response)),
-    dispatch(clearErrors())),
+    dispatch(receiveCurrentListing(response))),
     err => dispatch(receiveErrors(err))
   )
 );

@@ -1,0 +1,32 @@
+.host-container {
+  display: flex;
+}
+
+.host-side-bar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-info-container {
+  display: flex;
+  display: column;
+}
+
+.hosting-info-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.host-info-nav-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.host-personal-info-container {
+  display: flex;
+}
+
+.host-detail-info-container {
+  display: flex;
+  flex-direction: column;
+}

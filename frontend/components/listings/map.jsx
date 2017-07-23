@@ -14,13 +14,14 @@ class Map extends React.Component {
     this.addMarker = this.addMarker.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.listenForMove = this.listenForMove.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.center.lat !== nextProps.center.lat &&
       this.props.center.lng !== nextProps.center.lng) {
         this.map.setCenter(new google.maps.LatLng(nextProps.center.lat, nextProps.center.lng));
-    }
+      }
   }
 
   componentDidMount() {
@@ -280,7 +281,7 @@ class Map extends React.Component {
       const bounds = this.map.getBounds();
       let listingsInView = [];
       let keys = Object.keys(this.props.listings);
-      for (let i = 0; i < keys.length - 1; i++) {
+      for (let i = 0; i <= keys.length - 1; i++) {
         let listing = this.props.listings[keys[i]];
         let listingLat = listing.location[0];
         let listingLong = listing.location[1];

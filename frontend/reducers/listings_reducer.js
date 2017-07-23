@@ -20,7 +20,7 @@ const ListingsReducer = (state = noListings, action) => {
   switch(action.type) {
     case RECEIVE_LISTINGS:
       const listings = action.listings;
-      return merge({}, state, { listings });
+      return Object.assign({}, state, { listings });
     case RECEIVE_CURRENT_LISTING:
       const currentListing = action.currentListing;
       return merge({}, state, { currentListing });

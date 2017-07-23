@@ -1,2 +1,10 @@
-# json.merge! @listing.attributes
-json.extract! @listing, :firstname, :lastname, :location, :city
+json.extract! @listing,
+              :firstname,
+              :lastname,
+              :location,
+              :city,
+              :about,
+              :hosting,
+              :languages,
+              :country,
+              :picture
