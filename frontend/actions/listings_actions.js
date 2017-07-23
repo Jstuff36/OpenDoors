@@ -4,6 +4,7 @@ export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const RECEIVE_CURRENT_LISTING = 'RECEIVE_CURRENT_LISTING';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_CITY = 'RECEIVE_CITY';
 
 export const receiveListings = listings => ({
   type: RECEIVE_LISTINGS,
@@ -11,8 +12,13 @@ export const receiveListings = listings => ({
 });
 
 export const receiveCurrentListing = currentListing => ({
-  type :RECEIVE_CURRENT_LISTING,
+  type: RECEIVE_CURRENT_LISTING,
   currentListing
+});
+
+export const receiveCity = city => ({
+  type: RECEIVE_CITY,
+  city
 });
 
 export const receiveErrors = errors => ({

@@ -16,6 +16,13 @@ class Map extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.center.lat !== nextProps.center.lat &&
+      this.props.center.lng !== nextProps.center.lng) {
+        this.map.setCenter(new google.maps.LatLng(nextProps.center.lat, nextProps.center.lng));
+    }
+  }
+
   componentDidMount() {
     const map = this.refs.map;
     const options = {

@@ -16,6 +16,7 @@ class ListingsNavBar extends React.Component {
     this.setState({
       city: $(e.target).text()
     });
+    this.props.receiveCity($(e.target).text());
   }
 
   handleLogout(e) {
@@ -37,7 +38,7 @@ class ListingsNavBar extends React.Component {
           </div>
           <div className="dropdown-content">
             <span onClick={this.handleCityClick}>San Francisco</span>
-            <span onClick={this.handleCityClick}>CasaBlanca</span>
+            <span onClick={this.handleCityClick}>Casablanca</span>
           </div>
         </div>
         <div className="dropdown-icon">

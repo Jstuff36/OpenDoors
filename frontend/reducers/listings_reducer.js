@@ -4,12 +4,14 @@ import {
   RECEIVE_LISTINGS,
   RECEIVE_CURRENT_LISTING,
   RECEIVE_ERRORS,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  RECEIVE_CITY
 } from '../actions/listings_actions';
 
 const noListings = Object.freeze({
   listings: {},
   currentListing: null,
+  currentCity: "San Francisco",
   errors: []
 });
 
@@ -22,6 +24,9 @@ const ListingsReducer = (state = noListings, action) => {
     case RECEIVE_CURRENT_LISTING:
       const currentListing = action.currentListing;
       return merge({}, state, { currentListing });
+    case RECEIVE_CITY:
+      const currentCity = action.city;
+      return merge({}, state, { currentCity });
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, state, { errors });

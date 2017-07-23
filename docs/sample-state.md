@@ -34,6 +34,7 @@
       about: "Likes to travel",
       hosting: true
     },
+    current_city: "San Francisco",
     errors: [],
     current_listing: {
       id: 1
