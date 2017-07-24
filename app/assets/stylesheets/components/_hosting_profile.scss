@@ -70,9 +70,28 @@
   border-width: 1px;
 }
 
-.request-booking {
-  
+.hosting-info-container div {
+  padding: 5px;
 }
+
+.request-booking {
+  border: solid #e2e1e1;
+  width: 25%;
+  text-align: center;
+  border-width: 1px;
+  border-radius: 25px;
+}
+
+.request-booking:hover {
+  background: rgba(256, 256, 256, 0.2);
+  cursor: pointer
+}
+
+.currently-hosting {
+  border-bottom: solid #e2e1e1;
+  border-width: 1px;
+}
+
 
 .host-info-nav-container {
   display: flex;

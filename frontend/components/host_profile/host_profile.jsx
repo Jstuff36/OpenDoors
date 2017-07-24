@@ -53,8 +53,10 @@ class HostProfile extends React.Component {
           </div>
           <div className="host-info-container">
             <div className="hosting-info-container">
-              <div>Currently hosting?     {hosting ? "Yes" : "No"}</div>
-              <div>Request to book</div>
+              <div className="currently-hosting">
+                Currently hosting? {hosting ? "Yes" : "No"}
+              </div>
+              <div className="request-booking">Request to book</div>
             </div>
             <div className="host-info-nav-container">
               <button>About</button>
@@ -62,11 +64,11 @@ class HostProfile extends React.Component {
               <button>Location</button>
             </div>
             <div className="host-personal-info-container">
-              <div className="host-personal-info-item">Fluent in {languages}</div>
-              <div className="host-personal-info-item">Join Date</div>
               <div className="host-personal-info-item">
                 {age_sex ? age_sex : "Age/Sex"}
               </div>
+              <div className="host-personal-info-item">Join Date</div>
+              <div className="host-personal-info-item">Fluent in {languages}</div>
               <div className="host-personal-info-item">{country}</div>
               <div className="host-personal-info-item">
                 {occupation ? occupation: "No occupation listed"}
