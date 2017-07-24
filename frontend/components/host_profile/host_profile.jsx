@@ -54,7 +54,7 @@ class HostProfile extends React.Component {
           <div className="host-info-container">
             <div className="hosting-info-container">
               <div className="currently-hosting">
-                Currently hosting? {hosting ? "Yes" : "No"}
+                {hosting ? "Currently hosting" : "Not hosting"}
               </div>
               <div className="request-booking">Request to book</div>
             </div>

@@ -3,10 +3,9 @@
   flex-flow: nowrap;
   width: 100%;
   z-index: 1;
-  border-bottom: #e2e1e1 solid;
-  border-width: 1px;
   background: black;
   color: #e2e1e1;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.2);
 }
 
 .host-nav-container h2 {

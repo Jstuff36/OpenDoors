@@ -10,6 +10,7 @@
   background-attachment: fixed;
   position: fixed;
   z-index: -1;
+  box-shadow: 0 0 5px #000000;
 }
 
 .host-side-bar-container {
@@ -20,10 +21,9 @@
   padding: 30px;
   background: rgba(0,0,0,0.75);
   max-height: 325px;
-  margin: 30px 5px 0 30px;
-  border: solid #e2e1e1;
-  border-width: 1px;
-  border-radius: 10px;
+  margin: 30px 5px 0 55px;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
 }
 
 .host-img {
@@ -36,8 +36,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    border: solid #e2e1e1;
-    border-width: 1px;
 }
 
 .host-name {
@@ -55,19 +53,19 @@
   display: flex;
   flex-direction: column;
   width: 66.66%;
-  padding: 30px;
+  margin: 30px 50px 30px 30px;
+  border-radius: 5px;
 }
 
 .hosting-info-container {
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  border: solid #e2e1e1;
   color: #e2e1e1;
   background: rgba(0,0,0, 0.75);
   font-size: 25px;
-  border-radius: 10px;
-  border-width: 1px;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
 }
 
 .hosting-info-container div {
@@ -88,8 +86,6 @@
 }
 
 .currently-hosting {
-  border-bottom: solid #e2e1e1;
-  border-width: 1px;
 }
 
 
@@ -100,21 +96,18 @@
   font-size: 30px;
   color: #e2e1e1;
   background: rgba(0,0,0,0.75);
-  border: solid #e2e1e1;
-  border-width: 1px;
-  border-radius: 10px;
   margin: 10px 0 10px 0;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
 }
 
 .host-info-nav-container button {
-  border: solid #e2e1e1;
-  width: 25%;
   text-align: center;
-  border-width: 1px;
-  border-radius: 25px;
 }
 
 .host-info-nav-container button:hover {
+  border-bottom: solid #e2e1e1;
+  border-width: 1px;
   background: rgba(256, 256, 256, 0.2);
 }
 
@@ -125,9 +118,8 @@
   font-size: 20px;
   color: #e2e1e1;
   background: rgba(0,0,0,0.75);
-  border: solid #e2e1e1;
-  border-width: 1px;
-  border-radius: 10px;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
 }
 
 .host-personal-info-item {
@@ -142,11 +134,10 @@
   font-size: 20px;
   color: #e2e1e1;
   background: rgba(0,0,0,0.75);
-  border: solid #e2e1e1;
-  border-width: 1px;
-  border-radius: 10px;
   margin-top: 10px;
   min-height: 250px;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
 }
 
 .about-title {

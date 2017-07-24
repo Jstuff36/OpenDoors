@@ -30,7 +30,7 @@ class ListingsNavBar extends React.Component {
     return (
       <div className="listing-nav-bar-container">
         <h2 className="site-name">OpenDoors</h2>
-        <h2>Find A Host in {this.state.city}</h2>
+        <h2>Find a Host in {this.state.city}</h2>
         <div className="dropdown-location">
           <div
             className="dropbtn-location">
