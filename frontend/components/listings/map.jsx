@@ -23,12 +23,12 @@ class Map extends React.Component {
     if (this.props.center.lat !== nextProps.center.lat &&
       this.props.center.lng !== nextProps.center.lng) {
         this.map.setCenter(new google.maps.LatLng(nextProps.center.lat, nextProps.center.lng));
-        this.map.setMapOnAll(null);
       }
   }
 
-  componentWillUpdate(nextProps, nextState) {
-
+  componentDidUpdate(prevProps, prevState) {
+    Object.keys(this.props.listings).forEach(
+      key => this.addMarker(this.props.listings[key]));
   }
 
   componentDidMount() {

@@ -1,9 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class HostNavBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleListing = this.handleListing.bind(this);
   }
 
   handleLogout(e) {
@@ -14,8 +16,8 @@ class HostNavBar extends React.Component {
   }
 
   handleListing(e) {
-    this.props.histroy.push({
-      pathname: '/listings'
+    this.props.history.push({
+      pathname: '/'
     });
   }
 
@@ -25,7 +27,9 @@ class HostNavBar extends React.Component {
         <h2 className="site-name">
           OpenDoors
         </h2>
-        <button className="host-nav-listings">
+        <button
+          className="host-nav-listings"
+          onClick={this.handleListing}>
           Listings
         </button>
         <button
@@ -38,4 +42,4 @@ class HostNavBar extends React.Component {
   }
 }
 
-export default HostNavBar;
+export default withRouter(HostNavBar);
