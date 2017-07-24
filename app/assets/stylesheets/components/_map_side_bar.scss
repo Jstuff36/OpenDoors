@@ -52,18 +52,20 @@
 .side-bar-item-description {
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 
-.side-bar-item-description span {
+.side-bar-name {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
   margin: 5px 0 5px 0;
+}
+
+.side-bar-info {
   font-size: 15px;
 }
 
 .side-bar-about {
-}
-
-.name {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 25px;
+  margin-top: auto;
 }

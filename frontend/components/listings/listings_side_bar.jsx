@@ -26,13 +26,13 @@ class ListingsSideBar extends React.Component {
                     style={this.getImage(content.picture)}>
                   </div>
                   <div className="side-bar-item-description">
-                    <span className="name">
-                      {content.firstname} {content.lastname}
+                    <span className="side-bar-name">
+                      {content.firstname + " " + content.lastname}
                     </span>
-                    <span>
+                    <span className="side-bar-info">
                       {content.languages.join(", ")}
                     </span>
-                    <span>
+                    <span className="side-bar-info">
                       {content.hosting? "Currently Hosting" : "Not Currently Hosting"}
                     </span>
                     <span className="side-bar-about">
