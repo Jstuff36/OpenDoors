@@ -5,11 +5,29 @@
 .host-side-bar-container {
   display: flex;
   flex-direction: column;
+  width: 33.33%;
+  align-items: center;
+  padding: 30px;
+}
+
+.host-img {
+    position: relative;
+    float: left;
+    width: 175px;
+    height: 225px;
+    min-width: 55px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid #e2e1e1;
+    border-width: 1px;
 }
 
 .host-info-container {
   display: flex;
-  display: column;
+  flex-direction: column;
+  width: 66.66%;
 }
 
 .hosting-info-container {
@@ -24,6 +42,12 @@
 
 .host-personal-info-container {
   display: flex;
+  flex-flow: row wrap
+}
+
+.host-personal-info-item {
+  width: 33.33%;
+  text-align: center;
 }
 
 .host-detail-info-container {

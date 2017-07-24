@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HostNavBar } from './host-nav-bar';
 
 class HostProfile extends React.Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class HostProfile extends React.Component {
     });
   }
 
+  getImage(imageUrl) {
+    return { backgroundImage: `url(${imageUrl})` };
+  }
+
   render() {
     const {
       firstname,
@@ -30,31 +35,40 @@ class HostProfile extends React.Component {
       picture
     } = this.state.currentListing;
     return(
-      <div className="host-container">
-        <div className="host-side-bar-container">
-          <div>{firstname} {lastname}</div>
-          <div>{city}</div>
-        </div>
-        <div className="host-info-container">
-          <div className="hosting-info-container">
-            <div>{hosting ? "Currently Hosting" : "Not Currently Hosting"}</div>
+      <div>
+        <HostNavBar />
+        <div className="host-container">
+          <div className="host-side-bar-container">
+            <div
+              className="host-img"
+              style={this.getImage(picture)}>
+            </div>
+            <div>{firstname} {lastname}</div>
+            <div>{city}</div>
           </div>
-          <div className="host-info-nav-container">
-            <div>About</div>
-            <div>References</div>
-            <div>Location</div>
-          </div>
-          <div className="host-personal-info-container">
-            <div>{languages}</div>
-            <div>Join Date</div>
-            <div>Age/sex</div>
-            <div>{country}</div>
-            <div>occupation</div>
-            <div>refrences</div>
-          </div>
-          <div className="host-detail-info-container">
-            <div>About me...</div>
-            <div>Interest...</div>
+          <div className="host-info-container">
+            <div className="hosting-info-container">
+              <div>{hosting ? "Currently Hosting" : "Not Currently Hosting"}</div>
+              <div>Request to book</div>
+            </div>
+            <div className="host-info-nav-container">
+              <div>About</div>
+              <div>References</div>
+              <div>Location</div>
+            </div>
+            <div className="host-personal-info-container">
+              <div className="host-personal-info-item">{languages}</div>
+              <div className="host-personal-info-item">Join Date</div>
+              <div className="host-personal-info-item">Age/sex</div>
+              <div className="host-personal-info-item">{country}</div>
+              <div className="host-personal-info-item">occupation</div>
+              <div className="host-personal-info-item">refrences</div>
+            </div>
+            <div className="host-detail-info-container">
+              <div>About me...</div>
+              <div>{about}</div>
+              <div>Interest...</div>
+            </div>
           </div>
         </div>
       </div>

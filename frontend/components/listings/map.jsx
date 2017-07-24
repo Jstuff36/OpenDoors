@@ -248,7 +248,7 @@ class Map extends React.Component {
     this.map = new google.maps.Map(map, options);
     this.listenForMove();
     let keys = Object.keys(this.props.listings);
-    for (let i = 0; i < keys.length - 1; i++) {
+    for (let i = 0; i <= keys.length - 1; i++) {
       this.addMarker(this.props.listings[keys[i]]);
     }
   }
