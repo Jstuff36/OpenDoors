@@ -1,8 +1,9 @@
 .listing-nav-bar-container {
   display: flex;
   flex-flow: nowrap;
+  position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
   background: black;
   color: #e2e1e1;
 }

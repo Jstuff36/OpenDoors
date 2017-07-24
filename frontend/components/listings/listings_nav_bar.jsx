@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
 
 class ListingsNavBar extends React.Component {
   constructor(props) {
@@ -57,4 +56,4 @@ class ListingsNavBar extends React.Component {
   }
 }
 
-export default withRouter(ListingsNavBar);
+export default ListingsNavBar;

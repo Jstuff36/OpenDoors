@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import ListingsSideBar from './listings_side_bar';
+import { Link } from 'react-router-dom';
+
 class Map extends React.Component {
 
   constructor(props) {
@@ -21,7 +23,12 @@ class Map extends React.Component {
     if (this.props.center.lat !== nextProps.center.lat &&
       this.props.center.lng !== nextProps.center.lng) {
         this.map.setCenter(new google.maps.LatLng(nextProps.center.lat, nextProps.center.lng));
+        this.map.setMapOnAll(null);
       }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+
   }
 
   componentDidMount() {
@@ -315,7 +322,11 @@ class Map extends React.Component {
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={true}
           overlayClassName="Overlay">
-          <ul className="modal-container">
+          <ul>
+            <Link
+              to={`/listings/${this.state.modalContent["id"]}`}>
+              <div className="modal-container">
+
             <li>
               <div
                 className="modal-image"
@@ -328,6 +339,8 @@ class Map extends React.Component {
             <li className="modal-about">
               {this.state.modalContent["about"]}
             </li>
+          </div>
+          </Link>
           </ul>
           <button
             className="modal-button"

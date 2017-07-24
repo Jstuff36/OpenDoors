@@ -39,13 +39,13 @@
 }
 
 .host-name {
-  font-size: 35px;
+  font-size: 25px;
   color: #e2e1e1;
   margin: 8px;
 }
 
 .host-city {
-  font-size: 30px;
+  font-size: 20px;
   color: #e2e1e1;
 }
 
@@ -63,7 +63,7 @@
   padding: 10px;
   color: #e2e1e1;
   background: rgba(0,0,0, 0.75);
-  font-size: 25px;
+  font-size: 20px;
   box-shadow: 0 0 5px #000000;
   border-radius: 5px;
 }
@@ -77,7 +77,7 @@
   width: 25%;
   text-align: center;
   border-width: 1px;
-  border-radius: 25px;
+  border-radius: 5px;
 }
 
 .request-booking:hover {
@@ -93,7 +93,7 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  font-size: 30px;
+  font-size: 25px;
   color: #e2e1e1;
   background: rgba(0,0,0,0.75);
   margin: 10px 0 10px 0;
@@ -101,21 +101,25 @@
   border-radius: 5px;
 }
 
-.host-info-nav-container button {
+.current-page {
+  text-align: center;
+  border-bottom: solid lighten(#548072, 10%);
+  border-width: 1px;
+}
+
+.host-links {
   text-align: center;
 }
 
-.host-info-nav-container button:hover {
-  border-bottom: solid #e2e1e1;
-  border-width: 1px;
-  background: rgba(256, 256, 256, 0.2);
+.host-links:hover {
+  color: lighten(#548072, 10%);
 }
 
 .host-personal-info-container {
   display: flex;
   flex-flow: row wrap;
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   color: #e2e1e1;
   background: rgba(0,0,0,0.75);
   box-shadow: 0 0 5px #000000;
@@ -131,7 +135,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   color: #e2e1e1;
   background: rgba(0,0,0,0.75);
   margin-top: 10px;
@@ -142,10 +146,9 @@
 
 .about-title {
   margin: 10px;
-  border-bottom: solid #e2e1e1;
   border-width: 1px;
   width: 102px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .about-text {
