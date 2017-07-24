@@ -1,5 +1,15 @@
 .host-container {
   display: flex;
+  background: url("https://res.cloudinary.com/dax5cdjeh/image/upload/e_sharpen:100/v1500859782/host-profile-background_rilnbx.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+  position: fixed;
+  z-index: -1;
 }
 
 .host-side-bar-container {
@@ -8,6 +18,12 @@
   width: 33.33%;
   align-items: center;
   padding: 30px;
+  background: rgba(0,0,0,0.75);
+  max-height: 325px;
+  margin: 30px 5px 0 30px;
+  border: solid #e2e1e1;
+  border-width: 1px;
+  border-radius: 10px;
 }
 
 .host-img {
@@ -24,33 +40,104 @@
     border-width: 1px;
 }
 
+.host-name {
+  font-size: 35px;
+  color: #e2e1e1;
+  margin: 8px;
+}
+
+.host-city {
+  font-size: 30px;
+  color: #e2e1e1;
+}
+
 .host-info-container {
   display: flex;
   flex-direction: column;
   width: 66.66%;
+  padding: 30px;
 }
 
 .hosting-info-container {
   display: flex;
   justify-content: space-around;
+  padding: 10px;
+  border: solid #e2e1e1;
+  color: #e2e1e1;
+  background: rgba(0,0,0, 0.75);
+  font-size: 25px;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+.request-booking {
+  
 }
 
 .host-info-nav-container {
   display: flex;
   justify-content: space-around;
+  padding: 10px;
+  font-size: 30px;
+  color: #e2e1e1;
+  background: rgba(0,0,0,0.75);
+  border: solid #e2e1e1;
+  border-width: 1px;
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.host-info-nav-container button {
+  border: solid #e2e1e1;
+  width: 25%;
+  text-align: center;
+  border-width: 1px;
+  border-radius: 25px;
+}
+
+.host-info-nav-container button:hover {
+  background: rgba(256, 256, 256, 0.2);
 }
 
 .host-personal-info-container {
   display: flex;
-  flex-flow: row wrap
+  flex-flow: row wrap;
+  padding: 10px;
+  font-size: 20px;
+  color: #e2e1e1;
+  background: rgba(0,0,0,0.75);
+  border: solid #e2e1e1;
+  border-width: 1px;
+  border-radius: 10px;
 }
 
 .host-personal-info-item {
-  width: 33.33%;
-  text-align: center;
+  width: 28.33%;
+  margin: 10px 10px 10px 0;
 }
 
 .host-detail-info-container {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  font-size: 20px;
+  color: #e2e1e1;
+  background: rgba(0,0,0,0.75);
+  border: solid #e2e1e1;
+  border-width: 1px;
+  border-radius: 10px;
+  margin-top: 10px;
+  min-height: 250px;
+}
+
+.about-title {
+  margin: 10px;
+  border-bottom: solid #e2e1e1;
+  border-width: 1px;
+  width: 102px;
+  font-size: 25px;
+}
+
+.about-text {
+  margin: 0px 10px 5px 10px;
 }

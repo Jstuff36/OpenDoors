@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HostNavBar } from './host-nav-bar';
+import HostNavBar from './host_nav_bar';
 
 class HostProfile extends React.Component {
   constructor(props) {
@@ -32,7 +32,10 @@ class HostProfile extends React.Component {
       hosting,
       languages,
       country,
-      picture
+      interest,
+      picture,
+      occupation,
+      age_sex
     } = this.state.currentListing;
     return(
       <div>
@@ -43,31 +46,41 @@ class HostProfile extends React.Component {
               className="host-img"
               style={this.getImage(picture)}>
             </div>
-            <div>{firstname} {lastname}</div>
-            <div>{city}</div>
+            <div className="host-name">
+              {firstname} {lastname}</div>
+            <div className="host-city">
+              {city}</div>
           </div>
           <div className="host-info-container">
             <div className="hosting-info-container">
-              <div>{hosting ? "Currently Hosting" : "Not Currently Hosting"}</div>
+              <div>Currently hosting?     {hosting ? "Yes" : "No"}</div>
               <div>Request to book</div>
             </div>
             <div className="host-info-nav-container">
-              <div>About</div>
-              <div>References</div>
-              <div>Location</div>
+              <button>About</button>
+              <button>References</button>
+              <button>Location</button>
             </div>
             <div className="host-personal-info-container">
-              <div className="host-personal-info-item">{languages}</div>
+              <div className="host-personal-info-item">Fluent in {languages}</div>
               <div className="host-personal-info-item">Join Date</div>
-              <div className="host-personal-info-item">Age/sex</div>
+              <div className="host-personal-info-item">
+                {age_sex ? age_sex : "Age/Sex"}
+              </div>
               <div className="host-personal-info-item">{country}</div>
-              <div className="host-personal-info-item">occupation</div>
-              <div className="host-personal-info-item">refrences</div>
+              <div className="host-personal-info-item">
+                {occupation ? occupation: "No occupation listed"}
+              </div>
             </div>
             <div className="host-detail-info-container">
-              <div>About me...</div>
-              <div>{about}</div>
-              <div>Interest...</div>
+              <div className="about-title">About me</div>
+              <div className="about-text">
+                {about ? about : "No about listed"}
+              </div>
+              <div className="about-title">Interest</div>
+              <div className="about-text">
+                {interest ? interest : "No interest listed"}
+              </div>
             </div>
           </div>
         </div>

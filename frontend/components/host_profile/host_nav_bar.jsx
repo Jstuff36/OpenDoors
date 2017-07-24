@@ -15,9 +15,27 @@ class HostNavBar extends React.Component {
 
   render() {
     return(
-      <div>
-
+      <div className="host-nav-container">
+        <h2 className="site-name">
+          OpenDoors
+        </h2>
+        <div className="nav-dropdown-icon">
+          <button
+            className="nav-dropbtn-icon">
+            <div className="nav-menu-icon"></div>
+            <div className="nav-menu-icon"></div>
+            <div className="nav-menu-icon"></div>
+          </button>
+          <div className="nav-dropdown-content">
+            <span>
+              Listings
+            </span>
+            <span onClick={this.handleLogout}>Log Out</span>
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+export default HostNavBar;
