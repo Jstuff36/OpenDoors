@@ -41,22 +41,16 @@ class ListingsNavBar extends React.Component {
             <span onClick={this.handleCityClick}>Casablanca</span>
           </div>
         </div>
-        <div className="dropdown-icon">
-          <button
-            className="dropbtn-icon">
-            <div className="menu-icon"></div>
-            <div className="menu-icon"></div>
-            <div className="menu-icon"></div>
-          </button>
-          <div className="dropdown-content">
-            <span>
-              My Profile
-            </span>
-            <span>
-              My Bookings
-            </span>
-            <span onClick={this.handleLogout}>Log Out</span>
-          </div>
+        <div className="nav-icons">
+          My Profile
+        </div>
+        <div className="nav-icons">
+          My Bookings
+        </div>
+        <div
+          className="nav-icons"
+          onClick={this.handleLogout}>
+          Log Out
         </div>
       </div>
     );
