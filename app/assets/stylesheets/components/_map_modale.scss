@@ -8,7 +8,11 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
+.modal-ul-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-name {
@@ -21,15 +25,12 @@
 }
 
 .modal-button {
-  position: relative;
-  float: right;
+
   font-size: 15px;
-  border: #e2e1e1 solid;
-  border-width: 2px;
-  width: 85px;
-  text-align: center;
+  text-align: right;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: -15px -5px 0 0;
+
 }
 
 

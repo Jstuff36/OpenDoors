@@ -16,7 +16,7 @@
   max-width: 350px;
   padding: 30px;
   border-radius: 5px;
-  box-shadow: 0px 0px 3px #e6e6e6;
+  box-shadow: 0px 0px 3px lighten(#548072, 10%);
   color: #e2e1e1;
   position: relative;
   left: 350px;
@@ -35,17 +35,32 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 5px;
+  color: lighten(#548072, 10%);
 }
 
 .send-booking {
 
 }
 
+.booking_placeholder::placeholder {
+  color: lighten(#548072, 10%);
+}
+.booking_placeholder::-moz-placeholder {
+  color: lighten(#548072, 10%);
+}
+.booking_placeholder:-ms-input-placeholder {
+  color: lighten(#548072, 10%);
+}
+.booking_placeholder:-moz-placeholder {
+  color: lighten(#548072, 10%);
+}
+
 .booking-body {
-  border: solid #e2e1e1;
+  border: solid lighten(#548072, 10%);
   width: 300px;
   height: 100px;
   border-width: 1px;
   border-radius: 5px;
   padding: 10px;
+  height: 200px;
 }

@@ -322,7 +322,11 @@ class Map extends React.Component {
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={true}
           overlayClassName="Overlay">
-          <ul>
+          <ul className="modal-ul-container">
+            <button
+              className="modal-button"
+              onClick={this.handleCloseModal}>
+              x</button>
             <Link
               to={`/listings/${this.state.modalContent["id"]}`}>
               <div className="modal-container">
@@ -342,10 +346,6 @@ class Map extends React.Component {
           </div>
           </Link>
           </ul>
-          <button
-            className="modal-button"
-            onClick={this.handleCloseModal}>
-            Back to Listings</button>
         </Modal>
         <div className="map-side-bar-container">
           <ListingsSideBar
