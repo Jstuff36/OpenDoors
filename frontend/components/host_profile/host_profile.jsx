@@ -21,6 +21,7 @@ class HostProfile extends React.Component {
     };
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   componentDidMount() {
@@ -110,6 +111,8 @@ class HostProfile extends React.Component {
                   Request to book
                 </button>
                 <Modal
+                  showModal={this.state.showModal}
+                  handleCloseModal={this.handleCloseModal}
                   isOpen={this.state.showModal}
                   className="booking-modal"
                   contentLabel="Booking request"

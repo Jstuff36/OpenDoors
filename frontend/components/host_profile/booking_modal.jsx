@@ -29,11 +29,12 @@ class BookingModal extends React.Component {
             type="submit"
             value="Send"/>
         </div>
-        <input
+        <textarea
           className="booking-body booking_placeholder"
           type="text"
           onChange={this.update('body')}
-          placeholder="Enter a message"/>
+          placeholder="Enter a message">
+        </textarea>
       </form>
     );
   }

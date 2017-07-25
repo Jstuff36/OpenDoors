@@ -50,7 +50,7 @@ class ListingMap extends React.Component {
           logout={this.props.logout}/>
         <Map
           logout={this.props.logout}
-          center ={mapCenter}
+          center={mapCenter}
           listings={this.state.listings}/>
       </div>
     );
