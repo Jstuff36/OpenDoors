@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import HostNavBar from './host_nav_bar';
 import { withRouter } from 'react-router-dom';
 import HostMap from './host_map';
+import Modal from 'react-modal';
+import BookingModal from './booking_modal';
 
 class HostProfile extends React.Component {
   constructor(props) {
@@ -13,9 +15,12 @@ class HostProfile extends React.Component {
         host_references: false,
         host_location: false,
       },
+      showModal: false,
+      modalContent: [],
       currentListing: ""
     };
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
+    this.openModal = this.openModal.bind(this);
   }
 
   componentDidMount() {
@@ -41,9 +46,24 @@ class HostProfile extends React.Component {
     };
   }
 
+  handleOpenModal () {
+    this.setState({
+      showModal: true
+    });
+  }
+
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
+
+  openModal() {
+    this.handleOpenModal();
+  }
+
   getImage(imageUrl) {
     return { backgroundImage: `url(${imageUrl})` };
   }
+
 
   render() {
     const {
@@ -84,7 +104,21 @@ class HostProfile extends React.Component {
                 <div className="currently-hosting">
                   {hosting ? "Currently hosting" : "Not hosting"}
                 </div>
-                <div className="request-booking">Request to book</div>
+                <button
+                  onClick={this.openModal}
+                  className="request-booking">
+                  Request to book
+                </button>
+                <Modal
+                  isOpen={this.state.showModal}
+                  className="booking-modal"
+                  contentLabel="Booking request"
+                  onRequestClose={this.handleCloseModal}
+                  shouldCloseOnOverlayClick={true}
+                  overlayClassName="booking-overlay">
+                  <BookingModal />
+                </Modal>
+
               </div>
               <div className="host-info-nav-container">
                 <div className="current-page">About</div>
