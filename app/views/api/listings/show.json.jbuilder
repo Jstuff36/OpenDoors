@@ -1,4 +1,5 @@
 json.extract! @listing,
+              :id,
               :firstname,
               :lastname,
               :location,

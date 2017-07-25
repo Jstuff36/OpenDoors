@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import HostMap from './host_map';
 import Modal from 'react-modal';
 import BookingModal from './booking_modal';
+import merge from 'lodash/merge';
 
 class HostProfile extends React.Component {
   constructor(props) {
@@ -17,12 +18,19 @@ class HostProfile extends React.Component {
       },
       showModal: false,
       modalContent: [],
-      currentListing: ""
+      currentListing: "",
+      currentUser: this.props.currentUser,
+      modalState: {
+        date: "",
+        body: ""
+      }
     };
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateDate = this.updateDate.bind(this);
+    this.updateBody = this.updateBody.bind(this);
   }
 
   componentDidMount() {
@@ -48,6 +56,22 @@ class HostProfile extends React.Component {
     };
   }
 
+  updateDate() {
+    return e => {
+      const newState = merge({}, this.state);
+      newState.modalState.date = e.currentTarget.value;
+      this.setState(newState);
+    };
+  }
+
+  updateBody() {
+    return e => {
+      const newState = merge({}, this.state);
+      newState.modalState.body = e.currentTarget.value;
+      this.setState(newState);
+    };
+  }
+
   handleOpenModal () {
     this.setState({
       showModal: true
@@ -55,7 +79,15 @@ class HostProfile extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
+    const modalState = this.props.modalState;
+    const trip = merge(
+      modalState,
+      { user_id: this.state.currentUser.id },
+      { host_id: this.state.currentListing.id }
+    );
+    debugger;
+    this.props.newTrip();
   }
 
 
@@ -117,7 +149,6 @@ class HostProfile extends React.Component {
                   Request to book
                 </button>
                 <Modal
-                  handleSubmit={this.handleSubmit}
                   showModal={this.state.showModal}
                   handleCloseModal={this.handleCloseModal}
                   isOpen={this.state.showModal}
@@ -126,7 +157,11 @@ class HostProfile extends React.Component {
                   onRequestClose={this.handleCloseModal}
                   shouldCloseOnOverlayClick={true}
                   overlayClassName="booking-overlay">
-                  <BookingModal />
+                  <BookingModal
+                    modalState={this.state.modalState}
+                    updateDate={this.updateDate}
+                    updateBody={this.updateBody}
+                    handleSubmit={this.handleSubmit}/>
                 </Modal>
 
               </div>
