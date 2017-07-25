@@ -80,14 +80,16 @@ class HostProfile extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const modalState = this.props.modalState;
+    const modalState = this.state.modalState;
     const trip = merge(
       modalState,
       { user_id: this.state.currentUser.id },
-      { host_id: this.state.currentListing.id }
+      { host_id: this.state.currentListing.id },
+      { status: "pending" }
     );
-    debugger;
-    this.props.newTrip();
+    this.props.newTrip(trip).then( () => (
+      this.handleCloseModal()
+    ));
   }
 
 
