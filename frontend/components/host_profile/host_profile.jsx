@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import HostNavBar from './host_nav_bar';
 import { withRouter } from 'react-router-dom';
+import HostMap from './host_map';
 
 class HostProfile extends React.Component {
   constructor(props) {
@@ -205,6 +206,7 @@ class HostProfile extends React.Component {
                 </button>
                 <div className="current-page">Location</div>
               </div>
+              <HostMap currentListing={this.state.currentListing}/>
             </div>
           </div>
         </div>

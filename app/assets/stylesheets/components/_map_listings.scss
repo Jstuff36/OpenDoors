@@ -7,6 +7,13 @@
 .listings-nav-main {
 }
 
+#host-map {
+  z-index: 3;
+  width: 100%;
+  height: 500px;
+  border-radius: 5px;
+}
+
 #map {
   top: 0px;
   display: block;
