@@ -187,7 +187,22 @@ class HostProfile extends React.Component {
                 <div className="currently-hosting">
                   {hosting ? "Currently hosting" : "Not hosting"}
                 </div>
-                <div className="request-booking">Request to book</div>
+                <button
+                  onClick={this.openModal}
+                  className="request-booking">
+                  Request to book
+                </button>
+                <Modal
+                  showModal={this.state.showModal}
+                  handleCloseModal={this.handleCloseModal}
+                  isOpen={this.state.showModal}
+                  className="booking-modal"
+                  contentLabel="Booking request"
+                  onRequestClose={this.handleCloseModal}
+                  shouldCloseOnOverlayClick={true}
+                  overlayClassName="booking-overlay">
+                  <BookingModal />
+                </Modal>
               </div>
               <div className="host-info-nav-container">
                 <button
@@ -228,7 +243,22 @@ class HostProfile extends React.Component {
                 <div className="currently-hosting">
                   {hosting ? "Currently hosting" : "Not hosting"}
                 </div>
-                <div className="request-booking">Request to book</div>
+                <button
+                  onClick={this.openModal}
+                  className="request-booking">
+                  Request to book
+                </button>
+                <Modal
+                  showModal={this.state.showModal}
+                  handleCloseModal={this.handleCloseModal}
+                  isOpen={this.state.showModal}
+                  className="booking-modal"
+                  contentLabel="Booking request"
+                  onRequestClose={this.handleCloseModal}
+                  shouldCloseOnOverlayClick={true}
+                  overlayClassName="booking-overlay">
+                  <BookingModal />
+                </Modal>
               </div>
               <div className="host-info-nav-container">
                 <button

@@ -8,7 +8,26 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  def password= password
+  has_many :trips,
+           classname: "Trip",
+           foreign_key: :user_id,
+           primary_key: :id
+
+  has_many :reservations,
+           classname: "Trip",
+           foreign_key: :host_id,
+           primary_key: :id
+
+  has_many :host,
+           through: :trips,
+           source: :host
+
+  has_many :guest,
+           through: :reservations,
+           source: :traveler
+
+
+  def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
