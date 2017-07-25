@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    #change the location!
     @user.location = [37.7749, 122.4194]
     if @user.save
       sign_in(@user)

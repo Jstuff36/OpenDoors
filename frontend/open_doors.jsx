@@ -7,6 +7,7 @@ import Root from './components/root';
 //Testing
 import * as utils from './util/session_api_util';
 import * as listingUtils from './util/listing_api_util';
+import * as tripsUtils from './util/trips_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -27,3 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.util = utils;
 window.listingUtil = listingUtils;
+window.tripsUtil = tripsUtils;

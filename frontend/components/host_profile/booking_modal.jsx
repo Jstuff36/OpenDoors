@@ -17,7 +17,9 @@ class BookingModal extends React.Component {
 
   render() {
     return(
-      <form className="booking-modal-container">
+      <form
+        className="booking-modal-container"
+        onSubmit={this.handleSubmit}>
         <div className="booking-modal-heading-container">
           <input
             className="booking-dates booking_placeholder"

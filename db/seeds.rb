@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # user: {email: "myemail", password: "password", firstname: "justin", lastname: "white", city: "Cucuta", country: "Colombia", location: [8, 72.5]}
 User.delete_all
+Trip.delete_all
 
 user1 = User.new(
   firstname: "Justin",
@@ -127,3 +128,43 @@ user8 = User.new(
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500830483/rick_jkp74k.jpg"
 )
 user8.save
+
+trip1 = Trip.new(
+  user_id: user1.id,
+  host_id: user2.id,
+  dates: ["09/14/2017", "09/17/2017"],
+  status: "pending",
+  message: "Hi, you're place looks wonderful would you mind hosting us?"
+)
+
+trip1.save!
+
+trip2 = Trip.new(
+  user_id: user1.id,
+  host_id: user3.id,
+  dates: ["08/14/2017", "08/17/2017"],
+  status: "pending",
+  message: "Hi, would you mind sending us a few more photos"
+)
+
+trip2.save
+
+trip3 = Trip.new(
+  user_id: user2.id,
+  host_id: user3.id,
+  dates: ["09/4/2017", "09/17/2017"],
+  status: "pending",
+  message: "Hi, is there a bus close by to the city?"
+)
+
+trip3.save
+
+trip4 = Trip.new(
+  user_id: user2.id,
+  host_id: user1.id,
+  dates: ["09/10/2017", "09/12/2017"],
+  status: "pending",
+  message: "Coming to stay with you this time!"
+)
+
+trip4.save

@@ -9,12 +9,12 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :trips,
-           classname: "Trip",
+           class_name: "Trip",
            foreign_key: :user_id,
            primary_key: :id
 
   has_many :reservations,
-           classname: "Trip",
+           class_name: "Trip",
            foreign_key: :host_id,
            primary_key: :id
 

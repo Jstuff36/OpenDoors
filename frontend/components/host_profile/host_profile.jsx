@@ -22,6 +22,7 @@ class HostProfile extends React.Component {
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +53,11 @@ class HostProfile extends React.Component {
       showModal: true
     });
   }
+
+  handleSubmit(e) {
+    e.preventDefault;
+  }
+
 
   handleCloseModal () {
     this.setState({ showModal: false });
@@ -111,6 +117,7 @@ class HostProfile extends React.Component {
                   Request to book
                 </button>
                 <Modal
+                  handleSubmit={this.handleSubmit}
                   showModal={this.state.showModal}
                   handleCloseModal={this.handleCloseModal}
                   isOpen={this.state.showModal}
@@ -193,6 +200,7 @@ class HostProfile extends React.Component {
                   Request to book
                 </button>
                 <Modal
+                  handleSubmit={this.handleSubmit}
                   showModal={this.state.showModal}
                   handleCloseModal={this.handleCloseModal}
                   isOpen={this.state.showModal}
@@ -249,6 +257,7 @@ class HostProfile extends React.Component {
                   Request to book
                 </button>
                 <Modal
+                  handleSubmit={this.handleSubmit}
                   showModal={this.state.showModal}
                   handleCloseModal={this.handleCloseModal}
                   isOpen={this.state.showModal}
