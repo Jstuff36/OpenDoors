@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   width: 33.33%;
+  max-width: 350px;
   align-items: center;
   padding: 30px;
   background: rgba(0,0,0,0.75);
@@ -41,7 +42,7 @@
 .host-name {
   font-size: 25px;
   color: #e2e1e1;
-  margin: 8px;
+  margin: 15px;
 }
 
 .host-city {
@@ -118,7 +119,7 @@
 
 .host-personal-info-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   padding: 15px;
   font-size: 15px;
   color: #e2e1e1;
@@ -128,15 +129,30 @@
 }
 
 .host-personal-info-item {
-  width: 38%;
+  width: 100%;
   margin: 10px 40px 10px 0;
+  display: flex;
+}
+
+.host-info-item-title {
+  background: black;
+  padding: 15px;
+  width: 100px;
+  border-radius: 5px 0 0 5px;
+}
+
+.host-info-item-content {
+  background: rgba(0,0,0,0.3);
+  width: 100%;
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
 }
 
 .host-detail-info-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding: 10px;
-  font-size: 15px;
   color: #e2e1e1;
   background: rgba(0,0,0,0.75);
   margin-top: 10px;
@@ -145,13 +161,22 @@
   border-radius: 5px;
 }
 
+.host-detail-info-container div {
+  display: flex;
+}
+
 .about-title {
-  margin: 10px;
-  border-width: 1px;
-  width: 102px;
-  font-size: 20px;
+  font-size: 15px;
+  background: black;
+  padding: 15px;
+  width: 100px;
+  border-radius: 5px 0 0 5px;
 }
 
 .about-text {
-  margin: 0px 10px 5px 10px;
+  font-size: 15px;
+  background: rgba(0,0,0,0.3);
+  width: 100%;
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
 }

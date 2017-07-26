@@ -9,4 +9,9 @@ json.extract! user,
   :occupation,
   :about,
   :hosting,
-  :picture
+  :picture,
+  :languages,
+  :zipcode,
+  :address,
+  :age,
+  :sex

@@ -14,16 +14,18 @@ class UserProfile extends React.Component {
       currentUser: this.props.currentUser,
       trips: "",
       userInfo: {
-        address: "",
-        zipcode: "",
-        langauges: "",
-        age: "",
-        sex: "",
-        occupation: "",
+        address: this.props.currentUser.address,
+        zipcode: this.props.currentUser.zipcode,
+        languages: this.props.currentUser.languages,
+        age: this.props.currentUser.age,
+        sex: this.props.currentUser.sex,
+        occupation: this.props.currentUser.occupation,
+        about: this.props.currentUser.about
       }
     };
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.seperateHostingsAndUserTrips = this.seperateHostingsAndUserTrips.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -76,6 +78,10 @@ class UserProfile extends React.Component {
     return [trips, hostings];
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
 render() {
   const {
     firstname,
@@ -126,7 +132,7 @@ render() {
                                style={this.getImage(trip.host_pic)}>
                              </div>
                              <div className="trip-listings-info-container">
-                               <div>
+                               <div className="trip-name">
                                  {trip.host_firstname + " " + trip.host_lastname }
                                </div>
                                <div>
@@ -152,7 +158,7 @@ render() {
                                style={this.getImage(trip.traveler_pic)}>
                              </div>
                              <div className="trip-listings-info-container">
-                               <div>
+                               <div className="trip-name">
                                  {trip.traveler_firstname + " " + trip.traveler_lastname }
                                </div>
                                <div>
@@ -205,43 +211,97 @@ render() {
                     Edit Profile
                   </div>
                 </div>
-                <form className="edit-main-container">
+                <form
+                  onSubmit={this.handleSubmit}
+                  className="edit-main-container">
+                  <div>
+                    <div className="input-type">
+                      Address:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.address}
+                      type="text"
+                      placeholder="Address"
+                      onChange={this.update('address')}
+                      />
+                  </div>
+                  <div>
+                    <div className="input-type">
+                      Zipcode:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.zipcode}
+                      type="text"
+                      placeholder="zipcode"
+                      onChange={this.update('zipcode')}
+                      />
+                  </div>
+                  <div>
+                    <div className="input-type">
+                      Langauages:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.languages.join(", ")}
+                      type="text"
+                      placeholder="Langauages seperated by commas"
+                      onChange={this.update('languages')}
+                      />
+                  </div>
+                  <div>
+                    <div className="input-type">
+                      Age:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.age}
+                      type="text"
+                      placeholder="Age"
+                      onChange={this.update('age')}
+                      />
+                  </div>
+                  <div>
+                    <div className="input-type">
+                      Sex:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.sex}
+                      type="text"
+                      placeholder="Sex"
+                      onChange={this.update('sex')}
+                      />
+                  </div>
+                  <div>
+                    <div className="input-type">
+                      Occupation:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.occupation}
+                      type="text"
+                      placeholder="Occupation"
+                      onChange={this.update('occupation')}
+                      />
+                  </div>
+                  <div>
+                    <div className="input-type">
+                      About:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.about}
+                      type="text"
+                      placeholder="About"
+                      onChange={this.update('about')}
+                      />
+                  </div>
                   <input
-                    className=""
-                    type="text"
-                    placeholder="Address"
-                    onChange={this.update('address')}
-                    />
-                  <input
-                    className=""
-                    type="text"
-                    placeholder="zipcode"
-                    onChange={this.update('zipcode')}
-                    />
-                  <input
-                    className=""
-                    type="text"
-                    placeholder="Langauages seperated by commas"
-                    onChange={this.update('languages')}
-                    />
-                  <input
-                    className=""
-                    type="text"
-                    placeholder="Age"
-                    onChange={this.update('age')}
-                    />
-                  <input
-                    className=""
-                    type="text"
-                    placeholder="Age"
-                    onChange={this.update('sex')}
-                    />
-                  <input
-                    className=""
-                    type="text"
-                    placeholder="Age"
-                    onChange={this.update('occupation')}
-                    />
+                    className="edit-profile-submit"
+                    type="submit"
+                    value="Upate Profile" />
                 </form>
               </div>
             </div>

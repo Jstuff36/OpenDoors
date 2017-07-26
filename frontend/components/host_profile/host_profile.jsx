@@ -50,7 +50,7 @@ class HostProfile extends React.Component {
         host_location: false
       };
       tempObj[action] = true;
-      this.setState({action: tempObj});
+      this.setState({ action: tempObj });
       e.preventDefault();
 
     };
@@ -184,27 +184,58 @@ class HostProfile extends React.Component {
               </div>
               <div className="host-personal-info-container">
                 <div className="host-personal-info-item">
-                  Age/Sex: {age_sex ? age_sex : "Age/Sex Not listed"}
+                  <div className="host-info-item-title">
+                    Age/Sex:
+                  </div>
+                  <div className="host-info-item-content">
+                    {age_sex ? age_sex : "Age/Sex Not listed"}
+                  </div>
                 </div>
                 <div className="host-personal-info-item">
-                  Join Date: {join_date ? join_date: "Join date not available"}
+                  <div className="host-info-item-title">
+                    Join Date:
+                  </div>
+                  <div className="host-info-item-content">
+                    {join_date ? join_date: "Join date not available"}
+                  </div>
                 </div>
                 <div className="host-personal-info-item">
-                  Langauges: {languages ? "Fluent in " + languages : "Langauges no listed"}
+                  <div className="host-info-item-title">
+                    Langauges:
+                  </div>
+                  <div className="host-info-item-content">
+                    {languages ? "Fluent in " + languages : "Langauges no listed"}
+                  </div>
                 </div>
-                <div className="host-personal-info-item">Country: {country}</div>
                 <div className="host-personal-info-item">
-                  Occupation: {occupation ? occupation: "No occupation listed"}
+                  <div className="host-info-item-title">
+                    Country:
+                  </div>
+                  <div className="host-info-item-content">
+                    {country}
+                  </div>
+                </div>
+                <div className="host-personal-info-item">
+                  <div className="host-info-item-title">
+                    Occupation:
+                  </div>
+                  <div className="host-info-item-content">
+                    {occupation ? occupation: "No occupation listed"}
+                  </div>
                 </div>
               </div>
               <div className="host-detail-info-container">
-                <div className="about-title">About me</div>
-                <div className="about-text">
-                  {about ? about : "No about listed"}
+                <div>
+                  <div className="about-title">About me:</div>
+                  <div className="about-text">
+                    {about ? about : "No about listed"}
+                  </div>
                 </div>
-                <div className="about-title">Interest</div>
-                <div className="about-text">
-                  {interest ? interest : "No interest listed"}
+                <div>
+                  <div className="about-title">Interest:</div>
+                  <div className="about-text">
+                    {interest ? interest : "No interest listed"}
+                  </div>
                 </div>
               </div>
             </div>
