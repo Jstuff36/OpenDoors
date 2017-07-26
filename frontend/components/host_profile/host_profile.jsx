@@ -82,7 +82,8 @@ class HostProfile extends React.Component {
     e.preventDefault();
     const modalState = this.state.modalState;
     const trip = merge(
-      modalState,
+      { dates: [modalState.date] },
+      { message: modalState.body },
       { user_id: this.state.currentUser.id },
       { host_id: this.state.currentListing.id },
       { status: "pending" }
