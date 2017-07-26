@@ -1,31 +1,97 @@
-.user_container {
+.user-container {
   display: flex;
+  background: url("https://res.cloudinary.com/dax5cdjeh/image/upload/v1501046482/bike-photo_jw06iq.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+  position: fixed;
+  z-index: -1;
+  box-shadow: 0 0 5px #000000;
 }
 
 .user-side-container {
   display: flex;
   flex-direction: column;
+  width: 33.33%;
+  align-items: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.75);
+  max-height: 275px;
+  margin: 30px 5px 0 85px;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
+}
+
+.user-img {
+  position: relative;
+  float: left;
+  width: 175px;
+  height: 225px;
+  min-width: 55px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.user-name {
+  font-size: 25px;
+  color: #e2e1e1;
+  margin: 8px;
 }
 
 .user-main-container {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  width: 66.66%;
+  margin: 30px 85px 30px 30px;
+  border-radius: 5px;
 }
 
-.user-options-conatiner {
+.user-options-container {
   display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: #e2e1e1;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 20px;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
 }
 
 .user-trips-refs-container {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .upcoming-trips-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  color: #e2e1e1;
+  background: rgba(0, 0, 0, 0.75);
+  margin: 10px 0 10px 0;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
+  width: 50%;
+  margin-right: 10px;
+
 }
 
 .user-references-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  color: #e2e1e1;
+  background: rgba(0, 0, 0, 0.75);
+  margin: 10px 0 10px 0;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 10px;
 }

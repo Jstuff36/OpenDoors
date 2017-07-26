@@ -20,8 +20,7 @@ export const clearErrors = () => ({
 
 export const allTrips = (id) => dispatch => (
   TripsUtil.tripsHostingsByUser(id).then(response => (
-    dispatch(receiveTrips(response)),
-    dispatch(clearErrors())),
+    dispatch(receiveTrips(response))),
     err => dispatch(receiveErrors(err))
   )
 );

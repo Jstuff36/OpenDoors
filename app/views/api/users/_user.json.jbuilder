@@ -8,4 +8,5 @@ json.extract! user,
   :country,
   :occupation,
   :about,
-  :hosting
+  :hosting,
+  :picture
