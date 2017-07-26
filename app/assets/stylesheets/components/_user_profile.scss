@@ -1,0 +1,31 @@
+.user_container {
+  display: flex;
+}
+
+.user-side-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-main-container {
+  display: flex;
+  flex-direction: column
+}
+
+.user-options-conatiner {
+  display: flex;
+}
+
+.user-trips-refs-container {
+  display: flex;
+}
+
+.upcoming-trips-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-references-container {
+  display: flex;
+  flex-direction: column;
+}
