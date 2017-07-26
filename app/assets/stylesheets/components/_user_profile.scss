@@ -63,6 +63,15 @@
   border-radius: 5px;
 }
 
+.user-current-page {
+  border-bottom: solid lighten(#548072, 10%);
+  border-width: 1px;
+}
+
+.user-links:hover {
+  color: lighten(#548072, 10%);
+}
+
 .user-trips-refs-container {
   display: flex;
   width: 100%;
@@ -80,6 +89,7 @@
   border-radius: 5px;
   width: 50%;
   margin-right: 10px;
+  overflow: scroll;
 }
 
 .trips-refs-heading {
@@ -91,7 +101,7 @@
   position: relative;
   float: left;
   width: 50px;
-  height: 75px;
+  height: 80px;
   min-width: 55px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -107,11 +117,11 @@
 .trip-listings-info-container {
   display: flex;
   flex-direction: column;
-  padding-left: 5px;
+  padding-left: 8px;
 }
 
 .trip-listings-info-container div {
-  padding: 3px;
+  padding: 5px;
 }
 
 .user-references-container {
