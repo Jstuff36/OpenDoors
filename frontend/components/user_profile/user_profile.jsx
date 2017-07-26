@@ -12,7 +12,15 @@ class UserProfile extends React.Component {
         user_profile_edit: false,
       },
       currentUser: this.props.currentUser,
-      trips: ""
+      trips: "",
+      userInfo: {
+        address: "",
+        zipcode: "",
+        langauges: "",
+        age: "",
+        sex: "",
+        occupation: "",
+      }
     };
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.seperateHostingsAndUserTrips = this.seperateHostingsAndUserTrips.bind(this);
@@ -39,6 +47,14 @@ class UserProfile extends React.Component {
       e.preventDefault();
 
     };
+  }
+
+  update(field) {
+    return e => this.setState({
+      userInfo: {
+
+      [field]: e.currentTarget.value }
+    });
   }
 
   getImage(imageUrl) {
@@ -189,6 +205,44 @@ render() {
                     Edit Profile
                   </div>
                 </div>
+                <form className="edit-main-container">
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="Address"
+                    onChange={this.update('address')}
+                    />
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="zipcode"
+                    onChange={this.update('zipcode')}
+                    />
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="Langauages seperated by commas"
+                    onChange={this.update('languages')}
+                    />
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="Age"
+                    onChange={this.update('age')}
+                    />
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="Age"
+                    onChange={this.update('sex')}
+                    />
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="Age"
+                    onChange={this.update('occupation')}
+                    />
+                </form>
               </div>
             </div>
           </div>
