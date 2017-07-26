@@ -1,6 +1,7 @@
 import React from 'react';
 import UserNavBar from './user_nav_bar';
 import { Link } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -12,8 +13,16 @@ class UserProfile extends React.Component {
     this.seperateHostingsAndUserTrips = this.seperateHostingsAndUserTrips.bind(this);
   }
 
+  
+
+
   componentDidMount() {
     const id = parseInt(this.props.match.params.id);
+
+    if (id !== this.props.currentUser.id) {
+      this.props.history.push(`/user/${this.props.currentUser.id}`);
+    }
+
     this.props.fetchAllTrips(id).then( (resp) => {
       this.setState({
         trips: resp.trips
@@ -81,8 +90,8 @@ render() {
                    </div>
                    <ul>
                      {allTrips[0].map( (trip, idx) => (
-                       <Link to={`/listings/${trip.host_id}`}>
-                         <li key={idx} className="trip-listings-container">
+                       <Link to={`/listings/${trip.host_id}`}  key={idx}>
+                         <li className="trip-listings-container">
                            <div
                              className="trip-img"
                              style={this.getImage(trip.host_pic)}>
@@ -107,8 +116,8 @@ render() {
                    </div>
                    <ul>
                      {allTrips[1].map( (trip, idx) => (
-                       <Link to={`/listings/${trip.trip_id}`}>
-                         <li key={idx} className="trip-listings-container">
+                       <Link to={`/listings/${trip.traveler_id}`}  key={idx}>
+                         <li className="trip-listings-container">
                            <div
                              className="trip-img"
                              style={this.getImage(trip.traveler_pic)}>

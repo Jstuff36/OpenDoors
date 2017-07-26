@@ -11,7 +11,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, UserProtectedRoute} from '../util/route_util';
 
 
 const App = () => (
@@ -20,7 +20,7 @@ const App = () => (
     <AuthRoute path="/signup" component={SignUpFormContainer} />
     <Route exact path="/" component={ListingMapContainer} />
     <ProtectedRoute path="/listings/:id" component={HostProfileContainer} />
-    <ProtectedRoute path="/user/:id" component={UserProfileContainer} />
+    <UserProtectedRoute path="/user/:id" component={UserProfileContainer} />
   </div>
 );
 
