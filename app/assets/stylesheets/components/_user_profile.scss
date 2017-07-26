@@ -58,7 +58,7 @@
   padding: 10px;
   color: #e2e1e1;
   background: rgba(0, 0, 0, 0.75);
-  font-size: 20px;
+  font-size: 25px;
   box-shadow: 0 0 5px #000000;
   border-radius: 5px;
 }
@@ -80,7 +80,37 @@
   border-radius: 5px;
   width: 50%;
   margin-right: 10px;
+}
 
+.trips-refs-heading {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.trip-img {
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 75px;
+  min-width: 55px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.trip-listings-container {
+  display: flex;
+  padding: 5px;
+}
+
+.trip-listings-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-listings-info-container div {
+  padding: 3px;
 }
 
 .user-references-container {

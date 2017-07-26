@@ -1,9 +1,26 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class UserNavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleListing = this.handleListing.bind(this);
   }
+
+  handleLogout(e) {
+    this.props.logout().then(
+      () => this.props.history.push({
+        pathname: `/login`
+    }));
+  }
+
+  handleListing(e) {
+    this.props.history.push({
+      pathname: '/'
+    });
+  }
+
 
   render() {
     return(
@@ -26,4 +43,4 @@ class UserNavBar extends React.Component {
   }
 }
 
-export default UserNavBar;
+export default withRouter(UserNavBar);

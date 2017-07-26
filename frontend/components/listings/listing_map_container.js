@@ -8,9 +8,10 @@ import {
   clearErrors
 } from '../../actions/listings_actions';
 
-const mapStateToProps = ( { listings } ) => ({
+const mapStateToProps = ( {session, listings } ) => ({
   listings: listings.listings,
   currentListing: listings.currentListing,
+  currentUser: session.currentUser,
   currentCity: listings.currentCity,
   errors: listings.errors
 });

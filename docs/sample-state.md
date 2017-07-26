@@ -47,7 +47,8 @@
       dates: ['09/14/2017', '09/21/2017']
       status: "confirmed",
       host_id: 3
-    }
+    },
+    errors: []
   }
 
   references: {

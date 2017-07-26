@@ -45,6 +45,7 @@ class ListingMap extends React.Component {
     return(
       <div className="listings-main-div">
         <ListingsNavBar
+          currentUserID={this.props.currentUser.id}
           receiveCity={this.props.receiveCity}
           history={this.props.history}
           logout={this.props.logout}/>

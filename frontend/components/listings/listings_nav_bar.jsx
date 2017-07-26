@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 class ListingsNavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentUserID: this.props.currentUserID,
       city: "San Francisco"
     };
     this.handleCityClick = this.handleCityClick.bind(this);
@@ -40,12 +42,16 @@ class ListingsNavBar extends React.Component {
             <span onClick={this.handleCityClick}>Casablanca</span>
           </div>
         </div>
-        <div className="nav-icons">
-          My Profile
-        </div>
-        <div className="nav-icons">
-          My Bookings
-        </div>
+        <Link to={`/user/${this.state.currentUserID}`}>
+          <div className="nav-icons">
+            My Profile
+          </div>
+        </Link>
+        <Link to={`/user/${this.state.currentUserID}`}>
+          <div className="nav-icons">
+            My Bookings
+          </div>
+        </Link>
         <div
           className="nav-icons"
           onClick={this.handleLogout}>
