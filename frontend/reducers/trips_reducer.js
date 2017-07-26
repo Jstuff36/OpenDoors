@@ -2,8 +2,8 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_TRIPS,
-  RECEIVE_ERRORS,
-  CLEAR_ERRORS
+  RECEIVE_TRIP_ERRORS,
+  CLEAR_TRIP_ERRORS
 } from '../actions/trips_actions';
 
 const noTrips = Object.freeze({
@@ -17,10 +17,10 @@ const TripsReducer = (state = noTrips, action) => {
     case RECEIVE_TRIPS:
       const trips = action.trips;
       return Object.assign({}, state, { trips });
-    case RECEIVE_ERRORS:
+    case RECEIVE_TRIP_ERRORS:
       const errors = action.errors;
       return merge({}, state, { errors });
-    case CLEAR_ERRORS:
+    case CLEAR_TRIP_ERRORS:
       return merge({}, state, { errors: []});
     default:
       return state;

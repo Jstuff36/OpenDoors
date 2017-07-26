@@ -161,6 +161,7 @@ class HostProfile extends React.Component {
                   shouldCloseOnOverlayClick={true}
                   overlayClassName="booking-overlay">
                   <BookingModal
+                    errors={this.props.errors}
                     modalState={this.state.modalState}
                     updateDate={this.updateDate}
                     updateBody={this.updateBody}

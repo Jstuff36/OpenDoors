@@ -9,6 +9,7 @@ import {
 
 const mapStateToProps = ( state, { match } ) => {
   return {
+  errors: state.trips.errors,
   currentListing: state.listings.listings[parseInt(match.params.id)],
   currentUser: state.session.currentUser
   };

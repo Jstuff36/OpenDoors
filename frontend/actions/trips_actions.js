@@ -1,8 +1,8 @@
 import * as TripsUtil from '../util/trips_api_util';
 
 export const RECEIVE_TRIPS = 'RECEIVE_TRIPS';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_TRIP_ERRORS = 'RECEIVE_TRIP_ERRORS';
+export const CLEAR_TRIP_ERRORS = 'CLEAR_TRIP_ERRORS';
 
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,
@@ -10,12 +10,12 @@ export const receiveTrips = trips => ({
 });
 
 export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_TRIP_ERRORS,
   errors
 });
 
 export const clearErrors = () => ({
-  type: CLEAR_ERRORS
+  type: CLEAR_TRIP_ERRORS
 });
 
 export const allTrips = (id) => dispatch => (
@@ -27,8 +27,10 @@ export const allTrips = (id) => dispatch => (
 );
 
 export const newTrip = (trip) => dispatch => (
-  TripsUtil.newTrip(trip).then( response => (
-    dispatch(clearErrors()),
-    err => dispatch(receiveErrors(err))
-  ))
+  TripsUtil.newTrip(trip).then( response => {
+      return dispatch(clearErrors());
+    },
+    err => {
+      return dispatch(receiveErrors(err.responseJSON));
+    })
 );
