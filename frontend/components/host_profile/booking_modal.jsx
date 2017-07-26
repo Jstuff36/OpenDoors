@@ -7,9 +7,16 @@ class BookingModal extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="booking-main-container">
+        <ul className="booking-errors-container">
+          {this.props.errors.map( (error, idx) => (
+            <li key={idx}
+              className="booking-errors">
+              {error === "User has already been taken" ? "Booking already requested" : error}
+            </li>
+          ))}
+        </ul>
         <div>
-          {this.props.errors}
         </div>
         <form
           className="booking-modal-container"

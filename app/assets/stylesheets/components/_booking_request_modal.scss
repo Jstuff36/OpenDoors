@@ -14,7 +14,7 @@
 .booking-modal {
   background: rgba(0, 0, 0, 0.85);
   max-width: 350px;
-  padding: 30px;
+  padding: 30px 20px 20px 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 3px lighten(#548072, 10%);
   color: #e2e1e1;
@@ -23,13 +23,16 @@
   top: 145px;
   width: 30%;
   height: 27%;
-
 }
 
 .booking-modal-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 90%;
+}
+
+.booking-main-container {
+  height: 110%;
 }
 
 .booking-modal-heading-container {
@@ -39,7 +42,12 @@
   color: lighten(#548072, 10%);
 }
 
-.send-booking {
+.booking-errors-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -25px;
+  padding: 3px;
 
 }
 
@@ -58,10 +66,9 @@
 
 .booking-body {
   border: solid lighten(#548072, 10%);
-  height: 100px;
+  height: 55%;
   border-width: 1px;
   border-radius: 5px;
   padding: 10px;
-  height: 200px;
   overflow: scroll;
 }
