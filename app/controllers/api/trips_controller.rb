@@ -27,8 +27,9 @@ class Api::TripsController < ApplicationController
   end
 
   def destroy
-    trip = Trip.find(trips_params[:id])
-    trip.destroy
+    @trip = Trip.find(trips_params[:id])
+    @trip.destroy
+    render "api/trips/create"
   end
 
   private

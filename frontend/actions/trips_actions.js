@@ -38,8 +38,8 @@ export const updateTrip = (trip) => dispatch => (
 );
 
 export const deleteTrip = (id) => dispatch => (
-  TripsUtil.deleteTrip(id).then(response => (
-    dispatch(deleteSingleTrip(id))
+  TripsUtil.deleteTrip(id).then(trip => (
+    dispatch(deleteSingleTrip(trip.id))
   ))
 );
 

@@ -5,7 +5,8 @@ import { allTrips, updateTrip, deleteTrip } from '../../actions/trips_actions';
 import { updateUser } from '../../actions/session_actions';
 
 const mapStateToProps = ( state, { match } ) => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  currentTrips: state.trips.trips
 });
 
 const mapDispatchToProps = (dispatch) => ({

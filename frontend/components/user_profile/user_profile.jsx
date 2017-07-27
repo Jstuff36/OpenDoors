@@ -32,6 +32,10 @@ class UserProfile extends React.Component {
     this.handleTripStatus = this.handleTripStatus.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+
+  }
+
   componentDidMount() {
     const id = parseInt(this.props.match.params.id);
     this.props.fetchAllTrips(id).then( (resp) => {
@@ -67,7 +71,7 @@ class UserProfile extends React.Component {
   }
 
   seperateHostingsAndUserTrips() {
-    let allTrips = this.state.trips;
+    let allTrips = this.props.currentTrips;
     let trips = [];
     let hostings = [];
     const id = parseInt(this.props.match.params.id);
