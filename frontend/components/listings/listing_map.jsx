@@ -31,8 +31,16 @@ class ListingMap extends React.Component {
 
   fetchAllListings(city) {
     this.props.allListings(city).then( () => {
+      let allListings = this.props.listings;
+      let keys = Object.keys(allListings);
+      let currentUser = this.props.currentUser;
+      for (let i = 0; i <= keys.length -1; i++) {
+        if (allListings[keys[i]].id === currentUser.id) {
+          delete allListings[keys[i]];
+        }
+      }
       this.setState({
-        listings: this.props.listings,
+        listings: allListings,
       });
     });
   }

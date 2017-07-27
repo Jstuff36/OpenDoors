@@ -255,16 +255,8 @@ class Map extends React.Component {
     this.map = new google.maps.Map(map, options);
     this.listenForMove();
     let keys = Object.keys(this.props.listings);
-    if (this.props.currentUser) {
-      for (let i = 0; i <= keys.length -1; i++) {
-        if (this.props.listings[keys[i]].id === this.props.currentUser.id) {
-          delete this.props.listings[keys[i]];
-        }
-    }
-    }
-    let newKeys = Object.keys(this.props.listings);
-    for (let i = 0; i <= newKeys.length - 1; i++) {
-      this.addMarker(this.props.listings[newKeys[i]]);
+    for (let i = 0; i <= keys.length - 1; i++) {
+      this.addMarker(this.props.listings[keys[i]]);
     }
   }
 
