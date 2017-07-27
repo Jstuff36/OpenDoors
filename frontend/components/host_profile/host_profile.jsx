@@ -297,7 +297,9 @@ class HostProfile extends React.Component {
                 <ul>
                   {Object.keys(references).map( (key, idx) => (
                     <li key={idx}>
-                      {references[key].comment}
+                      <div>
+                        {references[key].comment}
+                      </div>
                     </li>
                   ))}
                 </ul>

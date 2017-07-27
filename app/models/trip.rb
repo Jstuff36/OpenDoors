@@ -1,5 +1,5 @@
 class Trip < ApplicationRecord
-  validates :user_id, :dates, :status, :host_id, :message, presence: true
+  validates :user_id, :status, :host_id, :message, presence: true
   validates :user_id, uniqueness: { scope: :host_id }
   validate :date_check
 

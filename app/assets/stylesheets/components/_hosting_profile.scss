@@ -5,10 +5,10 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   width: 100%;
   background-attachment: fixed;
-  position: fixed;
   z-index: -1;
   box-shadow: 0 0 5px #000000;
 }
@@ -51,8 +51,6 @@
 }
 
 .host-info-container {
-  display: flex;
-  flex-direction: column;
   width: 66.66%;
   margin: 30px 85px 30px 30px;
   border-radius: 5px;
@@ -137,8 +135,9 @@
 .host-info-item-title {
   background: black;
   padding: 15px;
-  width: 100px;
+  min-width: 100px;
   border-radius: 5px 0 0 5px;
+  height: 20px;
 }
 
 .host-info-item-content {
@@ -146,6 +145,7 @@
   width: 100%;
   padding: 15px;
   border-radius: 0 5px 5px 0;
+  height: 20px;
 }
 
 .host-detail-info-container {
