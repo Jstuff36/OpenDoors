@@ -16,6 +16,21 @@ class Api::TripsController < ApplicationController
 
   end
 
+  def update
+    @trip = Trip.find(params[:id])
+    if @trip.update_attributes(trips_params)
+      render "api/trips/update"
+    else
+      render json: @trip.errors.full_messages, status: 422
+    end
+
+  end
+
+  def destroy
+    trip = Trip.find(trips_params[:id])
+    trip.destroy
+  end
+
   private
 
   def trips_params

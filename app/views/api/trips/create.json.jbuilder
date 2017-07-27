@@ -1,1 +1,1 @@
-json.extract! @trip, :status
+json.extract! @trip, :id, :status

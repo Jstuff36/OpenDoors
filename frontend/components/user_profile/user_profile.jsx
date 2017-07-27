@@ -34,7 +34,6 @@ class UserProfile extends React.Component {
 
   componentDidMount() {
     const id = parseInt(this.props.match.params.id);
-
     this.props.fetchAllTrips(id).then( (resp) => {
       this.setState({
         trips: resp.trips
@@ -104,13 +103,13 @@ class UserProfile extends React.Component {
     let status = $(e.target).text();
     let id = parseInt(e.target.id);
     if (status === "Approve") {
-      this.approveTrip(
+      this.props.approveTrip(
         {
           id: id,
           status: "Approved"
         });
     } else {
-      this.removeTrip( {id: id} );
+      this.props.deleteTrip( {id: id} );
     }
   }
 
@@ -157,6 +156,8 @@ render() {
                        Upcoming Trips
                      </div>
                      <ul>
+                       { (allTrips[0].length === 0) ? "No Upcoming Trips" :
+                      <div>
                        {allTrips[0].map( (trip, idx) => (
                            <li key={idx} className="trip-listings-container">
                              <Link to={`/listings/${trip.host_id}`}>
@@ -172,17 +173,26 @@ render() {
                                <div>
                                  {trip.dates[0] + "-" + trip.dates[1]}
                                </div>
-                               <div>
-                                 {trip.status}
+                               <div className="trip-status">
+                                 <div>
+                                   Trip Status:
+                                 </div>
+                                 <div>
+                                   {trip.status}
+                                 </div>
                                </div>
                              </div>
                            </li>
                        ))}
+                       </div>
+                     }
                      </ul>
                      <div className="trips-refs-heading">
                        Upcoming Hostings
                      </div>
                      <ul>
+                       { (allTrips[1].length === 0) ? "No Upcoming Hosting" :
+                      <div>
                        {allTrips[1].map( (trip, idx) => (
                            <li  key={idx} className="trip-listings-container">
                              <Link to={`/listings/${trip.traveler_id}`}>
@@ -198,6 +208,14 @@ render() {
                                <div>
                                  {trip.dates[0] + "-" + trip.dates[1]}
                                </div>
+                               <div className="trip-status">
+                                 <div>
+                                   Trip Status:
+                                 </div>
+                                 <div>
+                                   {trip.status}
+                                 </div>
+                               </div>
                                  { (trip.status === "Pending") ?
                                    (<div>
                                      <button
@@ -211,7 +229,10 @@ render() {
                                        Decline
                                      </button>
                                    </div>) : (
-                                    <div>
+                                    <div className="cancel-button">
+                                      <div>
+                                        Need to Cancel?
+                                      </div>
                                       <button
                                         id = {trip.id}
                                         onClick={this.handleTripStatus}>
@@ -222,6 +243,8 @@ render() {
                              </div>
                            </li>
                        ))}
+                     </div>
+                    }
                      </ul>
                      <div>
 

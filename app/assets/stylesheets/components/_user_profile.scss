@@ -171,6 +171,28 @@
   background: rgb(0,0,0);
 }
 
+.trip-status {
+  display: flex;
+  margin-left: -9px;
+}
+
+.cancel-button {
+  display: flex;
+  margin-left: -10px
+}
+
+.cancel-button button {
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  width: 60px;
+  text-align: center;
+}
+
+.cancel-button button:hover {
+  background: rgba(256, 256, 256, 0.25)
+}
+
 .edit-profile-submit {
   padding: 10px 35px;
   border: solid;
