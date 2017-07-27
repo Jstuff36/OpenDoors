@@ -14,6 +14,7 @@ class UserProfile extends React.Component {
       currentUser: this.props.currentUser,
       trips: "",
       userInfo: {
+        id: this.props.currentUser.id,
         address: this.props.currentUser.address,
         zipcode: this.props.currentUser.zipcode,
         languages: this.props.currentUser.languages,
@@ -26,6 +27,7 @@ class UserProfile extends React.Component {
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.seperateHostingsAndUserTrips = this.seperateHostingsAndUserTrips.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.geocodeAddress = this.geocodeAddress.bind(this);
   }
 
   componentDidMount() {
@@ -52,11 +54,11 @@ class UserProfile extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      userInfo: {
-
-      [field]: e.currentTarget.value }
-    });
+    return e => {
+      let  selectedfield = this.state.userInfo;
+      selectedfield[field] = e.currentTarget.value;
+      this.setState({selectedfield});
+    };
   }
 
   getImage(imageUrl) {
@@ -79,7 +81,20 @@ class UserProfile extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+      e.preventDefault();
+      this.geocodeAddress(this.state.userInfo.address, this.state.userInfo.zipcode);
+  }
+
+  geocodeAddress(address, zipcode) {
+    let detailedAddress = address.concat(" ").concat(zipcode);
+    var geocoder = new google.maps.Geocoder();
+    let userInfo = this.state.userInfo;
+    let updateUser = this.props.updateUser;
+    geocoder.geocode({'address': detailedAddress}, function(results, status) {
+      let latLng = results[0].geometry.location;
+      userInfo.location = [latLng.lat(), latLng.lng()];
+      updateUser(userInfo);
+    });
   }
 
 render() {

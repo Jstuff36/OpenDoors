@@ -6,8 +6,6 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    #change the location!
-    @user.location = [37.7749, 122.4194]
     if @user.save
       sign_in(@user)
       render "api/users/show"
@@ -17,10 +15,23 @@ class Api::UsersController < ApplicationController
 
   end
 
+  def update
+    @user = User.find(params[:id])
+    debugger;
+    if @user.update_attributes(user_params)
+      render "api/users/show"
+    else
+      render json: @user.error.full_messages, status: 422
+    end
+  end
+
+
+
   private
 
   def user_params
     params.require(:user).permit(
+      :id,
       :email,
       :password,
       :firstname,
@@ -30,7 +41,10 @@ class Api::UsersController < ApplicationController
       :age,
       :occupation,
       :about,
-      # location: [],
+      :sex,
+      :zipcode,
+      :address,
+      location: [],
       languages: []
     )
   end
