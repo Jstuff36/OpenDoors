@@ -244,7 +244,7 @@ render() {
                                       <button
                                         id = {trip.id}
                                         onClick={this.handleTripStatus}>
-                                        Decline
+                                        Cancel
                                       </button>
                                     </div>)
                                  }

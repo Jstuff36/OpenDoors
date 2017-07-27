@@ -26,6 +26,16 @@ class User < ApplicationRecord
            through: :reservations,
            source: :traveler
 
+  has_many :left_references,
+           class_name: "Trip",
+           foreight_key: :user_id,
+           primary_key: :id
+
+  has_many :references,
+           class_name: "Reference",
+           foreign_key: :host_id,
+           primary_key: :id
+
 
   def password=(password)
     @password = password

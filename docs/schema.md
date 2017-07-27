@@ -33,7 +33,8 @@ message         | text      | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-trip_id         | integer   | not null, foreign key (references trips), indexed
+user_id         | integer   | not null, foreign key (references users), indexed
+host_id         | integer   | not null, foreign key (references users), indexed
 comments        | text      | not null
 
 ### uniqueness in combination constraint on user_id and trip_id
