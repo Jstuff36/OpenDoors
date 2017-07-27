@@ -133,7 +133,7 @@ trip1 = Trip.new(
   user_id: user1.id,
   host_id: user2.id,
   dates: ["09/14/2017", "09/17/2017"],
-  status: "pending",
+  status: "Pending",
   message: "Hi, you're place looks wonderful would you mind hosting us?"
 )
 
@@ -143,7 +143,7 @@ trip2 = Trip.new(
   user_id: user1.id,
   host_id: user3.id,
   dates: ["08/14/2017", "08/17/2017"],
-  status: "pending",
+  status: "Pending",
   message: "Hi, would you mind sending us a few more photos"
 )
 
@@ -153,7 +153,7 @@ trip3 = Trip.new(
   user_id: user2.id,
   host_id: user3.id,
   dates: ["09/4/2017", "09/17/2017"],
-  status: "pending",
+  status: "Pending",
   message: "Hi, is there a bus close by to the city?"
 )
 
@@ -163,7 +163,7 @@ trip4 = Trip.new(
   user_id: user2.id,
   host_id: user1.id,
   dates: ["09/10/2017", "09/12/2017"],
-  status: "pending",
+  status: "Pending",
   message: "Coming to stay with you this time!"
 )
 

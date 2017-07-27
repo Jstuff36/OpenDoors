@@ -86,7 +86,7 @@ class HostProfile extends React.Component {
       { message: modalState.body },
       { user_id: this.state.currentUser.id },
       { host_id: this.state.currentListing.id },
-      { status: "pending" }
+      { status: "Pending" }
     );
     this.props.newTrip(trip).then( () => (
       this.handleCloseModal()
@@ -119,8 +119,7 @@ class HostProfile extends React.Component {
       interest,
       picture,
       occupation,
-      age_sex,
-      join_date
+      age_sex
     } = this.state.currentListing;
 
     if (this.state.action.host_profile) {
@@ -189,14 +188,6 @@ class HostProfile extends React.Component {
                   </div>
                   <div className="host-info-item-content">
                     {age_sex ? age_sex : "Age/Sex Not listed"}
-                  </div>
-                </div>
-                <div className="host-personal-info-item">
-                  <div className="host-info-item-title">
-                    Join Date:
-                  </div>
-                  <div className="host-info-item-content">
-                    {join_date ? join_date: "Join date not available"}
                   </div>
                 </div>
                 <div className="host-personal-info-item">

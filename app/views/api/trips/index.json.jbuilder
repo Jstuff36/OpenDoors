@@ -1,5 +1,6 @@
 @trips.each do |trip|
   json.set! trip.id do
+    json.id trip.id
     json.host_firstname trip.host.firstname
     json.host_lastname trip.host.lastname
     json.host_pic trip.host.picture

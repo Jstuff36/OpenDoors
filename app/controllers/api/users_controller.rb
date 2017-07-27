@@ -17,7 +17,6 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    debugger;
     if @user.update_attributes(user_params)
       render "api/users/show"
     else
@@ -44,6 +43,7 @@ class Api::UsersController < ApplicationController
       :sex,
       :zipcode,
       :address,
+      :interest,
       location: [],
       languages: []
     )

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
 import Map from './map';
 import ListingsNavBar from './listings_nav_bar';
+import ListingNavBarNotLoggedIn from './listings_nav_bar_not_logged_in';
 
 const CITY_CENTERS = {
   "San Francisco": { lat: 37.7758, lng: -122.435 },
@@ -44,12 +45,18 @@ class ListingMap extends React.Component {
     }
     return(
       <div className="listings-main-div">
+        { this.props.currentUser ?
         <ListingsNavBar
           currentUserID={this.props.currentUser.id}
           receiveCity={this.props.receiveCity}
           history={this.props.history}
-          logout={this.props.logout}/>
+          logout={this.props.logout}/> :
+        <ListingNavBarNotLoggedIn
+          receiveCity={this.props.receiveCity}
+          history={this.props.history}/>
+        }
         <Map
+          currentUser={this.props.currentUser}
           logout={this.props.logout}
           center={mapCenter}
           listings={this.state.listings}/>

@@ -19,3 +19,20 @@ export const newTrip = (trip) => (
     }
   })
 );
+
+export const updateTrip = (data) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/trips/${data.id}`,
+    data: {
+      trips: data
+    }
+  })
+);
+
+export const deleteTrip = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/trips/${id}`
+  })
+);

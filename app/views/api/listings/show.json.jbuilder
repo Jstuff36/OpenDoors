@@ -8,4 +8,8 @@ json.extract! @listing,
               :hosting,
               :languages,
               :country,
-              :picture
+              :picture,
+              :age,
+              :sex,
+              :occupation,
+              :interest

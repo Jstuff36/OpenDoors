@@ -21,13 +21,15 @@ class UserProfile extends React.Component {
         age: this.props.currentUser.age,
         sex: this.props.currentUser.sex,
         occupation: this.props.currentUser.occupation,
-        about: this.props.currentUser.about
+        about: this.props.currentUser.about,
+        interest: this.props.currentUser.interest
       }
     };
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.seperateHostingsAndUserTrips = this.seperateHostingsAndUserTrips.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.geocodeAddress = this.geocodeAddress.bind(this);
+    this.handleTripStatus = this.handleTripStatus.bind(this);
   }
 
   componentDidMount() {
@@ -97,6 +99,22 @@ class UserProfile extends React.Component {
     });
   }
 
+  handleTripStatus(e) {
+    e.preventDefault();
+    let status = $(e.target).text();
+    let id = parseInt(e.target.id);
+    if (status === "Approve") {
+      this.approveTrip(
+        {
+          id: id,
+          status: "Approved"
+        });
+    } else {
+      this.removeTrip( {id: id} );
+    }
+  }
+
+
 render() {
   const {
     firstname,
@@ -140,12 +158,13 @@ render() {
                      </div>
                      <ul>
                        {allTrips[0].map( (trip, idx) => (
-                         <Link to={`/listings/${trip.host_id}`}  key={idx}>
-                           <li className="trip-listings-container">
-                             <div
-                               className="trip-img"
-                               style={this.getImage(trip.host_pic)}>
-                             </div>
+                           <li key={idx} className="trip-listings-container">
+                             <Link to={`/listings/${trip.host_id}`}>
+                               <div
+                                 className="trip-img"
+                                 style={this.getImage(trip.host_pic)}>
+                               </div>
+                            </Link>
                              <div className="trip-listings-info-container">
                                <div className="trip-name">
                                  {trip.host_firstname + " " + trip.host_lastname }
@@ -158,7 +177,6 @@ render() {
                                </div>
                              </div>
                            </li>
-                        </Link>
                        ))}
                      </ul>
                      <div className="trips-refs-heading">
@@ -166,12 +184,13 @@ render() {
                      </div>
                      <ul>
                        {allTrips[1].map( (trip, idx) => (
-                         <Link to={`/listings/${trip.traveler_id}`}  key={idx}>
-                           <li className="trip-listings-container">
-                             <div
-                               className="trip-img"
-                               style={this.getImage(trip.traveler_pic)}>
-                             </div>
+                           <li  key={idx} className="trip-listings-container">
+                             <Link to={`/listings/${trip.traveler_id}`}>
+                               <div
+                                 className="trip-img"
+                                 style={this.getImage(trip.traveler_pic)}>
+                               </div>
+                             </Link>
                              <div className="trip-listings-info-container">
                                <div className="trip-name">
                                  {trip.traveler_firstname + " " + trip.traveler_lastname }
@@ -179,12 +198,29 @@ render() {
                                <div>
                                  {trip.dates[0] + "-" + trip.dates[1]}
                                </div>
-                               <div>
-                                 {trip.status}
-                               </div>
+                                 { (trip.status === "Pending") ?
+                                   (<div>
+                                     <button
+                                       id = {trip.id}
+                                       onClick={this.handleTripStatus}>
+                                       Approve
+                                     </button>
+                                     <button
+                                       id = {trip.id}
+                                       onClick={this.handleTripStatus}>
+                                       Decline
+                                     </button>
+                                   </div>) : (
+                                    <div>
+                                      <button
+                                        id = {trip.id}
+                                        onClick={this.handleTripStatus}>
+                                        Decline
+                                      </button>
+                                    </div>)
+                                 }
                              </div>
                            </li>
-                        </Link>
                        ))}
                      </ul>
                      <div>
@@ -311,6 +347,18 @@ render() {
                       type="text"
                       placeholder="About"
                       onChange={this.update('about')}
+                      />
+                  </div>
+                  <div>
+                    <div className="input-type">
+                      Interest:
+                    </div>
+                    <input
+                      className=""
+                      value={this.state.userInfo.interest}
+                      type="text"
+                      placeholder="Interest"
+                      onChange={this.update('interest')}
                       />
                   </div>
                   <input
