@@ -156,7 +156,10 @@ render() {
                        Upcoming Trips
                      </div>
                      <ul>
-                       { (allTrips[0].length === 0) ? "No Upcoming Trips" :
+                       { (allTrips[0].length === 0) ?
+                        <div className="no-trips-hostings">
+                         "No Upcoming Trips"
+                        </div> :
                       <div>
                        {allTrips[0].map( (trip, idx) => (
                            <li key={idx} className="trip-listings-container">
@@ -191,7 +194,10 @@ render() {
                        Upcoming Hostings
                      </div>
                      <ul>
-                       { (allTrips[1].length === 0) ? "No Upcoming Hosting" :
+                       { (allTrips[1].length === 0) ?
+                        <div className="no-trips-hostings">
+                         "No Upcoming Hosting"
+                       </div> :
                       <div>
                        {allTrips[1].map( (trip, idx) => (
                            <li  key={idx} className="trip-listings-container">
@@ -217,13 +223,15 @@ render() {
                                  </div>
                                </div>
                                  { (trip.status === "Pending") ?
-                                   (<div>
+                                   (<div className="trip-pending-buttons">
                                      <button
+                                       className="approve-trip"
                                        id = {trip.id}
                                        onClick={this.handleTripStatus}>
                                        Approve
                                      </button>
                                      <button
+                                       className="decline-trip"
                                        id = {trip.id}
                                        onClick={this.handleTripStatus}>
                                        Decline

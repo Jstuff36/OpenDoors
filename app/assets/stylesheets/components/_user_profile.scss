@@ -178,19 +178,54 @@
 
 .cancel-button {
   display: flex;
-  margin-left: -10px
+  margin-left: -10px;
 }
 
 .cancel-button button {
   border: solid;
+  height: 29px;
   border-width: 1px;
   border-radius: 5px;
-  width: 60px;
+  width: 62px;
   text-align: center;
+  color: lighten(rgba(189, 58, 58, 50), 10%)
+
 }
 
 .cancel-button button:hover {
-  background: rgba(256, 256, 256, 0.25)
+  background: rgba(86, 31, 21, 0.5);
+}
+
+.trip-pending-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -10px;
+}
+
+.trip-pending-buttons button {
+  border: solid 1px;
+  border-radius: 5px;
+  width: 62px;
+  padding: 5px;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.approve-trip {
+  color: lighten(#548072, 10%);
+  border-color: lighten(#548072, 10%);
+}
+
+.approve-trip:hover {
+  background: rgba(49, 80, 70, 0.5);
+}
+
+.decline-trip {
+  color: lighten(rgba(189, 58, 58, 50), 10%)
+}
+
+.decline-trip:hover {
+  background: rgba(86, 31, 21, 0.5);
 }
 
 .edit-profile-submit {
@@ -200,4 +235,8 @@
   border-radius: 5px;
   margin: 0 30px 20px auto;
   font-size: 20px;
+}
+
+.no-trips-hostings {
+  padding: 20px;
 }

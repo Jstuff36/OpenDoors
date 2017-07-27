@@ -150,8 +150,8 @@ trip2 = Trip.new(
 trip2.save
 
 trip3 = Trip.new(
-  user_id: user2.id,
-  host_id: user3.id,
+  user_id: user4.id,
+  host_id: user1.id,
   dates: ["09/4/2017", "09/17/2017"],
   status: "Pending",
   message: "Hi, is there a bus close by to the city?"
