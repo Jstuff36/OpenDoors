@@ -28,7 +28,7 @@ class User < ApplicationRecord
 
   has_many :left_references,
            class_name: "Trip",
-           foreight_key: :user_id,
+           foreign_key: :user_id,
            primary_key: :id
 
   has_many :references,

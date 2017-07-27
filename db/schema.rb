@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20170727163358) do
     t.string "host_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["host_id"], name: "index_references_on_host_id", unique: true
-    t.index ["user_id"], name: "index_references_on_user_id", unique: true
+    t.index ["host_id"], name: "index_references_on_host_id"
+    t.index ["user_id"], name: "index_references_on_user_id"
   end
 
   create_table "trips", force: :cascade do |t|

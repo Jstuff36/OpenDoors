@@ -8,6 +8,7 @@
 # user: {email: "myemail", password: "password", firstname: "justin", lastname: "white", city: "Cucuta", country: "Colombia", location: [8, 72.5]}
 User.delete_all
 Trip.delete_all
+Reference.delete_all
 
 user1 = User.new(
   firstname: "Justin",
@@ -168,3 +169,43 @@ trip4 = Trip.new(
 )
 
 trip4.save
+
+reference1 = Reference.new(
+  user_id: user1.id,
+  host_id: user2.id,
+  comment: "Fantastic host. Definitely would stay again!"
+)
+
+reference1.save!
+
+reference2 = Reference.new(
+  user_id: user2.id,
+  host_id: user1.id,
+  comment: "Great host! They even cooked for us"
+)
+
+reference2.save!
+
+reference3 = Reference.new(
+  user_id: user3.id,
+  host_id: user1.id,
+  comment: "Best host we've stayed at. Definitely would stay again!. ! They even cooked for us"
+)
+
+reference3.save!
+
+reference4 = Reference.new(
+  user_id: user4.id,
+  host_id: user1.id,
+  comment: "Host knows how to have a good time! We even went out to the bars together"
+)
+
+reference4.save!
+
+reference5 = Reference.new(
+  user_id: user3.id,
+  host_id: user2.id,
+  comment: "Average stay. The house was not the cleanist or most organized"
+)
+
+reference5.save!

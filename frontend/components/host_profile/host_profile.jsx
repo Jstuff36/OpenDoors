@@ -19,6 +19,7 @@ class HostProfile extends React.Component {
       showModal: false,
       modalContent: [],
       currentListing: "",
+      hostReferences: "",
       currentUser: this.props.currentUser,
       modalState: {
         date: "",
@@ -38,6 +39,11 @@ class HostProfile extends React.Component {
     this.props.fetchSingleListing(id).then( (resp) => {
       this.setState({
         currentListing: resp.currentListing
+      });
+    });
+    this.props.fetchAllReferences(id).then( (resp) => {
+      this.setState({
+        hostReferences: resp.references
       });
     });
   }
@@ -234,6 +240,7 @@ class HostProfile extends React.Component {
         </div>
       );
     } else if (this.state.action.host_references) {
+      const references = this.state.hostReferences;
       return(
         <div>
           <HostNavBar
@@ -285,6 +292,15 @@ class HostProfile extends React.Component {
                   className="host-links">
                   Location
                 </button>
+              </div>
+              <div>
+                <ul>
+                  {Object.keys(references).map( (key, idx) => (
+                    <li key={idx}>
+                      {references[key].comment}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

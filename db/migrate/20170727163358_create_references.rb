@@ -6,7 +6,7 @@ class CreateReferences < ActiveRecord::Migration[5.1]
       t.string :host_id, null: false
       t.timestamps
     end
-    add_index :references, :user_id, unique: true
-    add_index :references, :host_id, unique: true
+    add_index :references, :user_id
+    add_index :references, :host_id
   end
 end

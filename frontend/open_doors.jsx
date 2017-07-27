@@ -8,7 +8,9 @@ import Root from './components/root';
 import * as utils from './util/session_api_util';
 import * as listingUtils from './util/listing_api_util';
 import * as tripsUtils from './util/trips_api_util';
+import * as referencesUtils from './util/references_api_util';
 import { allTrips } from './actions/trips_actions';
+import { allReferences } from './actions/references_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -27,7 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 });
 
+// testing
 window.util = utils;
 window.listingUtil = listingUtils;
 window.tripsUtil = tripsUtils;
 window.allTrips = allTrips;
+window.referencesUtil = referencesUtils;
+window.allReferences = allReferences;

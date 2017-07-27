@@ -1,4 +1,5 @@
 class Reference < ApplicationRecord
+
   validates :comment, :user_id, :host_id, null: false
   validates_uniqueness_of :user_id, scope: :host_id
 
@@ -11,5 +12,4 @@ class Reference < ApplicationRecord
              class_name: "User",
              foreign_key: :user_id,
              primary_key: :id
-
 end
