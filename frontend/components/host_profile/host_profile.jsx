@@ -22,7 +22,8 @@ class HostProfile extends React.Component {
       hostReferences: "",
       currentUser: this.props.currentUser,
       modalState: {
-        date: "",
+        startDate: "",
+        endStart: "",
         body: ""
       }
     };
@@ -30,7 +31,8 @@ class HostProfile extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateDate = this.updateDate.bind(this);
+    this.updateStartDate = this.updateStartDate.bind(this);
+    this.updateEndDate = this.updateEndDate.bind(this);
     this.updateBody = this.updateBody.bind(this);
   }
 
@@ -62,10 +64,18 @@ class HostProfile extends React.Component {
     };
   }
 
-  updateDate() {
+  updateStartDate() {
     return e => {
       const newState = merge({}, this.state);
-      newState.modalState.date = e.currentTarget.value;
+      newState.modalState.startDate = e.currentTarget.value;
+      this.setState(newState);
+    };
+  }
+
+  updateEndDate() {
+    return e => {
+      const newState = merge({}, this.state);
+      newState.modalState.endDate = e.currentTarget.value;
       this.setState(newState);
     };
   }
@@ -88,7 +98,7 @@ class HostProfile extends React.Component {
     e.preventDefault();
     const modalState = this.state.modalState;
     const trip = merge(
-      { dates: [modalState.date] },
+      { dates: [modalState.startDate, modalState.endDate] },
       { message: modalState.body },
       { user_id: this.state.currentUser.id },
       { host_id: this.state.currentListing.id },
@@ -168,7 +178,8 @@ class HostProfile extends React.Component {
                   <BookingModal
                     errors={this.props.errors}
                     modalState={this.state.modalState}
-                    updateDate={this.updateDate}
+                    updateStartDate={this.updateStartDate}
+                    updateEndDate={this.updateEndDate}
                     updateBody={this.updateBody}
                     handleSubmit={this.handleSubmit}/>
                 </Modal>
@@ -277,7 +288,13 @@ class HostProfile extends React.Component {
                   onRequestClose={this.handleCloseModal}
                   shouldCloseOnOverlayClick={true}
                   overlayClassName="booking-overlay">
-                  <BookingModal />
+                  <BookingModal
+                    errors={this.props.errors}
+                    modalState={this.state.modalState}
+                    updateStartDate={this.updateStartDate}
+                    updateEndDate={this.updateEndDate}
+                    updateBody={this.updateBody}
+                    handleSubmit={this.handleSubmit}/>
                 </Modal>
               </div>
               <div className="host-info-nav-container">
@@ -345,7 +362,13 @@ class HostProfile extends React.Component {
                   onRequestClose={this.handleCloseModal}
                   shouldCloseOnOverlayClick={true}
                   overlayClassName="booking-overlay">
-                  <BookingModal />
+                  <BookingModal
+                    errors={this.props.errors}
+                    modalState={this.state.modalState}
+                    updateStartDate={this.updateStartDate}
+                    updateEndDate={this.updateEndDate}
+                    updateBody={this.updateBody}
+                    handleSubmit={this.handleSubmit}/>
                 </Modal>
               </div>
               <div className="host-info-nav-container">

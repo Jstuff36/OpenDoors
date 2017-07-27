@@ -178,7 +178,7 @@ render() {
                                  {trip.host_firstname + " " + trip.host_lastname }
                                </div>
                                <div>
-                                 {trip.dates[0] + "-" + trip.dates[1]}
+                                 {trip.dates[0] + " To " + trip.dates[1]}
                                </div>
                                <div className="trip-status">
                                  <div>
@@ -216,7 +216,7 @@ render() {
                                  {trip.traveler_firstname + " " + trip.traveler_lastname }
                                </div>
                                <div>
-                                 {trip.dates[0] + "-" + trip.dates[1]}
+                                 {trip.dates[0] + " To " + trip.dates[1]}
                                </div>
                                <div className="trip-status">
                                  <div>

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -22,13 +21,19 @@
   right: 85px;
   top: 145px;
   width: 30%;
-  height: 27%;
+  min-width: 400px;
+  height: 200px;
 }
 
 .booking-modal-container {
   display: flex;
   flex-direction: column;
   height: 90%;
+}
+
+.booking-modal-heading-container div {
+  margin-top: 3px;
+  margin-right: 5px;
 }
 
 .booking-main-container {
@@ -65,8 +70,9 @@
 }
 
 .booking-body {
+  color: lighten(#548072, 10%);
   border: solid lighten(#548072, 10%);
-  height: 55%;
+  height: 150px;
   border-width: 1px;
   border-radius: 5px;
   padding: 10px;
