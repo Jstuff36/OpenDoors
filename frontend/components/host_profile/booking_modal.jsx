@@ -24,10 +24,10 @@ class BookingModal extends React.Component {
           <div className="booking-modal-heading-container">
             <input
               className="booking-dates booking_placeholder"
-              type="text"
+              type="date"
               value={this.props.modalState.date}
               onChange={this.props.updateDate()}
-              placeholder="Date: dd/mm/yy"/>
+              placeholder="Start Date:"/>
             <input
               className="send-booking booking_placeholder"
               type="submit"
