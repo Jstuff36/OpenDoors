@@ -26,7 +26,6 @@ const TripsReducer = (state = noTrips, action) => {
       return Object.assign({}, state, { errors: []});
     case RECEIVE_SINGLE_TRIP:
       const trip = action.trip;
-      console.log("hi");
       return merge({}, state, { trips: {[trip.id]: trip} });
     case DELETE_TRIP:
       const id = action.id;

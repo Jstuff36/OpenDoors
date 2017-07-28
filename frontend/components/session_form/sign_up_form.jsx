@@ -40,7 +40,6 @@ class SignUpForm extends React.Component {
       user["location"] = [user["location"]];
       this.props.signup(user).then(
         () => {
-          console.log(this.props);
           this.props.history.push({
           pathname: `/currentUser`
         });
