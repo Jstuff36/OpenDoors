@@ -20,10 +20,15 @@ class NewReferenceModal extends React.Component {
           className="reference-modal-form-container"
           onSubmit={this.props.handleNewReference}>
           <div className="reference-modal-heading-container">
-            <input
-              className="send-reference booking_placeholder"
-              type="submit"
-              value="Send"/>
+            <div className="reference-heading-container">
+              <div>
+                New Reference
+              </div>
+              <input
+                className="send-reference booking_placeholder"
+                type="submit"
+                value="Send"/>
+            </div>
             <textarea
               value={this.props.referenceState.comment}
               className="reference-comment booking_placeholder"

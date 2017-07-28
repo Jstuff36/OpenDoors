@@ -3,7 +3,8 @@ import HostProfile from './host_profile';
 import { logout } from '../../actions/session_actions';
 import {
   newTrip,
-  clearTripErrors
+  clearTripErrors,
+  receiveErrors
  } from '../../actions/trips_actions';
 import {
   singleListing,
@@ -30,7 +31,8 @@ const mapDispatchToProps = (dispatch) => ({
   clearErrors: () => dispatch(clearErrors()),
   fetchAllReferences: (id) => dispatch(allReferences(id)),
   createNewReference: (reference) => dispatch(newReference(reference)),
-  clearTripErrors: () => dispatch(clearTripErrors())
+  clearTripErrors: () => dispatch(clearTripErrors()),
+  newTripError: (error) => dispatch(receiveErrors(error))
 });
 
 export default connect(

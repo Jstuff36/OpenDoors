@@ -16,8 +16,6 @@ class BookingModal extends React.Component {
             </li>
           ))}
         </ul>
-        <div>
-        </div>
         <form
           className="booking-modal-container"
           onSubmit={this.props.handleSubmit}>

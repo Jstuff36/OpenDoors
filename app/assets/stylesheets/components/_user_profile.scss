@@ -251,6 +251,11 @@
 
 .no-trips-hostings {
   padding: 20px;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
+  text-align: center;
 }
 
 #update-profile-submit {
@@ -266,4 +271,8 @@
 
 #update-profile-submit input:hover {
   background: rgba(256, 256, 256, 0.3);
+}
+
+#div-for-turnery {
+  width: 100%;
 }

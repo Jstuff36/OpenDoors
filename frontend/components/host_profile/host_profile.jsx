@@ -116,7 +116,7 @@ class HostProfile extends React.Component {
       { host_id: this.state.currentListing.id }
     );
     this.props.createNewReference(reference).then( () => {
-      this.handleCloseModal(true);
+      this.handleCloseModal(true)();
       this.props.fetchAllReferences(id).then( (resp) => {
         this.setState({
           hostReferences: resp.references
@@ -127,27 +127,34 @@ class HostProfile extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const modalState = this.state.modalState;
-    const trip = merge(
-      { dates: [modalState.startDate, modalState.endDate] },
-      { message: modalState.body },
-      { user_id: this.state.currentUser.id },
-      { host_id: this.state.currentListing.id },
-      { status: "Pending" }
-    );
-    this.props.newTrip(trip).then.call(this, () => {
-      console.log(this.handleCloseModal);
-      this.handleCloseModal(false)(),
-      this.setState({
-        bookingStatus: "Request Sent!"
+    let startDate = Date.parse(this.state.modalState.startDate);
+    let endDate = Date.parse(this.state.modalState.endDate);
+    if (endDate < startDate) {
+      this.props.newTripError(["End date can't be before start date!"]);
+    } else if (Date.now() > startDate || Date.now > endDate) {
+      this.props.newTripError(["Can't pick a date in the past!"]);
+    } else {
+
+      const modalState = this.state.modalState;
+      const trip = merge(
+        { dates: [modalState.startDate, modalState.endDate] },
+        { message: modalState.body },
+        { user_id: this.state.currentUser.id },
+        { host_id: this.state.currentListing.id },
+        { status: "Pending" }
+      );
+      this.props.newTrip(trip).then.call(this, () => {
+        this.handleCloseModal(false)(),
+        this.setState({
+          bookingStatus: "Request Sent!"
+        });
       });
-    });
+    }
   }
 
 
   handleCloseModal(flag) {
     return (e) => {
-      debugger;
       if (flag) {
         this.setState({ showModalRef: false });
       } else {
@@ -191,6 +198,7 @@ class HostProfile extends React.Component {
       return(
         <div>
           <HostNavBar
+            currentUser={this.props.currentUser}
             logout={this.props.logout}
             history={this.props.history}/>
           <div className="host-container">

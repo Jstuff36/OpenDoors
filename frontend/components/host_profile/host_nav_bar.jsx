@@ -6,6 +6,7 @@ class HostNavBar extends React.Component {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleListing = this.handleListing.bind(this);
+    this.handleProfile = this.handleProfile.bind(this);
   }
 
   handleLogout(e) {
@@ -21,6 +22,13 @@ class HostNavBar extends React.Component {
     });
   }
 
+  handleProfile(e) {
+    let id = this.props.currentUser.id;
+    this.props.history.push({
+      pathname: `/user/${id}`
+    });
+  }
+
   render() {
     return(
       <div className="host-nav-container">
@@ -31,6 +39,11 @@ class HostNavBar extends React.Component {
           className="host-nav-listings"
           onClick={this.handleListing}>
           Listings
+        </button>
+        <button
+          className="host-nav-listings"
+          onClick={this.handleProfile}>
+          My Profile
         </button>
         <button
           className="host-nav-log-out"

@@ -39,6 +39,9 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+    console.error(this.props.history);
+    console.error(this.props);
+
     const id = parseInt(this.props.match.params.id);
     this.props.fetchAllTrips(id).then( (resp) => {
       this.setState({
@@ -50,6 +53,11 @@ class UserProfile extends React.Component {
         userReferences: resp.references
       });
     });
+
+    if (!this.props.currentUser.address) {
+      this.handleSwitchDisplay('user_profile_edit')();
+    }
+
   }
 
   handleSwitchDisplay(action) {
@@ -228,12 +236,12 @@ render() {
                        <div className="trips-refs-heading">
                          Upcoming Hostings
                        </div>
-                       { (allTrips[1].slice(0).reverse().length === 0) ?
+                       { (allTrips[1].length === 0) ?
                         <div className="no-trips-hostings">
                          No Upcoming Hosting
                        </div> :
                       <div>
-                       {allTrips[1].map( (trip, idx) => (
+                       {allTrips[1].slice(0).reverse().map( (trip, idx) => (
                            <li  key={idx} className="trip-listings-container">
                              <Link to={`/listings/${trip.traveler_id}`}>
                                <div
@@ -293,11 +301,16 @@ render() {
                      </div>
                    </div>
                    <div className="user-references-container">
-                     <div>
+                     <div id="div-for-turnery">
                        <ul className="user-indv-references-container">
                          <div className="trips-refs-heading">
                            My References
                          </div>
+                         { (Object.keys(references).length === 0) ?
+                          <div className="no-trips-hostings">
+                           No References
+                          </div> :
+                        <div>
                          {Object.keys(references).slice(0).reverse().map( (key, idx) => (
                            <li
                              key={idx}>
@@ -319,6 +332,8 @@ render() {
                              </div>
                            </li>
                          ))}
+                        </div>
+                      }
                        </ul>
                      </div>
                    </div>

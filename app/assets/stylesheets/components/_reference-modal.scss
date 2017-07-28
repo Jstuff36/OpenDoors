@@ -27,13 +27,14 @@
   z-index: 3;
 }
 
-.reference-modal-form-container {
-
-}
 
 .reference-modal-heading-container {
   display: flex;
   flex-direction: column;
+}
+.reference-heading-container {
+  display: flex;
+  color: lighten(#548072, 10%);
 }
 
 .reference-comment {
@@ -48,4 +49,6 @@
 .send-reference {
   color: lighten(#548072, 10%);
   margin-top: -5px;
+  margin-left: auto;
+  margin-top: 0px;
 }
