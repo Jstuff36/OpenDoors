@@ -75,6 +75,8 @@
   border: solid lighten(#548072, 10%);
   color: lighten(#548072, 10%);
   width: 25%;
+  max-width: 200px;
+  min-width: 175px;
   text-align: center;
   border-width: 1px;
   border-radius: 5px;

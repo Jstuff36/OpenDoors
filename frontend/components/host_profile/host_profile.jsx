@@ -308,7 +308,10 @@ class HostProfile extends React.Component {
                   className="host-links">
                   About
                 </button>
-                <div className="current-page">References</div>
+                <button
+                  className="add-reference">
+                  Add Reference
+                </button>
                 <button
                   onClick={this.handleSwitchDisplay("host_location")}
                   className="host-links">
