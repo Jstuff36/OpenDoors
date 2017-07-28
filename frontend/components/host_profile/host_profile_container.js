@@ -6,7 +6,10 @@ import {
   singleListing,
   clearErrors
 } from '../../actions/listings_actions';
-import { allReferences } from '../../actions/references_actions';
+import {
+  allReferences,
+  newReference
+ } from '../../actions/references_actions';
 
 const mapStateToProps = ( state, { match } ) => {
   return {
@@ -22,7 +25,8 @@ const mapDispatchToProps = (dispatch) => ({
   newTrip: (trip) => dispatch(newTrip(trip)),
   fetchSingleListing: (id) => dispatch(singleListing(id)),
   clearErrors: () => dispatch(clearErrors()),
-  fetchAllReferences: (id) => dispatch(allReferences(id))
+  fetchAllReferences: (id) => dispatch(allReferences(id)),
+  createNewReference: (reference) => dispatch(newReference(reference))
 });
 
 export default connect(

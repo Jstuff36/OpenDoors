@@ -10,9 +10,9 @@ export const receieveReferences = references => ({
   references
 });
 
-export const receieveSingleReference = reference => ({
+export const receieveSingleReference = references => ({
   type: RECEIVE_SINGLE_REFERENCE,
-  reference
+  references
 });
 
 export const clearReferencesErrors = () => ({
@@ -32,8 +32,8 @@ export const allReferences = (id) => dispatch => {
 
 export const newReference = (reference) => dispatch => (
   ReferencesUtil.newReference(reference).then( response => {
-    dispatch(clearReferencesErrors());
     dispatch(receieveSingleReference(response));
+    dispatch(clearReferencesErrors());
   },
     err => {
       dispatch(receiveReferencesErrors);

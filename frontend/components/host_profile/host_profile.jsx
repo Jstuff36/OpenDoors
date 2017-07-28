@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import HostMap from './host_map';
 import Modal from 'react-modal';
 import BookingModal from './booking_modal';
+import NewReferenceModal from './new_reference_modal';
 import merge from 'lodash/merge';
 import { Link } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ class HostProfile extends React.Component {
         host_location: false,
       },
       showModal: false,
+      showModalRef: false,
       modalContent: [],
       currentListing: "",
       hostReferences: "",
@@ -27,15 +29,20 @@ class HostProfile extends React.Component {
         startDate: "",
         endStart: "",
         body: ""
+      },
+      referenceState: {
+        comment: ""
       }
     };
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
-    this.openModal = this.openModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateStartDate = this.updateStartDate.bind(this);
     this.updateEndDate = this.updateEndDate.bind(this);
     this.updateBody = this.updateBody.bind(this);
+    this.updateComment = this.updateComment.bind(this);
+    this.handleNewReference = this.handleNewReference.bind(this);
   }
 
   componentDidMount() {
@@ -66,6 +73,14 @@ class HostProfile extends React.Component {
     };
   }
 
+  updateComment() {
+    return e => {
+      const newState = merge({}, this.state);
+      newState.referenceState.comment = e.currentTarget.value;
+      this.setState(newState);
+    };
+  }
+
   updateStartDate() {
     return e => {
       const newState = merge({}, this.state);
@@ -90,9 +105,22 @@ class HostProfile extends React.Component {
     };
   }
 
-  handleOpenModal () {
-    this.setState({
-      showModal: true
+  handleNewReference(e) {
+    e.preventDefault();
+    const id = parseInt(this.props.match.params.id);
+    const refState = this.state.referenceState;
+    const reference = merge(
+      { comment: refState.comment },
+      { user_id: this.state.currentUser.id },
+      { host_id: this.state.currentListing.id }
+    );
+    this.props.createNewReference(reference).then( () => {
+      this.handleCloseModal(true);
+      this.props.fetchAllReferences(id).then( (resp) => {
+        this.setState({
+          hostReferences: resp.references
+        });
+      });
     });
   }
 
@@ -115,12 +143,24 @@ class HostProfile extends React.Component {
   }
 
 
-  handleCloseModal () {
-    this.setState({ showModal: false });
+  handleCloseModal(flag) {
+    return (e) => {
+      if (flag) {
+        this.setState({ showModalRef: false });
+      } else {
+        this.setState({ showModal: false });
+      }
+    };
   }
 
-  openModal() {
-    this.handleOpenModal();
+  handleOpenModal(flag) {
+    return (event) => {
+      if (flag) {
+        this.setState({ showModalRef: true});
+      } else {
+        this.setState({ showModal: true });
+      }
+    };
   }
 
   getImage(imageUrl) {
@@ -167,17 +207,17 @@ class HostProfile extends React.Component {
                   {hosting ? "Currently hosting" : "Not hosting"}
                 </div>
                 <button
-                  onClick={this.openModal}
+                  onClick={this.handleOpenModal(false)}
                   className="request-booking">
                   {this.state.bookingStatus}
                 </button>
                 <Modal
                   showModal={this.state.showModal}
-                  handleCloseModal={this.handleCloseModal}
+                  handleCloseModal={this.handleCloseModal(false)}
                   isOpen={this.state.showModal}
                   className="booking-modal"
                   contentLabel="Booking request"
-                  onRequestClose={this.handleCloseModal}
+                  onRequestClose={this.handleCloseModal(false)}
                   shouldCloseOnOverlayClick={true}
                   overlayClassName="booking-overlay">
                   <BookingModal
@@ -279,18 +319,18 @@ class HostProfile extends React.Component {
                   {hosting ? "Currently hosting" : "Not hosting"}
                 </div>
                 <button
-                  onClick={this.openModal}
+                  onClick={this.handleOpenModal(false)}
                   className="request-booking">
                   {this.state.bookingStatus}
                 </button>
                 <Modal
                   handleSubmit={this.handleSubmit}
                   showModal={this.state.showModal}
-                  handleCloseModal={this.handleCloseModal}
+                  handleCloseModal={this.handleCloseModal(false)}
                   isOpen={this.state.showModal}
                   className="booking-modal"
                   contentLabel="Booking request"
-                  onRequestClose={this.handleCloseModal}
+                  onRequestClose={this.handleCloseModal(false)}
                   shouldCloseOnOverlayClick={true}
                   overlayClassName="booking-overlay">
                   <BookingModal
@@ -309,9 +349,25 @@ class HostProfile extends React.Component {
                   About
                 </button>
                 <button
+                  onClick={this.handleOpenModal(true)}
                   className="add-reference">
                   Add Reference
                 </button>
+                <Modal
+                  showModal={this.state.showModalRef}
+                  handleCloseModal={this.handleCloseModal(true)}
+                  isOpen={this.state.showModalRef}
+                  className="reference-modal"
+                  contentLabel="New Reference"
+                  onRequestClose={this.handleCloseModal(true)}
+                  shouldCloseOnOverlayClick={true}
+                  overlayClassName="reference-overlay">
+                  <NewReferenceModal
+                    errors={this.props.errors}
+                    referenceState={this.state.referenceState}
+                    updateComment={this.updateComment}
+                    handleNewReference={this.handleNewReference}/>
+                </Modal>
                 <button
                   onClick={this.handleSwitchDisplay("host_location")}
                   className="host-links">
@@ -320,7 +376,13 @@ class HostProfile extends React.Component {
               </div>
               <div className="references-container">
                 <ul className="indv-references-container">
-                  {Object.keys(references).map( (key, idx) => (
+                  { (Object.keys(references).length === 0) ?
+                  <div className="no-references">
+                    User Has No References
+                  </div>
+                   :
+                   <div>
+                    {Object.keys(references).slice(0).reverse().map( (key, idx) => (
                     <li
                       key={idx}>
                       <div className="one-div-to-rule-them-all">
@@ -340,7 +402,9 @@ class HostProfile extends React.Component {
                           </div>
                       </div>
                     </li>
-                  ))}
+                    ))}
+                  </div>
+                  }
                 </ul>
               </div>
             </div>
@@ -370,18 +434,18 @@ class HostProfile extends React.Component {
                   {hosting ? "Currently hosting" : "Not hosting"}
                 </div>
                 <button
-                  onClick={this.openModal}
+                  onClick={this.handleOpenModal(false)}
                   className="request-booking">
                   {this.state.bookingStatus}
                 </button>
                 <Modal
                   handleSubmit={this.handleSubmit}
                   showModal={this.state.showModal}
-                  handleCloseModal={this.handleCloseModal}
+                  handleCloseModal={this.handleCloseModal(false)}
                   isOpen={this.state.showModal}
                   className="booking-modal"
                   contentLabel="Booking request"
-                  onRequestClose={this.handleCloseModal}
+                  onRequestClose={this.handleCloseModal(false)}
                   shouldCloseOnOverlayClick={true}
                   overlayClassName="booking-overlay">
                   <BookingModal

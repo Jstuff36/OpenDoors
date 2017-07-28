@@ -1,5 +1,6 @@
 json.extract! @reference,
-              :comment,
-              :traveler.firstname,
-              :traveler.lastname,
-              :traveler.picture
+              :comment
+json.extract! @reference.traveler,
+              :firstname,
+              :lastname,
+              :picture

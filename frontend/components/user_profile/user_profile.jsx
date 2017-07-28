@@ -185,7 +185,7 @@ render() {
                          No Upcoming Trips
                         </div> :
                       <div>
-                       {allTrips[0].map( (trip, idx) => (
+                       {allTrips[0].slice(0).reverse().map( (trip, idx) => (
                            <li key={idx} className="trip-listings-container">
                              <Link to={`/listings/${trip.host_id}`}>
                                <div
@@ -228,7 +228,7 @@ render() {
                        <div className="trips-refs-heading">
                          Upcoming Hostings
                        </div>
-                       { (allTrips[1].length === 0) ?
+                       { (allTrips[1].slice(0).reverse().length === 0) ?
                         <div className="no-trips-hostings">
                          No Upcoming Hosting
                        </div> :
@@ -298,7 +298,7 @@ render() {
                          <div className="trips-refs-heading">
                            My References
                          </div>
-                         {Object.keys(references).map( (key, idx) => (
+                         {Object.keys(references).slice(0).reverse().map( (key, idx) => (
                            <li
                              key={idx}>
                              <div className="user-one-div-to-rule-them-all">

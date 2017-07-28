@@ -7,7 +7,8 @@ import ListingNavBarNotLoggedIn from './listings_nav_bar_not_logged_in';
 
 const CITY_CENTERS = {
   "San Francisco": { lat: 37.7758, lng: -122.435 },
-  "Casablanca": { lat: 33.5731, lng: -7.5898}
+  "Casablanca": { lat: 33.5731, lng: -7.5898},
+  "Dubai": { lat: 25.2048, lng: 55.2708 }
 };
 
 class ListingMap extends React.Component {
