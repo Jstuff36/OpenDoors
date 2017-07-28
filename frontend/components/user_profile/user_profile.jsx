@@ -14,6 +14,7 @@ class UserProfile extends React.Component {
       currentUser: this.props.currentUser,
       trips: "",
       updateStatus: "",
+      userReferences: "",
       userInfo: {
         id: this.props.currentUser.id,
         address: this.props.currentUser.address,
@@ -42,6 +43,11 @@ class UserProfile extends React.Component {
     this.props.fetchAllTrips(id).then( (resp) => {
       this.setState({
         trips: resp.trips
+      });
+    });
+    this.props.fetchAllReferences(id).then( (resp) => {
+      this.setState({
+        userReferences: resp.references
       });
     });
   }
@@ -105,7 +111,7 @@ class UserProfile extends React.Component {
             updateStatus: "Profile Updated"
           })
         ));
-      });
+      }.bind(this));
     } else {
       updateUser(this.state.userInfo).then( () => (
         this.setState({
@@ -143,6 +149,7 @@ render() {
   } else {
     if (this.state.action.user_profile) {
       const allTrips = this.seperateHostingsAndUserTrips();
+      const references = this.state.userReferences;
       return(
           <div>
             <UserNavBar
@@ -169,10 +176,10 @@ render() {
                 </div>
                 <div className="user-trips-refs-container">
                    <div className="upcoming-trips-container">
-                     <div className="trips-refs-heading">
-                       Upcoming Trips
-                     </div>
                      <ul>
+                       <div className="trips-refs-heading">
+                         Upcoming Trips
+                       </div>
                        { (allTrips[0].length === 0) ?
                         <div className="no-trips-hostings">
                          No Upcoming Trips
@@ -217,10 +224,10 @@ render() {
                        </div>
                      }
                      </ul>
-                     <div className="trips-refs-heading">
-                       Upcoming Hostings
-                     </div>
                      <ul>
+                       <div className="trips-refs-heading">
+                         Upcoming Hostings
+                       </div>
                        { (allTrips[1].length === 0) ?
                         <div className="no-trips-hostings">
                          No Upcoming Hosting
@@ -286,8 +293,33 @@ render() {
                      </div>
                    </div>
                    <div className="user-references-container">
-                     <div className="trips-refs-heading">
-                       My References
+                     <div>
+                       <ul className="user-indv-references-container">
+                         <div className="trips-refs-heading">
+                           My References
+                         </div>
+                         {Object.keys(references).map( (key, idx) => (
+                           <li
+                             key={idx}>
+                             <div className="user-one-div-to-rule-them-all">
+                               <div
+                                 className="user-references-img"
+                                 style={this.getImage(references[key].traveler_pic)}>
+                               </div>
+                               <div className="user-references-content-container">
+                                 <div className="user-references-name">
+                                   {
+                                     references[key].traveler_firstname +
+                                     ' ' + references[key].traveler_lastname }
+                                   </div>
+                                   <div>
+                                     {references[key].comment}
+                                   </div>
+                                 </div>
+                             </div>
+                           </li>
+                         ))}
+                       </ul>
                      </div>
                    </div>
                 </div>
@@ -323,6 +355,9 @@ render() {
                 <form
                   onSubmit={this.handleSubmit}
                   className="edit-main-container">
+                  <span>
+                    {this.state.updateStatus}
+                  </span>
                   <div>
                     <div className="input-type">
                       Address:
@@ -420,9 +455,6 @@ render() {
                       />
                   </div>
                   <div id="update-profile-submit">
-                    <div>
-                      {this.state.updateStatus}
-                    </div>
                     <input
                       className="edit-profile-submit"
                       type="submit"

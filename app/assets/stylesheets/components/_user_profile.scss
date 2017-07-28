@@ -5,10 +5,10 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   width: 100%;
   background-attachment: fixed;
-  position: fixed;
   z-index: -1;
   box-shadow: 0 0 5px #000000;
 }
@@ -84,19 +84,23 @@
   flex-direction: column;
   align-items: center;
   color: #e2e1e1;
-  background: rgba(0, 0, 0, 0.75);
   margin: 10px 0 10px 0;
-  box-shadow: 0 0 5px #000000;
-  border-radius: 5px;
   width: 50%;
   margin-right: 10px;
-  overflow: scroll;
+}
+
+.upcoming-trips-container ul {
+  width: 100%;
 }
 
 .trips-refs-heading {
-  padding: 10px;
+  padding: 20px;
   font-weight: 600;
   font-size: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .trip-img {
@@ -109,11 +113,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
+  margin: 5px;
 }
 
 .trip-listings-container {
   display: flex;
   padding: 5px;
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
+  margin: 15px 0;
 }
 
 .trip-listings-info-container {
@@ -128,6 +137,7 @@
 
 .trip-name {
   font-weight: 600;
+  margin-top: -5px;
 }
 
 .user-references-container {
@@ -135,10 +145,7 @@
   flex-direction: column;
   align-items: center;
   color: #e2e1e1;
-  background: rgba(0, 0, 0, 0.75);
   margin: 10px 0 10px 0;
-  box-shadow: 0 0 5px #000000;
-  border-radius: 5px;
   width: 50%;
   margin-left: 10px;
 }
@@ -150,7 +157,12 @@
   background: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   margin-top: 15px;
-  overflow: scroll;
+}
+
+.edit-main-container span {
+  font-size: 20px;
+  padding: 20px;
+  margin-bottom: -20px;
 }
 
 .edit-main-container div {
@@ -249,4 +261,9 @@
   width: 125px;
   text-align: center;
   border-radius: 5px;
+  padding: 10px;
+}
+
+#update-profile-submit input:hover {
+  background: rgba(256, 256, 256, 0.3);
 }

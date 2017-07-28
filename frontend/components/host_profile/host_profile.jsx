@@ -6,6 +6,7 @@ import HostMap from './host_map';
 import Modal from 'react-modal';
 import BookingModal from './booking_modal';
 import merge from 'lodash/merge';
+import { Link } from 'react-router-dom';
 
 class HostProfile extends React.Component {
   constructor(props) {
@@ -108,7 +109,7 @@ class HostProfile extends React.Component {
     this.props.newTrip(trip).then( () => {
       this.handleCloseModal(),
       this.setState({
-        bookingStatus: "Request Sent!" 
+        bookingStatus: "Request Sent!"
       });
     });
   }
@@ -314,12 +315,26 @@ class HostProfile extends React.Component {
                   Location
                 </button>
               </div>
-              <div>
-                <ul>
+              <div className="references-container">
+                <ul className="indv-references-container">
                   {Object.keys(references).map( (key, idx) => (
-                    <li key={idx}>
-                      <div>
-                        {references[key].comment}
+                    <li
+                      key={idx}>
+                      <div className="one-div-to-rule-them-all">
+                        <div
+                          className="references-img"
+                          style={this.getImage(references[key].traveler_pic)}>
+                        </div>
+                        <div className="references-content-container">
+                          <div className="references-name">
+                            {
+                              references[key].traveler_firstname +
+                              ' ' + references[key].traveler_lastname }
+                            </div>
+                            <div>
+                              {references[key].comment}
+                            </div>
+                          </div>
                       </div>
                     </li>
                   ))}
