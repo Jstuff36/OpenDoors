@@ -13,6 +13,7 @@ class UserProfile extends React.Component {
       },
       currentUser: this.props.currentUser,
       trips: "",
+      updateStatus: "",
       userInfo: {
         id: this.props.currentUser.id,
         address: this.props.currentUser.address,
@@ -91,15 +92,27 @@ class UserProfile extends React.Component {
   }
 
   geocodeAddress(address, zipcode) {
-    let detailedAddress = address.concat(" ").concat(zipcode);
-    var geocoder = new google.maps.Geocoder();
-    let userInfo = this.state.userInfo;
     let updateUser = this.props.updateUser;
-    geocoder.geocode({'address': detailedAddress}, function(results, status) {
-      let latLng = results[0].geometry.location;
-      userInfo.location = [latLng.lat(), latLng.lng()];
-      updateUser(userInfo);
-    });
+    if (address && zipcode) {
+      let detailedAddress = address.concat(" ").concat(zipcode);
+      var geocoder = new google.maps.Geocoder();
+      let userInfo = this.state.userInfo;
+      geocoder.geocode({'address': detailedAddress}, function(results, status) {
+        let latLng = results[0].geometry.location;
+        userInfo.location = [latLng.lat(), latLng.lng()];
+        updateUser(userInfo).then( () => (
+          this.setState({
+            updateStatus: "Profile Updated"
+          })
+        ));
+      });
+    } else {
+      updateUser(this.state.userInfo).then( () => (
+        this.setState({
+          updateStatus: "Profile Updated"
+        })
+      ));
+    }
   }
 
   handleTripStatus(e) {
@@ -162,7 +175,7 @@ render() {
                      <ul>
                        { (allTrips[0].length === 0) ?
                         <div className="no-trips-hostings">
-                         "No Upcoming Trips"
+                         No Upcoming Trips
                         </div> :
                       <div>
                        {allTrips[0].map( (trip, idx) => (
@@ -188,6 +201,16 @@ render() {
                                    {trip.status}
                                  </div>
                                </div>
+                               <div className="cancel-button">
+                                 <div>
+                                   Need to Cancel?
+                                 </div>
+                                 <button
+                                   id = {trip.id}
+                                   onClick={this.handleTripStatus}>
+                                   Cancel
+                                 </button>
+                               </div>
                              </div>
                            </li>
                        ))}
@@ -200,7 +223,7 @@ render() {
                      <ul>
                        { (allTrips[1].length === 0) ?
                         <div className="no-trips-hostings">
-                         "No Upcoming Hosting"
+                         No Upcoming Hosting
                        </div> :
                       <div>
                        {allTrips[1].map( (trip, idx) => (
@@ -396,10 +419,15 @@ render() {
                       onChange={this.update('interest')}
                       />
                   </div>
-                  <input
-                    className="edit-profile-submit"
-                    type="submit"
-                    value="Upate Profile" />
+                  <div id="update-profile-submit">
+                    <div>
+                      {this.state.updateStatus}
+                    </div>
+                    <input
+                      className="edit-profile-submit"
+                      type="submit"
+                      value="Upate Profile" />
+                  </div>
                 </form>
               </div>
             </div>

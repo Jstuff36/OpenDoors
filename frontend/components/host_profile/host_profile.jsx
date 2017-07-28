@@ -20,6 +20,7 @@ class HostProfile extends React.Component {
       modalContent: [],
       currentListing: "",
       hostReferences: "",
+      bookingStatus: "Request to book",
       currentUser: this.props.currentUser,
       modalState: {
         startDate: "",
@@ -104,9 +105,12 @@ class HostProfile extends React.Component {
       { host_id: this.state.currentListing.id },
       { status: "Pending" }
     );
-    this.props.newTrip(trip).then( () => (
-      this.handleCloseModal()
-    ));
+    this.props.newTrip(trip).then( () => {
+      this.handleCloseModal(),
+      this.setState({
+        bookingStatus: "Request Sent!" 
+      });
+    });
   }
 
 
@@ -164,7 +168,7 @@ class HostProfile extends React.Component {
                 <button
                   onClick={this.openModal}
                   className="request-booking">
-                  Request to book
+                  {this.state.bookingStatus}
                 </button>
                 <Modal
                   showModal={this.state.showModal}
@@ -276,7 +280,7 @@ class HostProfile extends React.Component {
                 <button
                   onClick={this.openModal}
                   className="request-booking">
-                  Request to book
+                  {this.state.bookingStatus}
                 </button>
                 <Modal
                   handleSubmit={this.handleSubmit}
@@ -350,7 +354,7 @@ class HostProfile extends React.Component {
                 <button
                   onClick={this.openModal}
                   className="request-booking">
-                  Request to book
+                  {this.state.bookingStatus}
                 </button>
                 <Modal
                   handleSubmit={this.handleSubmit}
