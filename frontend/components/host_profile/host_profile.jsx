@@ -47,6 +47,7 @@ class HostProfile extends React.Component {
 
   componentDidMount() {
     const id = parseInt(this.props.match.params.id);
+    this.props.clearTripErrors();
     this.props.fetchSingleListing(id).then( (resp) => {
       this.setState({
         currentListing: resp.currentListing
@@ -134,8 +135,9 @@ class HostProfile extends React.Component {
       { host_id: this.state.currentListing.id },
       { status: "Pending" }
     );
-    this.props.newTrip(trip).then( () => {
-      this.handleCloseModal(),
+    this.props.newTrip(trip).then.call(this, () => {
+      console.log(this.handleCloseModal);
+      this.handleCloseModal(false)(),
       this.setState({
         bookingStatus: "Request Sent!"
       });
@@ -145,6 +147,7 @@ class HostProfile extends React.Component {
 
   handleCloseModal(flag) {
     return (e) => {
+      debugger;
       if (flag) {
         this.setState({ showModalRef: false });
       } else {

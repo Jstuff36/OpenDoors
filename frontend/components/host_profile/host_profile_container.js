@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
 import HostProfile from './host_profile';
 import { logout } from '../../actions/session_actions';
-import { newTrip } from '../../actions/trips_actions';
+import {
+  newTrip,
+  clearTripErrors
+ } from '../../actions/trips_actions';
 import {
   singleListing,
   clearErrors
@@ -26,7 +29,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchSingleListing: (id) => dispatch(singleListing(id)),
   clearErrors: () => dispatch(clearErrors()),
   fetchAllReferences: (id) => dispatch(allReferences(id)),
-  createNewReference: (reference) => dispatch(newReference(reference))
+  createNewReference: (reference) => dispatch(newReference(reference)),
+  clearTripErrors: () => dispatch(clearTripErrors())
 });
 
 export default connect(

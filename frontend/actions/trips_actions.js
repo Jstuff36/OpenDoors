@@ -26,7 +26,7 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const clearErrors = () => ({
+export const clearTripErrors = () => ({
   type: CLEAR_TRIP_ERRORS
 });
 
@@ -52,7 +52,7 @@ export const allTrips = (id) => dispatch => (
 
 export const newTrip = (trip) => dispatch => (
   TripsUtil.newTrip(trip).then( response => {
-      return dispatch(clearErrors());
+      return dispatch(clearTripErrors());
     },
     err => {
       return dispatch(receiveErrors(err.responseJSON));

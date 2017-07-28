@@ -19,7 +19,7 @@ class UserProfile extends React.Component {
         id: this.props.currentUser.id,
         address: this.props.currentUser.address,
         zipcode: this.props.currentUser.zipcode,
-        languages: this.props.currentUser.languages,
+        languages: this.props.currentUser.languages.join(", "),
         age: this.props.currentUser.age,
         sex: this.props.currentUser.sex,
         occupation: this.props.currentUser.occupation,
@@ -388,7 +388,7 @@ render() {
                     </div>
                     <input
                       className=""
-                      value={this.state.userInfo.languages.join(", ")}
+                      value={this.state.userInfo.languages}
                       type="text"
                       placeholder="Langauages seperated by commas"
                       onChange={this.update('languages')}

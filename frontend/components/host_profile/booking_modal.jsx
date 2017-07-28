@@ -12,7 +12,7 @@ class BookingModal extends React.Component {
           {this.props.errors.map( (error, idx) => (
             <li key={idx}
               className="booking-errors">
-              {error === "User has already been taken" ? "Booking already requested" : error}
+              {error === "User has already been taken" ? "Booking already requested with this user!" : error}
             </li>
           ))}
         </ul>

@@ -23,7 +23,7 @@ const TripsReducer = (state = noTrips, action) => {
       const errors = action.errors;
       return merge({}, state, { errors });
     case CLEAR_TRIP_ERRORS:
-      return merge({}, state, { errors: []});
+      return Object.assign({}, state, { errors: []});
     case RECEIVE_SINGLE_TRIP:
       const trip = action.trip;
       console.log("hi");
