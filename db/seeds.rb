@@ -57,14 +57,14 @@ user3.save
 
 user4 = User.new(
   firstname: "Hoires",
-  lastname: "Zoo",
+  lastname: "Zho",
   email: "email3",
   password: "password",
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Likes chinese food and can will drain a pull up 3 on you",
-  location: [ 37.869950, -122.471300],
+  about: "Likes chinese food and will drain a pull up 3 on you",
+  location: [37.792366, -122.445890],
   languages: ["Manderin"],
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500763596/hoires_wc828g.jpg"
 )
@@ -79,7 +79,7 @@ user5 = User.new(
   country: "United States",
   hosting: true,
   about: "Damn right I like the life I live, cause I went from negative to positive",
-  location: [ 37.759990, -122.31127],
+  location: [37.794069, -122.401846],
   languages: ["English"],
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500764375/biggie_epf4lh.jpg"
 )
@@ -94,7 +94,7 @@ user6 = User.new(
   country: "United States",
   hosting: true,
   about: "You know life is what we make it, and a chance is like a picture, it’d be nice if you just take it",
-  location: [ 37.769800, -122.381270],
+  location: [37.804514, -122.418474],
   languages: ["Canadian English"],
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500764916/drake_x1nkau.jpg"
 )
@@ -109,13 +109,109 @@ user7 = User.new(
   country: "United States",
   hosting: true,
   about: "Thinks So Cal is life",
-  location: [ 37.669923, -122.411296],
+  location: [37.796119, -122.411568],
   languages: ["English"],
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500764855/stephen_cxoztx.jpg"
 )
 user7.save
 
 user8 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.793143, -122.416378],
+  languages: ["English"],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501274629/3596043_kyltrv.jpg"
+)
+user8.save
+
+user9 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.783265, -122.417927],
+  languages: ["English"],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501274743/3729100_xmo2l5.jpg"
+)
+user9.save
+
+user10 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.775688, -122.398196],
+  languages: ["English"],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275068/not-so-recent-and-random-portraits_qsqv4t.jpg"
+)
+user10.save
+
+user11 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.795988, -122.397249],
+  languages: ["English"],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275177/not-so-recent-and-random-portraits_0_lbhjfj.jpg"
+)
+user11.save
+
+user12 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.795988, -122.397249],
+  languages: ["English"],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275404/not-so-recent-and-random-portraits_5_li9cxc.jpg"
+)
+user12.save
+
+user12 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.803618, -122.439757],
+  languages: ["English"],
+  picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275448/not-so-recent-and-random-portraits_8_i0jpua.jpg"
+)
+user12.save
+
+user999 = User.new(
   firstname: "Rick",
   lastname: "Blaine",
   email: "email7",
@@ -128,7 +224,7 @@ user8 = User.new(
   languages: ["English"],
   picture: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500830483/rick_jkp74k.jpg"
 )
-user8.save
+user999.save
 
 trip1 = Trip.new(
   user_id: user1.id,

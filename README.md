@@ -1,66 +1,63 @@
 # OpenDoors
 
-[Heroku][heroku]
+URL: [Live Link](https://open-doors22.herokuapp.com/#/)
 
-[Trello link][trello]
-
-[heroku]: https://open-doors22.herokuapp.com/#/
-[trello]: https://trello.com/b/kBJo5Fqe/full-stack
-
-## Minimum Viable Product
+![OpenDoors-landing](./docs/images/landing_page.png)
 
 OpenDoors is a web application meant to connect travelers looking for a room with locals wanting to open their doors to the world. It is built using Ruby on Rails and React.js and is a clone of the popular sight [Couchsurfing](https://www.couchsurfing.com/).
 
-By the end of Week 9, this app will, at a minimum, satisfy the
-following criteria with smooth, bug-free navigation, adequate seed data and
-sufficient CSS styling:
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README
-- [ ] Host Locations
-- [ ] Bookings
-- [ ] User Profile
-- [ ] References
-- [ ] Search Filter
+## Contents
+**Features**
 
-## Design Docs
+* User Authentication
+* Map of Listings with Filters
+* Listing Show Page
+* Book a Trip
+* Leave a Reference
+* User Profile
 
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+## Project Information
+This project was developed in 10 days utilizing Ruby on Rails, React.js with Redux, and Google Maps.
 
+## Features
+  * Account creation and authentication
+  * Users can update and edit their personal profile and listing
+  * View Hosting Page
+  * Make a request to stay
+  * Approve and Deny Bookings
+  * Host and travelers can view trips unique to them
+  * Users can leave references on a host
+  * Ability to view host personal info and references
 
-[components]: docs/component-hierarchy.md
-[wireframes]: docs/wireframes
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
-[sample-state]: docs/sample-state.md
+## User Authentication
+On the back-end, an encrypted, hashed password is stored in the database (passwords are never saved to the database). On log-in, the provided password is rehashed and compared to the encrypted password in order to verify the log-in. Upon Sign-up new users are redirected to their edit information page where they can optionally provide additional information.
 
+## Map of Listings with Filters
+OpenDoors offers filtering based on city selection. The Redux state is updated with a list of all the host in the specified city. It then populates a Google map with markers of the hostings in the specified city. Additionally, a side bar showing all of the hostings currently within the bounds of the local Google maps floats over the left side of the map. As the map bound changes by dragging or zooming out, this side bar dynamically updates to show only the listings currently in view.
 
-## Implementation Timeline
+## Listing Show Page
+By clicking on either the listings mentioned in the side bar above or the map markers, the current user will be redirected to host show page. Here a user has the ability to view information about the host, view references other users have left, leave a reference, or request a stay.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+## User Profile Page
+The user profile page allows the users to see upcoming trips, hostings, and references unique to that user. Additionally, a user has the ability to edit their profile information which is seen by other users who view their profile.
 
-**Objective:** Functioning rails project with front-end Authentication
+## Book A Trip
+All trips are stored in one table in the database, which contains columns for `id`, the `host_id`, `user_id` which references the user who is traveling, the `booking message`, and the `dates` of the trip. Validation checks ensure that the date range is neither in the past or in reverse order. A host then has the ability to approve or decline requested trips. Additionally, both users have the ability to cancel of a trip if the need arises.
 
-### Phase 2: Map Model, API, and components (2 days)
+## Leave A Reference
+All References are stored in one table in the database, which contains columns for `id`, the `host_id`, `user_id` which references the user who is traveling, and the `comment`. Upon creation the reference shows on the host listing page and the user profile page. Validation checks ensure a user may only leave one reference per host.
 
-**Objective:** Map displays listings and dynamically updates as window changes
+## Future Concepts
+Below is a non-comprehensive list of features I would like to implement.
 
-### Phase 3: User profile (2 day)
+#### Search by availability
+This is will allow users to to filter results shown on the map by hostings which are available within a specified date range.
 
-**Objective:** Show user profile including upcoming trips and references
+#### Port to React Native
+Integration with mobile using React Native.
 
-### Phase 4: References and components (2 days)
+#### Drop down map markers
+Instead of populating the map with all markers for the filtered city initially. I would like to implement a feature where the map markers are added as the google maps viewing window is changed. The markers would "drop down" onto their location to as an additional wow factor.
 
-**Objective:** Users can leave references to listings they have completed
-
-
-### Phase 5: Implement Search (2 days)
-
-**Objective:** Be able to filter search by date range and city
-
-### Bonus Features (TBD)
-- [ ] Filter results by availability
+#### Refactor
+I would like to DRY out the code by refactoring components into sub-components and making more general optimizations at bottleneck points.
