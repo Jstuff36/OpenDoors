@@ -25,13 +25,17 @@ class UserProfile extends React.Component {
         occupation: this.props.currentUser.occupation,
         about: this.props.currentUser.about,
         interest: this.props.currentUser.interest
-      }
+      },
+      imageFile: null,
+      imageUrl: null
     };
+
     this.handleSwitchDisplay = this.handleSwitchDisplay.bind(this);
     this.seperateHostingsAndUserTrips = this.seperateHostingsAndUserTrips.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.geocodeAddress = this.geocodeAddress.bind(this);
     this.handleTripStatus = this.handleTripStatus.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -39,9 +43,6 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    console.error(this.props.history);
-    console.error(this.props);
-
     const id = parseInt(this.props.match.params.id);
     this.props.fetchAllTrips(id).then( (resp) => {
       this.setState({
@@ -68,7 +69,6 @@ class UserProfile extends React.Component {
       };
       tempObj[action] = true;
       this.setState({action: tempObj});
-      e.preventDefault();
 
     };
   }
@@ -106,22 +106,33 @@ class UserProfile extends React.Component {
   }
 
   geocodeAddress(address, zipcode) {
+    let id = this.props.currentUser.id;
     let updateUser = this.props.updateUser;
+    let file = this.state.imageFile;
+    let formData = new FormData();
+    formData.append("user[image]", file);
+    let keys = Object.keys(this.state.userInfo);
+    for (let i = 0; i < keys.length; i++ ) {
+      if (this.state.userInfo[keys[i]]) {
+        formData.append(`user[${keys[i]}]`, this.state.userInfo[keys[i]]);
+      }
+    }
+    formData.append("age", this.state.userInfo.age);
     if (address && zipcode) {
       let detailedAddress = address.concat(" ").concat(zipcode);
       var geocoder = new google.maps.Geocoder();
       let userInfo = this.state.userInfo;
       geocoder.geocode({'address': detailedAddress}, function(results, status) {
         let latLng = results[0].geometry.location;
-        userInfo.location = [latLng.lat(), latLng.lng()];
-        updateUser(userInfo).then( () => (
+        formData.append("location", [latLng.lat(), latLng.lng()]);
+        updateUser(formData, id).then( () => (
           this.setState({
             updateStatus: "Profile Updated"
           })
         ));
       }.bind(this));
     } else {
-      updateUser(this.state.userInfo).then( () => (
+      updateUser(formData, id).then( () => (
         this.setState({
           updateStatus: "Profile Updated"
         })
@@ -141,6 +152,24 @@ class UserProfile extends React.Component {
         });
     } else {
       this.props.deleteTrip( {id: id} );
+    }
+  }
+
+  updateFile(e) {
+    e.preventDefault();
+    var reader = new FileReader();
+    var file = e.currentTarget.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        imageUrl: reader.result,
+        imageFile: file
+      });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
     }
   }
 
@@ -351,10 +380,23 @@ render() {
               <div className="user-side-container">
                 <div
                   className="user-img"
-                  style={this.getImage(picture)}>
+                  style={this.state.imageUrl ?
+                    this.getImage(this.state.imageUrl) :
+                    this.getImage(this.props.currentUser.picture)
+                  }>
                 </div>
                 <div className="user-name">
-                  {firstname} {lastname}</div>
+                  {firstname} {lastname}
+                </div>
+                <div className="change-profile-pic-container">
+                  <div>
+                    Change Profile Picture:
+                  </div>
+                  <input
+                    type="file"
+                    onChange={this.updateFile}
+                    />
+                </div>
               </div>
               <div className="user-main-container">
                 <div className="user-options-container">
@@ -473,7 +515,7 @@ render() {
                     <input
                       className="edit-profile-submit"
                       type="submit"
-                      value="Upate Profile" />
+                      value="Save" />
                   </div>
                 </form>
               </div>

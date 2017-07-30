@@ -13,7 +13,7 @@ const mapStateToProps = ( state, { match } ) => ({
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   fetchAllTrips: (id) => dispatch(allTrips(id)),
-  updateUser: (user) => dispatch(updateUser(user)),
+  updateUser: (user, id) => dispatch(updateUser(user, id)),
   approveTrip: (trip) => dispatch(updateTrip(trip)),
   deleteTrip: (id) => dispatch(deleteTrip(id)),
   fetchAllReferences: (id) => dispatch(allReferences(id))

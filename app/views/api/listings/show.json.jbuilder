@@ -8,8 +8,9 @@ json.extract! @listing,
               :hosting,
               :languages,
               :country,
-              :picture,
               :age,
               :sex,
               :occupation,
               :interest
+
+json.picture asset_path(@listing.image.url)

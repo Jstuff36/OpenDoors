@@ -44,6 +44,7 @@ class Api::UsersController < ApplicationController
       :zipcode,
       :address,
       :interest,
+      :image,
       location: [],
       languages: []
     )

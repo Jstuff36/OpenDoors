@@ -4,7 +4,7 @@
     json.location listing.location
     json.firstname listing.firstname
     json.lastname listing.lastname
-    json.picture listing.picture
+    json.picture asset_path(listing.image.url)
     json.about listing.about
     json.languages listing.languages
     json.hosting listing.hosting

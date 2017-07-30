@@ -10,9 +10,10 @@ json.extract! user,
   :about,
   :interest,
   :hosting,
-  :picture,
   :languages,
   :zipcode,
   :address,
   :age,
   :sex
+
+json.picture asset_path(user.image.url)

@@ -2,5 +2,6 @@ json.extract! @reference,
               :comment
 json.extract! @reference.traveler,
               :firstname,
-              :lastname,
-              :picture
+              :lastname
+
+json.picture asset_path(@reference.traveler.image.url)

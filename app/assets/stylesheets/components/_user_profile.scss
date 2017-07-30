@@ -45,6 +45,31 @@
   margin: 8px;
 }
 
+.change-profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.change-profile-pic-container div {
+  color: #e2e1e1;
+}
+
+.change-profile-pic-container input {
+  padding: 15px 0;
+  color: #e2e1e1;
+}
+
+.inputfile {
+  color: #e2e1e1;
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
 .user-main-container {
   display: flex;
   flex-direction: column;

@@ -18,13 +18,14 @@ export const signup = user => (
   })
 );
 
-export const updateUser = user => {
+export const updateUser = (formData, id) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/users/${user.id}`,
-    data: {
-      user: user
-    }
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    url: `/api/users/${id}`,
+    data: formData
   });
 };
 
