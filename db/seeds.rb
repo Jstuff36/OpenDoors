@@ -230,20 +230,260 @@ user13 = User.new(
 )
 user13.save
 
-user999 = User.new(
+user14 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.765792, -122.462902],
+  languages: ["English"],
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440112/girl-with-grey-hair_vgmaqx.jpg"
+)
+user14.save
+
+user15 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "San Francisco",
+country: "United States",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [37.760827, -122.478903],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440184/ee8f163549859.562e32e62418a_kbctvs.jpg"
+)
+user15.save
+
+user16 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "San Francisco",
+country: "United States",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [37.748116, -122.451748],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440292/images_yjos86.jpg"
+)
+user16.save
+
+user17 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "San Francisco",
+country: "United States",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [37.753328, -122.432006],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440351/images_pkjmhb.jpg"
+)
+user17.save
+
+user18 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.580083, -7.627963],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440779/a7217d6009493e7e8347594ba699dc46_xnzuw1.jpg"
+)
+user18.save
+
+user19 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.580083, -7.627963],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441137/casablanca_drawing_man_ozmdn2.jpg"
+)
+user19.save
+
+user20 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.582422, -7.654304],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441186/images_rgbe5j.jpg"
+)
+user20.save
+
+user21 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.591882, -7.641301],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441248/casablanca_man_2_tkuaru.jpg"
+)
+user21.save
+
+user22 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.589137, -7.586324],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441364/images_o3wquq.jpg"
+)
+user22.save
+
+user23 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.565595, -7.572084],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440351/images_pkjmhb.jpg"
+)
+user23.save
+
+user24 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.588329, -7.578113],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441405/images_rwsauv.jpg"
+)
+user24.save
+
+user25 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.549812, -7.597626],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441432/images_sycc9j.jpg"
+)
+user25.save
+
+user26 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.599786, -7.653829],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441510/casablanca_3_gjzggw.jpg"
+)
+user26.save
+
+user27 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.602050, -7.620300],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441554/images_skmidl.jpg"
+)
+user27.save
+
+user28 = User.new(
+firstname: Faker::Name.first_name,
+lastname: Faker::Name.last_name,
+email: Faker::Internet.unique.email,
+password: "password",
+city: "Casablanca",
+country: "Morocco",
+hosting: true,
+about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+location: [33.593813, -7.591228],
+languages: ["English"],
+image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441584/images_qb6krp.jpg"
+)
+user28.save
+
+user29 = User.new(
   firstname: "Rick",
   lastname: "Blaine",
   email: "email7",
   password: "password",
   city: "Casablanca",
-  country: "United States",
+  country: "Morocco",
   hosting: true,
   about: "…Here’s looking at you, kid.",
   location: [ 33.5731, -7.5898],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500830483/rick_jkp74k.jpg"
 )
-user999.save
+user29.save
 
 trip1 = Trip.new(
   user_id: user1.id,
@@ -285,6 +525,182 @@ trip4 = Trip.new(
 
 trip4.save
 
+trip5 = Trip.new(
+  user_id: user15.id,
+  host_id: user3.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip5.save
+
+trip6 = Trip.new(
+  user_id: user20.id,
+  host_id: user23.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip6.save
+
+trip7 = Trip.new(
+  user_id: user4.id,
+  host_id: user7.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip7.save
+
+trip8 = Trip.new(
+  user_id: user15.id,
+  host_id: user3.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip8.save
+
+trip9 = Trip.new(
+  user_id: user10.id,
+  host_id: user8.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Hi, you're place looks wonderful would you mind hosting us?"
+)
+
+trip9.save!
+
+trip10 = Trip.new(
+  user_id: user2.id,
+  host_id: user6.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Hi, would you mind sending us a few more photos"
+)
+
+trip10.save
+
+trip11 = Trip.new(
+  user_id: user19.id,
+  host_id: user16.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Hi, is there a bus close by to the city?"
+)
+
+trip11.save
+
+trip12 = Trip.new(
+  user_id: user10.id,
+  host_id: user2.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip12.save
+
+trip13 = Trip.new(
+  user_id: user18.id,
+  host_id: user5.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip13.save
+
+trip14 = Trip.new(
+  user_id: user8.id,
+  host_id: user9.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip14.save
+
+trip15 = Trip.new(
+  user_id: user15.id,
+  host_id: user9.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip15.save
+
+trip16 = Trip.new(
+  user_id: user18.id,
+  host_id: user22.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip16.save
+
+trip17 = Trip.new(
+  user_id: user13.id,
+  host_id: user12.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Are you availabe between the above dates? Hoping to explore the city and meet locals!"
+)
+
+trip17.save
+
+trip18 = Trip.new(
+  user_id: user18.id,
+  host_id: user27.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Hi, you're place looks wonderful would you mind hosting us?"
+)
+
+trip18.save!
+
+trip19 = Trip.new(
+  user_id: user12.id,
+  host_id: user17.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Hi, would you mind sending us a few more photos"
+)
+
+trip19.save
+
+trip20 = Trip.new(
+  user_id: user25.id,
+  host_id: user5.id,
+  dates: [Faker::Date.between(Date.today, 1.month.from_now),
+          Faker::Date.between(1.month.from_now, 2.month.from_now)],
+  status: "Pending",
+  message: "Hi, is there a bus close by to the city?"
+)
+
+trip20.save
+
 reference1 = Reference.new(
   user_id: user1.id,
   host_id: user2.id,
@@ -324,3 +740,123 @@ reference5 = Reference.new(
 )
 
 reference5.save!
+
+reference6 = Reference.new(
+  user_id: user20.id,
+  host_id: user26.id,
+  comment: "Fantastic host. Definitely would stay again!"
+)
+
+reference6.save!
+
+reference7 = Reference.new(
+  user_id: user4.id,
+  host_id: user7.id,
+  comment: "Great host! They even cooked for us"
+)
+
+reference7.save!
+
+reference8 = Reference.new(
+  user_id: user13.id,
+  host_id: user2.id,
+  comment: "Best host we've stayed at. Definitely would stay again!. ! They even cooked for us"
+)
+
+reference8.save!
+
+reference9 = Reference.new(
+  user_id: user7.id,
+  host_id: user1.id,
+  comment: "Host knows how to have a good time! We even went out to the bars together"
+)
+
+reference9.save!
+
+reference10 = Reference.new(
+  user_id: user19.id,
+  host_id: user1.id,
+  comment: "Average stay. The house was not the cleanist or most organized"
+)
+
+reference10.save!
+
+reference11 = Reference.new(
+  user_id: user11.id,
+  host_id: user21.id,
+  comment: "Fantastic host. Definitely would stay again!"
+)
+
+reference11.save!
+
+reference12 = Reference.new(
+  user_id: user5.id,
+  host_id: user8.id,
+  comment: "Great host! They even cooked for us"
+)
+
+reference12.save!
+
+reference13 = Reference.new(
+  user_id: user13.id,
+  host_id: user25.id,
+  comment: "Best host we've stayed at. Definitely would stay again!. ! They even cooked for us"
+)
+
+reference13.save!
+
+reference14 = Reference.new(
+  user_id: user8.id,
+  host_id: user1.id,
+  comment: "Host knows how to have a good time! We even went out to the bars together"
+)
+
+reference14.save!
+
+reference15 = Reference.new(
+  user_id: user22.id,
+  host_id: user18.id,
+  comment: "Average stay. The house was not the cleanist or most organized"
+)
+
+reference15.save!
+
+reference16 = Reference.new(
+  user_id: user23.id,
+  host_id: user6.id,
+  comment: "Fantastic host. Definitely would stay again!"
+)
+
+reference16.save!
+
+reference17 = Reference.new(
+  user_id: user14.id,
+  host_id: user17.id,
+  comment: "Great host! They even cooked for us"
+)
+
+reference17.save!
+
+reference18 = Reference.new(
+  user_id: user13.id,
+  host_id: user21.id,
+  comment: "Best host we've stayed at. Definitely would stay again!. ! They even cooked for us"
+)
+
+reference18.save!
+
+reference19 = Reference.new(
+  user_id: user7.id,
+  host_id: user11.id,
+  comment: "Host knows how to have a good time! We even went out to the bars together"
+)
+
+reference19.save!
+
+reference20 = Reference.new(
+  user_id: user19.id,
+  host_id: user10.id,
+  comment: "Average stay. The house was not the cleanist or most organized"
+)
+
+reference20.save!
