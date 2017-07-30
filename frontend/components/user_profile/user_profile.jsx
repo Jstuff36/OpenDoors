@@ -187,6 +187,7 @@ render() {
     if (this.state.action.user_profile) {
       const allTrips = this.seperateHostingsAndUserTrips();
       const references = this.state.userReferences;
+      debugger;
       return(
           <div>
             <UserNavBar
@@ -195,7 +196,7 @@ render() {
               <div className="user-side-container">
                 <div
                   className="user-img"
-                  style={this.getImage(picture)}>
+                  style={this.getImage(this.props.currentUser.picture)}>
                 </div>
                 <div className="user-name">
                   {firstname} {lastname}</div>
