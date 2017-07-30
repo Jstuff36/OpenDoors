@@ -214,6 +214,22 @@ user12 = User.new(
 )
 user12.save
 
+user13 = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  city: "San Francisco",
+  country: "United States",
+  hosting: true,
+  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
+  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  location: [37.803618, -122.439757],
+  languages: ["English"],
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501392637/images_tlukyp.jpg"
+)
+user13.save
+
 user999 = User.new(
   firstname: "Rick",
   lastname: "Blaine",

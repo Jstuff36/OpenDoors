@@ -110,7 +110,9 @@ class UserProfile extends React.Component {
     let updateUser = this.props.updateUser;
     let file = this.state.imageFile;
     let formData = new FormData();
-    formData.append("user[image]", file);
+    if (file) {
+      formData.append("user[image]", file);
+    }
     let keys = Object.keys(this.state.userInfo);
     for (let i = 0; i < keys.length; i++ ) {
       if (this.state.userInfo[keys[i]]) {
@@ -187,7 +189,6 @@ render() {
     if (this.state.action.user_profile) {
       const allTrips = this.seperateHostingsAndUserTrips();
       const references = this.state.userReferences;
-      debugger;
       return(
           <div>
             <UserNavBar
