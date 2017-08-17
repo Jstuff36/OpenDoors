@@ -1,30 +1,24 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# user: {email: "myemail", password: "password", firstname: "justin", lastname: "white", city: "Cucuta", country: "Colombia", location: [8, 72.5]}
 User.delete_all
 Trip.delete_all
 Reference.delete_all
 
 user1 = User.new(
-  firstname: "Justin",
-  lastname: "White",
-  address: "1207 Lane St",
+  firstname: "Benjamin",
+  lastname: "Franklin",
+  address: "1210 Lane St",
   zipcode: "94124",
-  age: 23,
+  age: 311,
   sex: "Male",
   email: "email",
   password: "password",
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Hi! I'm Justin. I'm passonate traveling, cultures, and languages. Come visit my door is always open!",
-  languages: ["English", "Spanish"],
-  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500658457/16587048_10209812149394672_8162820951177611547_o_woib7p.jpg"
+  about: "Hi! I'm Ben. I'm passionate about reading, science, and revolutions. Come visit, my door is always open!",
+  languages: ["English", "French", "Italian", "Spanish", "Latin", "German"],
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1502987824/BRAND_THC_HOSF_199651_SFM_000_2997_15_20170217_00_HD_still_624x352_em6uxu.jpg"
 )
 user1.save
 
