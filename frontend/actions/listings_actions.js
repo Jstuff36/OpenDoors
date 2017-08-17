@@ -26,9 +26,11 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS
-});
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
 
 export const allListings = (city) => dispatch => (
   ListingsUtil.listingByLocation(city).then(response => (
