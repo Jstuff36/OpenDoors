@@ -1,11 +1,13 @@
 .listing-nav-bar-container {
   display: flex;
+  align-items: center;
   flex-flow: nowrap;
   position: fixed;
   width: 100%;
   z-index: 3;
   background: black;
   color: #e2e1e1;
+  height: 60px;
 }
 
 .listing-nav-bar-container h2 {
@@ -16,15 +18,17 @@
 }
 
 .site-name {
-  font-size: 25px;
+  font-size: 25px !important;
   font-family: 'Proza Libre', sans-serif;
   color: lighten(#548072, 10%);
   letter-spacing: 0;
 }
 
 .nav-icons {
-  margin: 10px 15px 10px 15px;
+  margin: 12px 15px 10px 15px;
   font-size: 20px;
+  border-bottom: solid black;
+  border-width: 1px;
 }
 
 .nav-icons:hover {
@@ -46,9 +50,12 @@
 .dropbtn-location {
   @extend .dropbtn;
   font-size: 20px;
-  padding: 5px;
+  padding: 0px 5px;
   text-align: center;
+  margin-top: 6px;
   margin-right: 10px;
+  border-bottom: solid black;
+  border-width: 1px;
 }
 
 .dropdown {
@@ -88,12 +95,12 @@
 
 .dropdown-content span:hover {
   z-index: 2;
-  background: rgba(100, 100, 100, 0.1)
+  background: rgba(100, 100, 100, 0.15);
 }
 
 .dropdown:hover .dropdown-content {
   z-index: 2;
-  background: rgba(256, 256, 256, 0.5);
+  background: rgba(256, 256, 256, 1);
   display: block;
   cursor: pointer;
 }
