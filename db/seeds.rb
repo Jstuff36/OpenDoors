@@ -5,8 +5,8 @@ Trip.delete_all
 Reference.delete_all
 
 user1 = User.new(
-  firstname: "Benjamin",
-  lastname: "Franklin",
+  firstname: "Keith",
+  lastname: "Lindsey",
   address: "1210 Lane St",
   zipcode: "94124",
   age: 311,
@@ -16,39 +16,39 @@ user1 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Hi! I'm Ben. I'm passionate about reading, science, and revolutions. Come visit, my door is always open!",
-  languages: ["English", "French", "Italian", "Spanish", "Latin", "German"],
-  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1502987824/BRAND_THC_HOSF_199651_SFM_000_2997_15_20170217_00_HD_still_624x352_em6uxu.jpg"
+  about: "Hi! I'm Keith. I'm passionate about reading, science, and traveling. Come visit, my door is always open!",
+  languages: ["English", "French"],
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1503427623/people-516372_960_720_suwml5.jpg"
 )
 user1.save
 
 user2 = User.new(
-  firstname: "Kovthe",
+  firstname: "Jan",
   lastname: "Rue",
   email: "email1",
   password: "password",
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Meddles with dark forces better left alone",
+  about: "Hello I'm Jan I enjoy conversation about the intersection of various cultures!",
   location: [37.779760, -122.413820],
-  languages: ["Aturan", "Ademic"],
-  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/q_100/v1500658517/kvothe_m9mbfl.jpg"
+  languages: ["English", "Japanese"],
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1503427713/girl-657753_960_720_fm3lhz.jpg"
 )
 user2.save
 
 user3 = User.new(
-  firstname: "Julius",
-  lastname: "Ceaser",
+  firstname: "Tony",
+  lastname: "White",
   email: "email2",
   password: "password",
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Doesn't listen to advice",
+  about: "I'm not home often but feel free to shoot me a message and ask!",
   location: [ 37.779996, -122.511281],
   languages: ["latin"],
-  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/q_100/v1500658629/Caesar_zxwnnx.jpg"
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1503427789/skydiving-678168__340_xxf6e8.jpg"
 )
 user3.save
 
@@ -68,23 +68,23 @@ user4 = User.new(
 user4.save
 
 user5 = User.new(
-  firstname: "Christopher",
-  lastname: "Wallace",
+  firstname: "Lindsey",
+  lastname: "Greene",
   email: "email4",
   password: "password",
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Damn right I like the life I live, cause I went from negative to positive",
+  about: "Hi, I'm Lindsey! I'm from Russia and work in tech.",
   location: [37.794069, -122.401846],
-  languages: ["English"],
-  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500764375/biggie_epf4lh.jpg"
+  languages: ["English, Russian"],
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1503427898/color-20412__340_vekwjt.jpg"
 )
 user5.save
 
 user6 = User.new(
-  firstname: "Aubrey",
-  lastname: "Graham",
+  firstname: "David",
+  lastname: "Norris",
   email: "email5",
   password: "password",
   city: "San Francisco",
@@ -93,7 +93,7 @@ user6 = User.new(
   about: "You know life is what we make it, and a chance is like a image, it’d be nice if you just take it",
   location: [37.804514, -122.418474],
   languages: ["Canadian English"],
-  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500764916/drake_x1nkau.jpg"
+  image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1503428005/passion-1690965__340_qoviid.jpg"
 )
 user6.save
 
@@ -121,7 +121,7 @@ user8 = User.new(
   country: "United States",
   hosting: true,
   about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  interest: "My favorite quote is " + Faker::MostInterestingManInTheWorld.quote + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.793143, -122.416378],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501274629/3596043_kyltrv.jpg"
@@ -136,8 +136,8 @@ user9 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  about: "I'm orginially from " + Faker::Team.state + " and I still have a lot of state pride",
+  interest: "My favorite quote is " + Faker::MostInterestingManInTheWorld.quote + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.783265, -122.417927],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501274743/3729100_xmo2l5.jpg"
@@ -152,8 +152,8 @@ user10 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  about: "I'm an instructor at " + Faker::Educator.university,
+  interest: "My favorite quote is " + Faker::MostInterestingManInTheWorld.quote + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.775688, -122.398196],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275068/not-so-recent-and-random-portraits_qsqv4t.jpg"
@@ -168,8 +168,8 @@ user11 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  about: "I'm orginially from " + Faker::Team.state + " and I still have a lot of state pride",
+  interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.795988, -122.397249],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275177/not-so-recent-and-random-portraits_0_lbhjfj.jpg"
@@ -184,8 +184,8 @@ user12 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  about: "I'm an instructor at " + Faker::Educator.university,
+  interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.795988, -122.397249],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275404/not-so-recent-and-random-portraits_5_li9cxc.jpg"
@@ -200,8 +200,8 @@ user12 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  about: "I'm an engineer at Facebook. I enjoy hacking together ideas that change the world",
+  interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.803618, -122.439757],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501275448/not-so-recent-and-random-portraits_8_i0jpua.jpg"
@@ -216,8 +216,8 @@ user13 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  about: "I'm an instructor at " + Faker::Educator.university,
+  interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.803618, -122.439757],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501392637/images_tlukyp.jpg"
@@ -232,8 +232,8 @@ user14 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-  interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+  about: "Hi! I'm not home often because work takes me across the globe but I have a dog and I'd love to have you if I'm around",
+  interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
   location: [37.765792, -122.462902],
   languages: ["English"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440112/girl-with-grey-hair_vgmaqx.jpg"
@@ -248,8 +248,8 @@ password: "password",
 city: "San Francisco",
 country: "United States",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "I'm an instructor at " + Faker::Educator.university,
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
 location: [37.760827, -122.478903],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440184/ee8f163549859.562e32e62418a_kbctvs.jpg"
@@ -265,7 +265,7 @@ city: "San Francisco",
 country: "United States",
 hosting: true,
 about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
 location: [37.748116, -122.451748],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440292/images_yjos86.jpg"
@@ -280,8 +280,8 @@ password: "password",
 city: "San Francisco",
 country: "United States",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "I'm an instructor at " + Faker::Educator.university,
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish + ". In my spare time you can find me reading anything by" + Faker::Book.author,
 location: [37.753328, -122.432006],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440351/images_pkjmhb.jpg"
@@ -296,8 +296,8 @@ password: "password",
 city: "Casablanca",
 country: "Morocco",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "I'm orginially from " + Faker::Team.state + " and I still have a lot of pride",
+interest: "My favorite quote is " + Faker::MostInterestingManInTheWorld.quote + ". In my spare time you can find me reading anything by" + Faker::Book.author,
 location: [33.580083, -7.627963],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440779/a7217d6009493e7e8347594ba699dc46_xnzuw1.jpg"
@@ -313,7 +313,7 @@ city: "Casablanca",
 country: "Morocco",
 hosting: true,
 about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+interest: "My favorite quote is " + Faker::MostInterestingManInTheWorld.quote + ". In my spare time you can find me reading anything by" + Faker::Book.author,
 location: [33.580083, -7.627963],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441137/casablanca_drawing_man_ozmdn2.jpg"
@@ -329,7 +329,7 @@ city: "Casablanca",
 country: "Morocco",
 hosting: true,
 about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+interest: "My favorite quote is " + Faker::MostInterestingManInTheWorld.quote + ". In my spare time you can find me reading anything by" + Faker::Book.author,
 location: [33.582422, -7.654304],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441186/images_rgbe5j.jpg"
@@ -344,8 +344,8 @@ password: "password",
 city: "Casablanca",
 country: "Morocco",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "Hi! I'm not home often because work takes me across the globe but I have a dog and I'd love to have you if I'm around",
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.591882, -7.641301],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441248/casablanca_man_2_tkuaru.jpg"
@@ -361,7 +361,7 @@ city: "Casablanca",
 country: "Morocco",
 hosting: true,
 about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.589137, -7.586324],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441364/images_o3wquq.jpg"
@@ -376,8 +376,8 @@ password: "password",
 city: "Casablanca",
 country: "Morocco",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "I'm an instructor at " + Faker::Educator.university,
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.565595, -7.572084],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501440351/images_pkjmhb.jpg"
@@ -393,7 +393,7 @@ city: "Casablanca",
 country: "Morocco",
 hosting: true,
 about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.588329, -7.578113],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441405/images_rwsauv.jpg"
@@ -408,8 +408,8 @@ password: "password",
 city: "Casablanca",
 country: "Morocco",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "I'm orginially from " + Faker::Team.state + " and I still have a lot of state pride",
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.549812, -7.597626],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441432/images_sycc9j.jpg"
@@ -424,8 +424,8 @@ password: "password",
 city: "Casablanca",
 country: "Morocco",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "I'm an instructor at " + Faker::Educator.university,
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.599786, -7.653829],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441510/casablanca_3_gjzggw.jpg"
@@ -440,8 +440,8 @@ password: "password",
 city: "Casablanca",
 country: "Morocco",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "I'm an engineer at Yelp. I enjoy hacking together ideas that change the world",
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.602050, -7.620300],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441554/images_skmidl.jpg"
@@ -456,8 +456,8 @@ password: "password",
 city: "Casablanca",
 country: "Morocco",
 hosting: true,
-about: "Star Wars quotes describe me best like " + Faker::StarWars.quote,
-interest: "I like moives! My favorite moive quote is " + Faker::Movie.quote,
+about: "Hi! I'm not home often because work takes me across the globe but I have a dog and I'd love to have you if I'm around",
+interest: "I enjoy cooking! I make a great" + Faker::Food.dish,
 location: [33.593813, -7.591228],
 languages: ["English"],
 image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1501441584/images_qb6krp.jpg"
@@ -754,7 +754,7 @@ reference7.save!
 reference8 = Reference.new(
   user_id: user13.id,
   host_id: user2.id,
-  comment: "Best host we've stayed at. Definitely would stay again!. ! They even cooked for us"
+  comment: "The host had the most comfy bed I've slept on in years"
 )
 
 reference8.save!
@@ -778,7 +778,7 @@ reference10.save!
 reference11 = Reference.new(
   user_id: user11.id,
   host_id: user21.id,
-  comment: "Fantastic host. Definitely would stay again!"
+  comment: "The host had only had a couch for us but the food made up for it!"
 )
 
 reference11.save!
@@ -794,7 +794,7 @@ reference12.save!
 reference13 = Reference.new(
   user_id: user13.id,
   host_id: user25.id,
-  comment: "Best host we've stayed at. Definitely would stay again!. ! They even cooked for us"
+  comment: "The host had the most comfy bed I've slept on in years"
 )
 
 reference13.save!
@@ -818,7 +818,7 @@ reference15.save!
 reference16 = Reference.new(
   user_id: user23.id,
   host_id: user6.id,
-  comment: "Fantastic host. Definitely would stay again!"
+  comment: "The host had only had a couch for us but the food made up for it!"
 )
 
 reference16.save!
@@ -834,7 +834,7 @@ reference17.save!
 reference18 = Reference.new(
   user_id: user13.id,
   host_id: user21.id,
-  comment: "Best host we've stayed at. Definitely would stay again!. ! They even cooked for us"
+  comment: "The host had the most comfy bed I've slept on in years"
 )
 
 reference18.save!
