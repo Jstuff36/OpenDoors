@@ -9,6 +9,7 @@ class UserProfile extends React.Component {
     this.state = {
       action: {
         user_profile: true,
+        user_references: false,
         user_profile_edit: false,
       },
       currentUser: this.props.currentUser,
@@ -65,6 +66,7 @@ class UserProfile extends React.Component {
     return (e) => {
       let tempObj = {
         user_profile: false,
+        user_references: false,
         user_profile_edit: false,
       };
       tempObj[action] = true;
@@ -209,6 +211,11 @@ render() {
                   </div>
                   <button
                     className="user-links"
+                    onClick={this.handleSwitchDisplay("user_references")}>
+                    My References
+                  </button>
+                  <button
+                    className="user-links"
                     onClick={this.handleSwitchDisplay("user_profile_edit")}>
                     Edit Profile
                   </button>
@@ -263,80 +270,115 @@ render() {
                        </div>
                      }
                      </ul>
+
+                   </div>
+                   <div className="upcoming-hostings-container">
+
                      <ul>
                        <div className="trips-refs-heading">
                          Upcoming Hostings
                        </div>
                        { (allTrips[1].length === 0) ?
-                        <div className="no-trips-hostings">
-                         No Upcoming Hosting
-                       </div> :
-                      <div>
-                       {allTrips[1].slice(0).reverse().map( (trip, idx) => (
-                           <li  key={idx} className="trip-listings-container">
-                             <Link to={`/listings/${trip.traveler_id}`}>
-                               <div
-                                 className="trip-img"
-                                 style={this.getImage(trip.traveler_pic)}>
-                               </div>
-                             </Link>
-                             <div className="trip-listings-info-container">
-                               <div className="trip-name">
-                                 {trip.traveler_firstname + " " + trip.traveler_lastname }
-                               </div>
-                               <div>
-                                 {trip.dates[0] + " To " + trip.dates[1]}
-                               </div>
-                               <div className="trip-status">
-                                 <div>
-                                   Trip Status:
+                         <div className="no-trips-hostings">
+                           No Upcoming Hosting
+                         </div> :
+                         <div>
+                           {allTrips[1].slice(0).reverse().map( (trip, idx) => (
+                             <li  key={idx} className="trip-listings-container">
+                               <Link to={`/listings/${trip.traveler_id}`}>
+                                 <div
+                                   className="trip-img"
+                                   style={this.getImage(trip.traveler_pic)}>
+                                 </div>
+                               </Link>
+                               <div className="trip-listings-info-container">
+                                 <div className="trip-name">
+                                   {trip.traveler_firstname + " " + trip.traveler_lastname }
                                  </div>
                                  <div>
-                                   {trip.status}
+                                   {trip.dates[0] + " To " + trip.dates[1]}
                                  </div>
-                               </div>
+                                 <div className="trip-status">
+                                   <div>
+                                     Trip Status:
+                                   </div>
+                                   <div>
+                                     {trip.status}
+                                   </div>
+                                 </div>
                                  { (trip.status === "Pending") ?
                                    (<div className="trip-pending-buttons">
+                                   <button
+                                     className="approve-trip"
+                                     id = {trip.id}
+                                     onClick={this.handleTripStatus}>
+                                     Approve
+                                   </button>
+                                   <button
+                                     className="decline-trip"
+                                     id = {trip.id}
+                                     onClick={this.handleTripStatus}>
+                                     Decline
+                                   </button>
+                                 </div>) : (
+                                   <div className="cancel-button">
+                                     <div>
+                                       Need to Cancel?
+                                     </div>
                                      <button
-                                       className="approve-trip"
                                        id = {trip.id}
                                        onClick={this.handleTripStatus}>
-                                       Approve
+                                       Cancel
                                      </button>
-                                     <button
-                                       className="decline-trip"
-                                       id = {trip.id}
-                                       onClick={this.handleTripStatus}>
-                                       Decline
-                                     </button>
-                                   </div>) : (
-                                    <div className="cancel-button">
-                                      <div>
-                                        Need to Cancel?
-                                      </div>
-                                      <button
-                                        id = {trip.id}
-                                        onClick={this.handleTripStatus}>
-                                        Cancel
-                                      </button>
-                                    </div>)
+                                   </div>)
                                  }
-                             </div>
-                           </li>
-                       ))}
-                     </div>
-                    }
+                               </div>
+                             </li>
+                           ))}
+                         </div>
+                       }
                      </ul>
-                     <div>
-
-                     </div>
                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      } else if (this.state.action.user_references) {
+        const allTrips = this.seperateHostingsAndUserTrips();
+        const references = this.state.userReferences;
+        return(
+            <div>
+              <UserNavBar
+                logout={this.props.logout}/>
+              <div className="user-container">
+                <div className="user-side-container">
+                  <div
+                    className="user-img"
+                    style={this.getImage(this.props.currentUser.picture)}>
+                  </div>
+                  <div className="user-name">
+                    {firstname} {lastname}</div>
+                </div>
+                <div className="user-main-container">
+                  <div className="user-options-container">
+                    <button
+                      className="user-links"
+                      onClick={this.handleSwitchDisplay("user_profile")}>
+                      My Profile
+                    </button>
+                    <div className="user-current-page">
+                      My References
+                    </div>
+                    <button
+                      className="user-links"
+                      onClick={this.handleSwitchDisplay("user_profile_edit")}>
+                      Edit Profile
+                    </button>
+                  </div>
                    <div className="user-references-container">
                      <div id="div-for-turnery">
                        <ul className="user-indv-references-container">
-                         <div className="trips-refs-heading">
-                           My References
-                         </div>
                          { (Object.keys(references).length === 0) ?
                           <div className="no-trips-hostings">
                            No References
@@ -371,8 +413,7 @@ render() {
                 </div>
               </div>
             </div>
-          </div>
-        );
+          )
       } else {
         return(
           <div>
@@ -406,6 +447,11 @@ render() {
                     className="user-links"
                     onClick={this.handleSwitchDisplay("user_profile")}>
                     My Profile
+                  </button>
+                  <button
+                    className="user-links"
+                    onClick={this.handleSwitchDisplay("user_references")}>
+                    My References
                   </button>
                   <div className="user-current-page">
                     Edit Profile

@@ -1,6 +1,6 @@
 .user-container {
   display: flex;
-  background: url("https://res.cloudinary.com/dax5cdjeh/image/upload/v1501046482/bike-photo_jw06iq.jpg") no-repeat center center fixed;
+  background: url("https://res.cloudinary.com/dax5cdjeh/image/upload/c_scale,w_2895/v1503540263/luca-bravo-276888_z9izcl.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -131,14 +131,14 @@
 .trip-img {
   position: relative;
   float: left;
-  width: 50px;
-  height: 103px;
-  min-width: 55px;
-  background-position: 50% 50%;
+  min-width: 65px;
+  min-height: 67px;
+  background-position: 50% 6%;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 5px;
+  margin-right: 8px;
 }
 
 .trip-listings-container {
@@ -148,6 +148,7 @@
   box-shadow: 0 0 5px #000000;
   border-radius: 5px;
   margin: 15px 0;
+  padding: 12px;
 }
 
 .trip-listings-info-container {
@@ -158,11 +159,26 @@
 
 .trip-listings-info-container div {
   padding: 9px;
+  margin-right: 5px;
 }
 
 .trip-name {
   font-weight: 600;
   margin-top: -5px;
+}
+
+.upcoming-hostings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e2e1e1;
+  margin: 10px 0 10px 0;
+  width: 50%;
+  margin-left: 10px;
+}
+
+.upcoming-hostings-container ul {
+  width: 100%;
 }
 
 .user-references-container {
@@ -171,7 +187,7 @@
   align-items: center;
   color: #e2e1e1;
   margin: 10px 0 10px 0;
-  width: 50%;
+  width: 100%;
   margin-left: 10px;
 }
 
@@ -225,8 +241,7 @@
   border-radius: 5px;
   width: 62px;
   text-align: center;
-  color: lighten(rgba(189, 58, 58, 50), 10%)
-
+  color: lighten(rgba(189, 58, 58, 50), 10%);
 }
 
 .cancel-button button:hover {
