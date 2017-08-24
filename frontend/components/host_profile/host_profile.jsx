@@ -312,6 +312,7 @@ class HostProfile extends React.Component {
         <div>
           <HostNavBar
             logout={this.props.logout}
+            currentUser={this.props.currentUser}
             history={this.props.history}/>
           <div className="host-container">
             <div className="host-side-bar-container">
@@ -427,6 +428,7 @@ class HostProfile extends React.Component {
         <div>
           <HostNavBar
             logout={this.props.logout}
+            currentUser={this.props.currentUser}
             history={this.props.history}/>
           <div className="host-container">
             <div className="host-side-bar-container">

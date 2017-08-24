@@ -23,6 +23,7 @@ class HostNavBar extends React.Component {
   }
 
   handleProfile(e) {
+    console.log(this.props.currentUser.id);
     let id = this.props.currentUser.id;
     this.props.history.push({
       pathname: `/user/${id}`

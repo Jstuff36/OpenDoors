@@ -345,7 +345,6 @@ render() {
           </div>
         );
       } else if (this.state.action.user_references) {
-        const allTrips = this.seperateHostingsAndUserTrips();
         const references = this.state.userReferences;
         console.log(references);
         return(
@@ -389,10 +388,12 @@ render() {
                            <li
                              key={idx}>
                              <div className="user-one-div-to-rule-them-all">
-                               <div
-                                 className="user-references-img"
-                                 style={this.getImage(references[key].traveler_pic)}>
-                               </div>
+                               <Link to={`/listings/${references[key].user_id}`}>
+                                 <div
+                                   className="user-references-img"
+                                   style={this.getImage(references[key].traveler_pic)}>
+                                 </div>
+                              </Link>
                                <div className="user-references-content-container">
                                  <div className="user-references-name">
                                    {
