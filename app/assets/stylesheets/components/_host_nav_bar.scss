@@ -13,13 +13,15 @@
 
 .host-nav-container h2 {
   font-size: 25px;
-  margin: 5px 0 5px 85px;
+  margin: 6px 0 5px 85px;
   letter-spacing: 0.1em;
 }
 
 .host-nav-listings {
   font-size: 25px;
   margin: 5px 0 5px 0;
+  border-bottom: solid black;
+  border-width: 1px;
 }
 
 .host-nav-listings:hover {
@@ -30,7 +32,9 @@
 
 .host-nav-log-out {
   font-size: 25px;
-  margin: 5px 85px 5px 0;
+  margin: 6px 85px 5px 0;
+  border-bottom: solid black;
+  border-width: 1px;
 }
 
 .host-nav-log-out:hover {
