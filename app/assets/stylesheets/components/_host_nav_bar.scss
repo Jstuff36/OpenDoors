@@ -1,8 +1,10 @@
 .host-nav-container {
   display: flex;
   flex-flow: nowrap;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 70px;
   z-index: 1;
   background: black;
   color: #e2e1e1;
