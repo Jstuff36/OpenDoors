@@ -347,6 +347,7 @@ render() {
       } else if (this.state.action.user_references) {
         const allTrips = this.seperateHostingsAndUserTrips();
         const references = this.state.userReferences;
+        console.log(references);
         return(
             <div>
               <UserNavBar
