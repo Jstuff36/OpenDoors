@@ -7,7 +7,7 @@ class ListingsNavBar extends React.Component {
     super(props);
     this.state = {
       currentUserID: this.props.currentUserID,
-      city: "San Francisco"
+      city: this.props.currentCity
     };
     this.handleCityClick = this.handleCityClick.bind(this);
     this.handleLogout = this.handleLogout.bind(this);

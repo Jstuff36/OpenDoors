@@ -7,7 +7,7 @@ class ListingsNavBarNotLoggedIn extends React.Component {
     super(props);
     this.state = {
       currentUserID: this.props.currentUserID,
-      city: "San Francisco"
+      city: this.props.currentCity || "San Francisco"
     };
     this.handleCityClick = this.handleCityClick.bind(this);
   }
@@ -49,4 +49,4 @@ class ListingsNavBarNotLoggedIn extends React.Component {
   }
 }
 
-export default ListingsNavBarNotLoggedIn
+export default ListingsNavBarNotLoggedIn;

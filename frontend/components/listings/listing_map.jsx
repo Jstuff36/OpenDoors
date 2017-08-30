@@ -58,11 +58,13 @@ class ListingMap extends React.Component {
       <div className="listings-main-div">
         { this.props.currentUser ?
         <ListingsNavBar
+          currentCity={this.props.currentCity}
           currentUserID={this.props.currentUser.id}
           receiveCity={this.props.receiveCity}
           history={this.props.history}
           logout={this.props.logout}/> :
         <ListingNavBarNotLoggedIn
+          currentCity={this.props.currentCity}
           receiveCity={this.props.receiveCity}
           history={this.props.history}/>
         }

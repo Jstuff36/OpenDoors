@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class HostNavBar extends React.Component {
   constructor(props) {
@@ -34,7 +35,9 @@ class HostNavBar extends React.Component {
     return(
       <div className="host-nav-container">
         <h2 className="site-name">
-          OpenDoors
+          <Link to={'/'}>
+            OpenDoors
+          </Link>
         </h2>
         <button
           className="host-nav-listings"
