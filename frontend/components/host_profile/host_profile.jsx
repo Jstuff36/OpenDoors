@@ -60,6 +60,16 @@ class HostProfile extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.id != nextProps.match.params.id) {
+      this.props.fetchSingleListing(nextProps.match.params.id).then( (resp) => {
+        this.setState({
+          currentListing: resp.currentListing
+        });
+      });
+    }
+  }
+
   handleSwitchDisplay(action) {
     return (e) => {
       let tempObj = {
@@ -398,10 +408,12 @@ class HostProfile extends React.Component {
                     <li
                       key={idx}>
                       <div className="one-div-to-rule-them-all">
-                        <div
-                          className="references-img"
-                          style={this.getImage(references[key].traveler_pic)}>
-                        </div>
+                        <Link to={`/listings/${references[key].user_id}`}>
+                          <div
+                            className="references-img"
+                            style={this.getImage(references[key].traveler_pic)}>
+                          </div>
+                        </Link>
                         <div className="references-content-container">
                           <div className="references-name">
                             {

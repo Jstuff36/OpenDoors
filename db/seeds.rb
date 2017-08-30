@@ -60,9 +60,9 @@ user4 = User.new(
   city: "San Francisco",
   country: "United States",
   hosting: true,
-  about: "Likes chinese food and will drain a pull up 3 on you",
+  about: "Likes Mexican food and will drain a pull up 3 on you",
   location: [37.792366, -122.445890],
-  languages: ["Manderin"],
+  languages: ["English, Manderin"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500763596/hoires_wc828g.jpg"
 )
 user4.save
@@ -730,7 +730,7 @@ reference4.save!
 reference5 = Reference.new(
   user_id: user3.id,
   host_id: user2.id,
-  comment: "Average stay. The house was not the cleanist or most organized"
+  comment: "Average stay. The house was not the cleanest or most organized"
 )
 
 reference5.save!
@@ -770,7 +770,7 @@ reference9.save!
 reference10 = Reference.new(
   user_id: user19.id,
   host_id: user1.id,
-  comment: "Average stay. The house was not the cleanist or most organized"
+  comment: "Average stay. The house was not the cleanest or most organized"
 )
 
 reference10.save!
@@ -810,7 +810,7 @@ reference14.save!
 reference15 = Reference.new(
   user_id: user22.id,
   host_id: user18.id,
-  comment: "Average stay. The house was not the cleanist or most organized"
+  comment: "Average stay. The house was not the cleanest or most organized"
 )
 
 reference15.save!
@@ -850,7 +850,7 @@ reference19.save!
 reference20 = Reference.new(
   user_id: user19.id,
   host_id: user10.id,
-  comment: "Average stay. The house was not the cleanist or most organized"
+  comment: "Average stay. The house was not the cleanest or most organized"
 )
 
 reference20.save!

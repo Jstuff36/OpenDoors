@@ -346,7 +346,6 @@ render() {
         );
       } else if (this.state.action.user_references) {
         const references = this.state.userReferences;
-        console.log(references);
         return(
             <div>
               <UserNavBar
