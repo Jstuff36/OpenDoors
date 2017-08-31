@@ -27,7 +27,7 @@ class NewReferenceModal extends React.Component {
               <input
                 className="send-reference booking_placeholder"
                 type="submit"
-                value="Send"/>
+                value="Leave Reference"/>
             </div>
             <textarea
               value={this.props.referenceState.comment}

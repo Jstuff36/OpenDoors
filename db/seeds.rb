@@ -62,7 +62,7 @@ user4 = User.new(
   hosting: true,
   about: "Likes Mexican food and will drain a pull up 3 on you",
   location: [37.792366, -122.445890],
-  languages: ["English, Manderin"],
+  languages: ["English, Mandarin"],
   image: "https://res.cloudinary.com/dax5cdjeh/image/upload/v1500763596/hoires_wc828g.jpg"
 )
 user4.save
