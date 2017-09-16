@@ -57,7 +57,7 @@ This is will allow users to to filter results shown on the map by hostings which
 Integration with mobile using React Native.
 
 #### Drop down map markers
-Instead of populating the map with all markers for the filtered city initially. I would like to implement a feature where the map markers are added as the google maps viewing window is changed. The markers would "drop down" onto their location to as an additional wow factor.
+Instead of populating the map with all markers for the filtered city initially, I would like to implement a feature where the map markers are added as the google maps viewing window is changed. The markers would "drop down" onto their location to as an additional wow factor.
 
 #### Refactor
 I would like to DRY out the code by refactoring components into sub-components and making more general optimizations at bottleneck points.
