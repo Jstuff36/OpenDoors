@@ -45,7 +45,7 @@ The user profile page allows the users to see upcoming trips, hostings, and refe
 All trips are stored in one table in the database, which contains columns for `id`, the `host_id`, `user_id` which references the user who is traveling, the `booking message`, and the `dates` of the trip. Validation checks ensure that the date range is neither in the past or in reverse order. A host then has the ability to approve or decline requested trips. Additionally, both users have the ability to cancel of a trip if the need arises.
 
 ## Leave A Reference
-All References are stored in one table in the database, which contains columns for `id`, the `host_id`, `user_id` which references the user who is traveling, and the `comment`. Upon creation the reference shows on the host listing page and the user profile page. Validation checks ensure a user may only leave one reference per host.
+All References are stored in one table in the database, which contains columns for `id`, the `host_id`, `user_id` which references the user who is traveling, and the `comment`. Upon creation the reference shows on the host listing page and the user profile page. Validation checks ensure a user may only leave one reference per host. 
 
 ## Future Concepts
 Below is a non-comprehensive list of features I would like to implement.
